@@ -2,16 +2,18 @@ const express = require("express")
 //const bcrypt = require("bcrypt")
 //const jwt = require("jsonwebtoken")
 const fs = require("fs")
-const rawData = fs.readFileSync("server/vaccine.json");
+const rawVaccinesData = fs.readFileSync("server/vaccine.json")
+const rawUsersData = fs.readFileSync("server/userVaccinationData.json")
 const dotenv = require("dotenv")
 
 dotenv.config()
 const SECRET = process.env.SECRET
 
-//get raw data from sample.js
-// let rawData = fs.readFileSync('./server/vaccine.json')
-let data = JSON.parse(rawData)
-let vaccine = data.VaccineStatus;
+//get raw data dummy DB
+const vaccineData = JSON.parse(rawVaccinesData)
+let vaccines = vaccineData.VaccineStatus;
+const usersData = JSON.parse(rawUsersData)
+let users = usersData.users
 
 //get user
 const getUser = (username) => {
