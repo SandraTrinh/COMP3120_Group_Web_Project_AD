@@ -3,7 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import LoginForm from './LoginForm'
 import productService from './services/products'
-
+import {
+  BrowserRouter as Router,
+  Switch, Route, Link, Redirect
+} from "react-router-dom"
+const padding = {
+  padding: 20,
+  margin: 20,
+  color: 'black',
+  fontSize: 20
+}
 function App() {
 
   const [user, setUser] = useState(null)
@@ -25,12 +34,42 @@ function App() {
 
   return (
     <div className="App">
-
-    <div className="row">
+   <Router>
+ 
       <div className="u-pull-right">
-        <LoginForm user={user} setUser={setUser}/>
+        <Link style={padding} to="/">home</Link>
+        <Link style={padding} to="/vaccines">vaccines</Link>
+        <Link style={padding} to="/login">login</Link>
+        <Link style={padding} to="/profile">profile</Link>
       </div>
-    </div>
+
+      <Switch>
+            {/* <Route path="/products/:id">
+              <Product products={products} />
+            </Route> */}
+            <Route path="/vaccines">
+              {/* <Products products={products} user={user} updateProductHandler={updateProductHandler} /> */}
+            </Route>
+            <Route path="/login">
+              {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
+              <LoginForm user={user} setUser={setUser}/>
+            </Route>
+            {/* <Route path="/users">
+              {user ? <Users /> : <Redirect to="/login" />}
+            </Route> */}
+            {/* <Route path="/">
+              <Home user={user}/>
+            </Route> */}
+        </Switch>
+
+
+
+
+
+
+
+      </Router>
+   
 
 
       <header className="App-header">

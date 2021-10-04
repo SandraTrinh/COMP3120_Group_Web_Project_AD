@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = '/api/products'
+const baseUrl = '/api/vaccines'
 
 // let token = null 
 
@@ -8,6 +8,12 @@ const baseUrl = '/api/products'
 // }
 
 const getAll = () => {
+    const request = axios.get(baseUrl)
+    return request.then(response => response.data)
+}
+
+
+const getVaccines= () => {
     const request = axios.get(baseUrl)
     return request.then(response => response.data)
 }
