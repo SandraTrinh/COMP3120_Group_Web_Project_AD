@@ -1,24 +1,184 @@
 {
-    "users" : [
-        {"id":"0","name":"Sam Smith","password":"sam123","territoryName":"Capital Region","vaccineName":"Pfizer","status":"Vaccinated","dose":"2"},
-        {"id":"1","name":"John Kim","password":"john123","territoryName":"Central Coast","vaccineName":"Pfizer","status":"Vaccinated","dose":"2"},
-        {"id":"2","name":"Elliott Tsie","password":"elliott123","territoryName":"Central West","vaccineName":"AstraZeneca","status":"Vaccinated","dose":"2"},
-        {"id":"3","name":"Jack Dan","password":"jack123","territoryName":"Coffs Harbour - Grafton","vaccineName":"Pfizer","status":"Vaccinated","dose":"2"},
-        {"id":"4","name":"Liam White","password":"liam123","territoryName":"Far West and Orana","vaccineName":"AstraZeneca","status":"Vaccinated","dose":"2"},
-        {"id":"5","name":"Noah Benjamin","password":"noah123","territoryName":"Hunter Valley exc Newcastle","vaccineName":"Pfizer","status":"Vaccinated","dose":"2"},
-        {"id":"6","name":"Oliver Thompson","password":"oliver123","territoryName":"Illawarra","vaccineName":"AstraZeneca","status":"Vaccinated","dose":"2"},
-        {"id":"7","name":"Elijah Taylor","password":"elijah123","territoryName":"Mid North Coast","vaccineName":"Pfizer","status":"Vaccinated","dose":"2"},
-        {"id":"8","name":"William Walker","password":"william123","territoryName":"Murray","vaccineName":"AstraZeneca","status":"Vaccinated","dose":"1"},
-        {"id":"9","name":"James Bond","password":"james123","territoryName":"New England and North West","vaccineName":"Pfizer","status":"Vaccinated","dose":"1"},
-        {"id":"10","name":"Lucas Wong","password":"lucas123","territoryName":"Newcastle and Lake Macquarie","vaccineName":"AstraZeneca","status":"Vaccinated","dose":"1"},
-        {"id":"11","name":"Henry Clark","password":"henry123","territoryName":"Richmond - Tweed","vaccineName":"Pfizer","status":"Vaccinated","dose":"1"},
-        {"id":"12","name":"Alexander Grey","password":"alexander123","territoryName":"Riverina","vaccineName":"AstraZeneca","status":"Vaccinated","dose":"1"},
-        {"id":"13","name":"Olivia Morris","password":"olivia123","territoryName":"Southern Highlands and Shoalhaven","vaccineName":"Pfizer","status":"Vaccinated","dose":"1"},
-        {"id":"14","name":"Emma Watson","password":"emma123","territoryName":"Sydney - Baulkham Hills and Hawkesbury","vaccineName":"Unknown","status":"Not Vaccinated","dose":"0"},
-        {"id":"15","name":"Ava Max","password":"ava123","territoryName":"Sydney - Blacktown","vaccineName":"Unknown","status":"Not Vaccinated","dose":"0"},
-        {"id":"16","name":"Charlotte Zhang","password":"charlotte123","territoryName":"Sydney - City and Inner South","vaccineName":"Unknown","status":"Not Vaccinated","dose":"0"},
-        {"id":"17","name":"Amelia Rhodes","password":"amelia123","territoryName":"Sydney - Eastern Suburbs","vaccineName":"Unknown","status":"Not Vaccinated","dose":"0"},
-        {"id":"18","name":"Evelyn Stone","password":"evelyn123","territoryName":"Sydney - Inner South West","vaccineName":"Unknown","status":"Not Vaccinated","dose":"0"},
-        {"id":"19","name":"Harper Murphy","password":"harper123","territoryName":"Sydney - Inner West","vaccineName":"Unknown","status":"Not Vaccinated","dose":"0"}
+    "users": [
+        {
+            "id": "0",
+            "name": "Sam Smith",
+            "password": "sam123",
+            "territoryName": "Capital Region",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "1",
+            "name": "John Kim",
+            "password": "john123",
+            "territoryName": "Central Coast",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "2",
+            "name": "Elliott Tsie",
+            "password": "elliott123",
+            "territoryName": "Central West",
+            "vaccineName": "AstraZeneca",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "3",
+            "name": "Jack Dan",
+            "password": "jack123",
+            "territoryName": "Coffs Harbour - Grafton",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "4",
+            "name": "Liam White",
+            "password": "liam123",
+            "territoryName": "Far West and Orana",
+            "vaccineName": "AstraZeneca",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "5",
+            "name": "Noah Benjamin",
+            "password": "noah123",
+            "territoryName": "Hunter Valley exc Newcastle",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "6",
+            "name": "Oliver Thompson",
+            "password": "oliver123",
+            "territoryName": "Illawarra",
+            "vaccineName": "AstraZeneca",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "7",
+            "name": "Elijah Taylor",
+            "password": "elijah123",
+            "territoryName": "Mid North Coast",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "2"
+        },
+        {
+            "id": "8",
+            "name": "William Walker",
+            "password": "william123",
+            "territoryName": "Murray",
+            "vaccineName": "AstraZeneca",
+            "status": "Vaccinated",
+            "dose": "1"
+        },
+        {
+            "id": "9",
+            "name": "James Bond",
+            "password": "james123",
+            "territoryName": "New England and North West",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "1"
+        },
+        {
+            "id": "10",
+            "name": "Lucas Wong",
+            "password": "lucas123",
+            "territoryName": "Newcastle and Lake Macquarie",
+            "vaccineName": "AstraZeneca",
+            "status": "Vaccinated",
+            "dose": "1"
+        },
+        {
+            "id": "11",
+            "name": "Henry Clark",
+            "password": "henry123",
+            "territoryName": "Richmond - Tweed",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "1"
+        },
+        {
+            "id": "12",
+            "name": "Alexander Grey",
+            "password": "alexander123",
+            "territoryName": "Riverina",
+            "vaccineName": "AstraZeneca",
+            "status": "Vaccinated",
+            "dose": "1"
+        },
+        {
+            "id": "13",
+            "name": "Olivia Morris",
+            "password": "olivia123",
+            "territoryName": "Southern Highlands and Shoalhaven",
+            "vaccineName": "Pfizer",
+            "status": "Vaccinated",
+            "dose": "1"
+        },
+        {
+            "id": "14",
+            "name": "Emma Watson",
+            "password": "emma123",
+            "territoryName": "Sydney - Baulkham Hills and Hawkesbury",
+            "vaccineName": "Unknown",
+            "status": "Not Vaccinated",
+            "dose": "0"
+        },
+        {
+            "id": "15",
+            "name": "Ava Max",
+            "password": "ava123",
+            "territoryName": "Sydney - Blacktown",
+            "vaccineName": "Unknown",
+            "status": "Not Vaccinated",
+            "dose": "0"
+        },
+        {
+            "id": "16",
+            "name": "Charlotte Zhang",
+            "password": "charlotte123",
+            "territoryName": "Sydney - City and Inner South",
+            "vaccineName": "Unknown",
+            "status": "Not Vaccinated",
+            "dose": "0"
+        },
+        {
+            "id": "17",
+            "name": "Amelia Rhodes",
+            "password": "amelia123",
+            "territoryName": "Sydney - Eastern Suburbs",
+            "vaccineName": "Unknown",
+            "status": "Not Vaccinated",
+            "dose": "0"
+        },
+        {
+            "id": "18",
+            "name": "Evelyn Stone",
+            "password": "evelyn123",
+            "territoryName": "Sydney - Inner South West",
+            "vaccineName": "Unknown",
+            "status": "Not Vaccinated",
+            "dose": "0"
+        },
+        {
+            "id": "19",
+            "name": "Harper Murphy",
+            "password": "harper123",
+            "territoryName": "Sydney - Inner West",
+            "vaccineName": "Unknown",
+            "status": "Not Vaccinated",
+            "dose": "0"
+        }
     ]
 }

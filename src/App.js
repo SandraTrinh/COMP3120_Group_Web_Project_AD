@@ -34,10 +34,10 @@ console.log(vaccines)
        <Router>
         <header className="col-12">
           <div className="Navbar col-12">
-            <Link className="App-link" to="/">home</Link>
-            <Link className="App-link" to="/vaccines">vaccines</Link>
-            <Link className="App-link" to="/login">login</Link>
-            <Link className="App-link" to="/profile">profile</Link>
+            <Link className="App-link" to="/">Home</Link>
+            <Link className="App-link" to="/vaccines">Vaccines</Link>
+            <Link className="App-link" to="/login">Login</Link>
+            <Link className="App-link" to="/profile">Profile</Link>
           </div>
         </header>
     

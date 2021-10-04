@@ -18,7 +18,7 @@ const Products = ({vaccines}) => {
   
     return(
       <div className="vaccination col-12">
-        <h3> NSW </h3>
+        <h3> Top 10 Regions in NSW in terms of 1st Dose of Vaccinations </h3>
         <ul className="vaccination-list">
             {vaccines.map(vaccine => 
               <li key={vaccine.id} className="vaccine-region">
