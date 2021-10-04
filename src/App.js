@@ -7,12 +7,7 @@ import {
   BrowserRouter as Router,
   Switch, Route, Link, Redirect
 } from "react-router-dom"
-const padding = {
-  padding: 20,
-  margin: 20,
-  color: 'black',
-  fontSize: 20
-}
+
 function App() {
 
   const [user, setUser] = useState(null)
@@ -35,37 +30,38 @@ console.log(vaccines)
 
   return (
     <div className="App">
-      <body className="App-body">
+      
        <Router>
-        
-        <div className="Navbar">
-          <Link style={padding} to="/">home</Link>
-          <Link style={padding} to="/vaccines">vaccines</Link>
-          <Link style={padding} to="/login">login</Link>
-          <Link style={padding} to="/profile">profile</Link>
-        </div>
-
-        <Switch>
-              {/* <Route path="/products/:id">
-                <Product products={products} />
-              </Route> */}
-              <Route path="/vaccines">
-                {/* <Products vaccines={vaccines} /> */}
-              </Route>
-              <Route path="/login">
-                {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
-                <LoginForm user={user} setUser={setUser}/>
-              </Route>
-              {/* <Route path="/users">
-                {user ? <Users /> : <Redirect to="/login" />}
-              </Route> */}
-              <Route path="/">
-              <Products vaccines={vaccines} />
-              </Route>
-          </Switch>
-
+        <header className="col-12">
+          <div className="Navbar col-12">
+            <Link className="App-link" to="/">home</Link>
+            <Link className="App-link" to="/vaccines">vaccines</Link>
+            <Link className="App-link" to="/login">login</Link>
+            <Link className="App-link" to="/profile">profile</Link>
+          </div>
+        </header>
+    
+        <body className="App-body">
+            <Switch>
+                {/* <Route path="/products/:id">
+                  <Product products={products} />
+                </Route> */}
+                <Route path="/vaccines">
+                  {/* <Products vaccines={vaccines} /> */}
+                </Route>
+                <Route path="/login">
+                  {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
+                  <LoginForm user={user} setUser={setUser}/>
+                </Route>
+                {/* <Route path="/users">
+                  {user ? <Users /> : <Redirect to="/login" />}
+                </Route> */}
+                <Route path="/">
+                <Products vaccines={vaccines} />
+                </Route>
+            </Switch>
+          </body> 
         </Router>
-      </body>   
     </div>
   );
 }

@@ -4,14 +4,6 @@ import {Link} from 'react-router-dom'
 
 import productService from '../services/vaccinations'
 
-const contentStyle = {
-    backgroundColor: 'white',
-    color: '#800000',
-    padding: 10,
-    margin: 20,
-    fontSize: 16
-}
-
 const Products = ({vaccines}) => {
 
     // const deleteProduct = (id) => {
@@ -25,7 +17,7 @@ const Products = ({vaccines}) => {
     // }
   
     return(
-      <div style={contentStyle}>
+      <div className="vaccination col-12">
         <h3> NSW </h3>
         <ul>
             {vaccines.map(vaccine => 
