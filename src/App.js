@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
 import LoginForm from './LoginForm'
-import productService from './services/products'
+import productService from './services/vaccinations.js'
 import Products from './components/Products.js'
 import {
   BrowserRouter as Router,
@@ -35,36 +35,37 @@ console.log(vaccines)
 
   return (
     <div className="App">
-   <Router>
- 
-      <div className="u-pull-right">
-        <Link style={padding} to="/">home</Link>
-        <Link style={padding} to="/vaccines">vaccines</Link>
-        <Link style={padding} to="/login">login</Link>
-        <Link style={padding} to="/profile">profile</Link>
-      </div>
+      <body className="App-body">
+       <Router>
+        
+        <div className="Navbar">
+          <Link style={padding} to="/">home</Link>
+          <Link style={padding} to="/vaccines">vaccines</Link>
+          <Link style={padding} to="/login">login</Link>
+          <Link style={padding} to="/profile">profile</Link>
+        </div>
 
-      <Switch>
-            {/* <Route path="/products/:id">
-              <Product products={products} />
-            </Route> */}
-            <Route path="/vaccines">
-              {/* <Products vaccines={vaccines} /> */}
-            </Route>
-            <Route path="/login">
-              {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
-              <LoginForm user={user} setUser={setUser}/>
-            </Route>
-            {/* <Route path="/users">
-              {user ? <Users /> : <Redirect to="/login" />}
-            </Route> */}
-            <Route path="/">
-            <Products vaccines={vaccines} />
-            </Route>
-        </Switch>
+        <Switch>
+              {/* <Route path="/products/:id">
+                <Product products={products} />
+              </Route> */}
+              <Route path="/vaccines">
+                {/* <Products vaccines={vaccines} /> */}
+              </Route>
+              <Route path="/login">
+                {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
+                <LoginForm user={user} setUser={setUser}/>
+              </Route>
+              {/* <Route path="/users">
+                {user ? <Users /> : <Redirect to="/login" />}
+              </Route> */}
+              <Route path="/">
+              <Products vaccines={vaccines} />
+              </Route>
+          </Switch>
 
-      </Router>
-   
+        </Router>
+      </body>   
     </div>
   );
 }

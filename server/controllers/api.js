@@ -2,16 +2,19 @@ const express = require("express")
 //const bcrypt = require("bcrypt")
 //const jwt = require("jsonwebtoken")
 const fs = require("fs")
-const rawData = fs.readFileSync("server/vaccine.json");
+const rawUsersData = fs.readFileSync("server/userVaccinationData.json")
+const rawVaccineData = fs.readFileSync("server/vaccine.json")
+const Vaccination = require("../models/vaccine")
 const dotenv = require("dotenv")
 
 dotenv.config()
 const SECRET = process.env.SECRET
 
-//get raw data from sample.js
-// let rawData = fs.readFileSync('./server/vaccine.json')
-let data = JSON.parse(rawData)
-let vaccine = data.vaccination;
+//get raw data dummy DB
+const usersData = JSON.parse(rawUsersData)
+let users = usersData.users
+const vaccineData = JSON.parse(rawVaccineData)
+let vaccinations = vaccineData.vaccination
 
 //get user
 const getUser = (username) => {
@@ -34,21 +37,18 @@ apiRouter.get('/', (request, response) => {
 })
 
 //GET user vaccine status
-apiRouter.get('/api/vaccines',(request, response) => {
+apiRouter.get('/api/vaccinations',(request, response) => {
     //response.json(units)
-    console.log('GET user vaccine status')
-    console.log(vaccine)
-    response.json(vaccine);
-    
-    //this is get data from mongoDB
-    // Unit.find({}).then(result => {
+    console.log('GET user vaccine status') 
+    response.json(vaccinations)   
+    // Vaccination.find({}).then(result => {
     //     console.log(result)
     //     response.json(result)
     // })
 })
 
 //GET one user vaccine status 
-apiRouter.get('/api/vaccines/:id', (request, response) => {
+apiRouter.get('/api/vaccinations/:id', (request, response) => {
     Unit.findById(request.params.id)
         .then(result => {
             response.json(result)

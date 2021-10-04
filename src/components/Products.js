@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-import productService from '../services/products'
+import productService from '../services/vaccinations'
 
 const contentStyle = {
     backgroundColor: 'white',
@@ -31,7 +31,7 @@ const Products = ({vaccines}) => {
             {vaccines.map(vaccine => 
               <li key={vaccine.id}>
                 <Link to={`/vaccines/${vaccine.id}`}>{vaccine.NameOfTheState}, {vaccine.NameOfTheTerritory}, {vaccine.TotalPopulation},
-                 {vaccine.FirstDoseVaccinationPercentage} and {vaccine.SecondDoseVaccinationPercentage}
+                 First Dose: {vaccine.FirstDoseVaccinationPercentage} and Second Does: {vaccine.SecondDoseVaccinationPercentage}
                 </Link>
                 {/* {
                   user !== null
