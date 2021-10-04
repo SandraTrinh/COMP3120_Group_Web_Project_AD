@@ -59,6 +59,9 @@ console.log(vaccines)
                 <Route path="/">
                 <Products vaccines={vaccines} />
                 </Route>
+                {/* <Route path="/profile">
+                    {}
+                </Route> */}
             </Switch>
           </body> 
         </Router>
