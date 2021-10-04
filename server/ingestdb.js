@@ -1,9 +1,9 @@
 require("dotenv").config()
 const mongoose = require("mongoose")
-const Vaccination = require("./models/vaccination")
+const Vaccination = require("./models/vaccine")
 const fs = require("fs")
 
-const rawData = fs.readFileSync("server/vaccination.json")
+const rawData = fs.readFileSync("server/vaccine.json")
 const data = JSON.parse(rawData)
 
 data.vaccination.map(record => {
