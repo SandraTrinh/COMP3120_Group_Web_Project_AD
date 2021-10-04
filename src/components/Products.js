@@ -26,11 +26,13 @@ const Products = ({vaccines}) => {
   
     return(
       <div style={contentStyle}>
-        <h3> Display Existing Patients </h3>
+        <h3> NSW </h3>
         <ul>
             {vaccines.map(vaccine => 
               <li key={vaccine.id}>
-                <Link to={`/vaccines/${vaccine.id}`}>{vaccine.FirstName} and {vaccine.LastName}</Link>
+                <Link to={`/vaccines/${vaccine.id}`}>{vaccine.NameOfTheState}, {vaccine.NameOfTheTerritory}, {vaccine.TotalPopulation},
+                 {vaccine.FirstDoseVaccinationPercentage} and {vaccine.SecondDoseVaccinationPercentage}
+                </Link>
                 {/* {
                   user !== null
                   ? <Button text="Delete" eventHandler={() => deleteProduct(product.id)}/> 

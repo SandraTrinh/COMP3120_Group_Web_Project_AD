@@ -29,7 +29,7 @@ function App() {
       })
   }, [])
 
-
+console.log(vaccines)
 
 
 
@@ -49,7 +49,7 @@ function App() {
               <Product products={products} />
             </Route> */}
             <Route path="/vaccines">
-              <Products vaccines={vaccines} />
+              {/* <Products vaccines={vaccines} /> */}
             </Route>
             <Route path="/login">
               {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
@@ -58,9 +58,9 @@ function App() {
             {/* <Route path="/users">
               {user ? <Users /> : <Redirect to="/login" />}
             </Route> */}
-            {/* <Route path="/">
-              <Home user={user}/>
-            </Route> */}
+            <Route path="/">
+            <Products vaccines={vaccines} />
+            </Route>
         </Switch>
 
       </Router>
