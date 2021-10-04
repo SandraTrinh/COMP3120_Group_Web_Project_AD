@@ -2,10 +2,27 @@ import React, {useState, useEffect} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import LoginForm from './LoginForm'
+import productService from './services/products'
 
 function App() {
 
   const [user, setUser] = useState(null)
+  const [vaccines, setVaccines] = useState([])
+
+  useEffect(() => {
+    console.log('effect')
+    productService
+      .getAll()
+      .then (initialProducts => {
+        console.log('promoise fulfilled')
+        setVaccines(initialProducts)
+      })
+  }, [])
+
+
+
+
+
   return (
     <div className="App">
 
