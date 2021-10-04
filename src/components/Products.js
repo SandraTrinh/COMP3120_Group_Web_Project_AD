@@ -1,7 +1,7 @@
 import React from 'react'
-import ProductForm from './ProductForm'
+
 import {Link} from 'react-router-dom'
-import Button from './Button'
+
 import productService from '../services/products'
 
 const contentStyle = {
@@ -12,7 +12,7 @@ const contentStyle = {
     fontSize: 16
 }
 
-const Products = ({products, user, updateProductHandler}) => {
+const Products = ({vaccines}) => {
 
     // const deleteProduct = (id) => {
     //    productService.deleteProduct(id).then(
@@ -26,23 +26,23 @@ const Products = ({products, user, updateProductHandler}) => {
   
     return(
       <div style={contentStyle}>
-        <h3> Display Existing Products </h3>
+        <h3> Display Existing Patients </h3>
         <ul>
-            {products.map(product => 
-              <li key={product.id}>
-                <Link to={`/products/${product.id}`}>{product.title}</Link>
-                {
+            {vaccines.map(vaccine => 
+              <li key={vaccine.id}>
+                <Link to={`/vaccines/${vaccine.id}`}>{vaccine.FirstName} and {vaccine.LastName}</Link>
+                {/* {
                   user !== null
                   ? <Button text="Delete" eventHandler={() => deleteProduct(product.id)}/> 
                   : null
-                }
+                } */}
               </li>
             )}
         </ul>
-        {user !== null
+        {/* {user !== null
           ?<ProductForm products={products} updateProductHandler={updateProductHandler}/>
           :null
-        }
+        } */}
       </div> 
     )
 }

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './App.css';
 import LoginForm from './LoginForm'
 import productService from './services/products'
+import Products from './components/Products.js'
 import {
   BrowserRouter as Router,
   Switch, Route, Link, Redirect
@@ -24,6 +25,7 @@ function App() {
       .then (initialProducts => {
         console.log('promoise fulfilled')
         setVaccines(initialProducts)
+        console.log(vaccines)
       })
   }, [])
 
@@ -47,7 +49,7 @@ function App() {
               <Product products={products} />
             </Route> */}
             <Route path="/vaccines">
-              {/* <Products products={products} user={user} updateProductHandler={updateProductHandler} /> */}
+              <Products vaccines={vaccines} />
             </Route>
             <Route path="/login">
               {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}

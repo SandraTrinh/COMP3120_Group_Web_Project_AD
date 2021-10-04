@@ -9,7 +9,7 @@ dotenv.config()
 const SECRET = process.env.SECRET
 
 //get raw data from sample.js
-let rawData = fs.readFileSync('./server/sample.json')
+// let rawData = fs.readFileSync('./server/vaccine.json')
 let data = JSON.parse(rawData)
 let vaccine = data.VaccineStatus;
 
@@ -37,7 +37,7 @@ apiRouter.get('/', (request, response) => {
 apiRouter.get('/api/vaccines',(request, response) => {
     //response.json(units)
     console.log('GET user vaccine status')
-
+    console.log(vaccine)
     response.json(vaccine);
     
     //this is get data from mongoDB
