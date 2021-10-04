@@ -224,43 +224,5 @@
         "FirstDoseVaccinationPercentage": "91.7202912605753%",
         "SecondDoseVaccinationPercentage": "70.7689257757037%"
     }
-  ],
-  "VaccineStatus": [
-    {
-      "id": 0,
-      "FirstName": "Sam",
-      "LastName": "Smith",
-      "postcode": "2000",
-      "vaccineName": "Pfizer",
-      "status": "Vaccinated",
-      "doses": "1"
-    },
-    {
-      "id": 1,
-      "FirstName": "John",
-      "LastName": "Kim",
-      "postcode": "2468",
-      "vaccineName": "Pfizer",
-      "status": "Vaccinated",
-      "doses": "2"
-    },
-    {
-      "id": 2,
-      "FirstName": "Elliott",
-      "LastName": "Tsie",
-      "postcode": "2234",
-      "vaccineName": "AstraZeneca",
-      "status": "Vaccinated",
-      "doses": "2"
-    },
-    {
-      "id": 3,
-      "FirstName": "Jack",
-      "LastName": "Dan",
-      "postcode": "2136",
-      "vaccineName": "Unknown",
-      "status": "Not Vaccinated",
-      "doses": "0"
-    }
   ]
 }
