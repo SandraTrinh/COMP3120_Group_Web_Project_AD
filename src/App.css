@@ -45,7 +45,7 @@ body {
 
 .Navbar {
   display: inline;
-  background-color: #181a1f;
+  background-image: linear-gradient(to right, #0F2027, #203A43, #2C5364);
 }
 
 .App-link {
@@ -60,6 +60,10 @@ a.App-link:hover {
   background-color: black;
 } 
 
+a.App-link:active {
+  background-color: rgb(75, 74, 74);
+} 
+
 .vaccination {
   background-color: white;
   color: #800000;
@@ -67,8 +71,11 @@ a.App-link:hover {
   font-size: 16px;
 }
 
-
-
+.vaccine-region {
+  border: 2px solid orange;
+  padding: 10px;
+  margin: 5px;
+}
 
 @keyframes App-logo-spin {
   from {
