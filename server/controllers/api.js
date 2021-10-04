@@ -187,18 +187,18 @@ const generatedId = () => {
 // })
 
 //DELETE unit
-apiRouter.delete('/api/vaccines/:id', (request, response) => {
-    const id = Number(request.params.id)
-    const unit = units.find(unit => unit.id === id)
+// apiRouter.delete('/api/vaccines/:id', (request, response) => {
+//     const id = Number(request.params.id)
+//     const unit = units.find(unit => unit.id === id)
 
-    if(unit){
-        units = units.filter(unit => unit.id !== id)
-        console.log(`Unit ${id} has been DELETED`)
-        response.status(204).end()
-    } else {
-        console.log("DELETE: Unit not found! It is not in the list.")
-        response.status(404).end()
-    }
-})
+//     if(unit){
+//         units = units.filter(unit => unit.id !== id)
+//         console.log(`Unit ${id} has been DELETED`)
+//         response.status(204).end()
+//     } else {
+//         console.log("DELETE: Unit not found! It is not in the list.")
+//         response.status(404).end()
+//     }
+// })
 
 module.exports = apiRouter
