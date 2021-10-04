@@ -11,7 +11,7 @@ const SECRET = process.env.SECRET
 //get raw data from sample.js
 // let rawData = fs.readFileSync('./server/vaccine.json')
 let data = JSON.parse(rawData)
-let vaccine = data.VaccineStatus;
+let vaccine = data.vaccination;
 
 //get user
 const getUser = (username) => {
