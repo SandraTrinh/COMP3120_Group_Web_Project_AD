@@ -19,13 +19,15 @@ const Products = ({vaccines}) => {
     return(
       <div className="vaccination col-12">
         <h3> NSW </h3>
-        <ul>
+        <ul className="vaccination-list">
             {vaccines.map(vaccine => 
               <li key={vaccine.id} className="vaccine-region">
                 <Link to={`/vaccines/${vaccine.id}`}>
                   <ul>
-                    <li>{vaccine.NameOfTheState}, {vaccine.NameOfTheTerritory}</li>
+                    <li className="NameOfTheState">{vaccine.NameOfTheState}, {vaccine.NameOfTheTerritory}</li>
                     <li>Population: {vaccine.TotalPopulation}</li>
+                  </ul>
+                  <ul>
                     <li>First Dose: {vaccine.FirstDoseVaccinationPercentage}</li>
                     <li>Second Does: {vaccine.SecondDoseVaccinationPercentage}</li>
                   </ul>                
