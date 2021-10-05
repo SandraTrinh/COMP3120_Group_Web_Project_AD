@@ -22,7 +22,7 @@ const vaccinationSchema = new mongoose.Schema({
     NameOfTheTerritory: String,
     TotalPopulation: Number,
     FirstDoseVaccinationPercentage: Number,
-    SecondDoseVaccinationPercenCtage: Number
+    SecondDoseVaccinationPercentage: Number
 })
 
 vaccinationSchema.set('toJSON', {
