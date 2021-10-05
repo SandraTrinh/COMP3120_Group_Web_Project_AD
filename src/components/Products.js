@@ -1,18 +1,10 @@
 import React from 'react'
-import ProductForm from './ProductForm'
+
 import {Link} from 'react-router-dom'
-import Button from './Button'
-import productService from '../services/products'
 
-const contentStyle = {
-    backgroundColor: 'white',
-    color: '#800000',
-    padding: 10,
-    margin: 20,
-    fontSize: 16
-}
+import productService from '../services/vaccinations'
 
-const Products = ({products, user, updateProductHandler}) => {
+const Products = ({vaccines}) => {
 
     // const deleteProduct = (id) => {
     //    productService.deleteProduct(id).then(
@@ -25,24 +17,33 @@ const Products = ({products, user, updateProductHandler}) => {
     // }
   
     return(
-      <div style={contentStyle}>
-        <h3> Display Existing Products </h3>
-        <ul>
-            {products.map(product => 
-              <li key={product.id}>
-                <Link to={`/products/${product.id}`}>{product.title}</Link>
-                {
+      <div className="vaccination col-12">
+        <h3> Top 10 Regions in NSW in terms of 1st Dose of Vaccinations </h3>
+        <ul className="vaccination-list">
+            {vaccines.map(vaccine => 
+              <li key={vaccine.id} className="vaccine-region">
+                <Link to={`/vaccines/${vaccine.id}`}>
+                  <ul>
+                    <li className="NameOfTheState">{vaccine.NameOfTheState}, {vaccine.NameOfTheTerritory}</li>
+                    <li>Population: {vaccine.TotalPopulation}</li>
+                  </ul>
+                  <ul>
+                    <li>First Dose: {vaccine.FirstDoseVaccinationPercentage}</li>
+                    <li>Second Does: {vaccine.SecondDoseVaccinationPercentage}</li>
+                  </ul>                
+                </Link>
+                {/* {
                   user !== null
                   ? <Button text="Delete" eventHandler={() => deleteProduct(product.id)}/> 
                   : null
-                }
+                } */}
               </li>
             )}
         </ul>
-        {user !== null
+        {/* {user !== null
           ?<ProductForm products={products} updateProductHandler={updateProductHandler}/>
           :null
-        }
+        } */}
       </div> 
     )
 }
