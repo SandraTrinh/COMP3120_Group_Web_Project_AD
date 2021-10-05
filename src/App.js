@@ -13,6 +13,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [vaccines, setVaccines] = useState([])
 
+
   useEffect(() => {
     console.log('effect')
     productService
@@ -26,7 +27,9 @@ function App() {
 
 console.log(vaccines)
 
-
+vaccines.sort((a, b) => (a.FirstDoseVaccinationPercentage < b.FirstDoseVaccinationPercentage) ? 1 : -1)
+var vaccinesToShow=[];
+vaccinesToShow = vaccines.slice(0,10)
 
   return (
     <div className="App">
@@ -37,7 +40,7 @@ console.log(vaccines)
             <Link className="App-link" to="/">Home</Link>
             <Link className="App-link" to="/vaccines">Vaccines</Link>
             <Link className="App-link" to="/login">Login</Link>
-            <Link className="App-link" to="/profile">Profile</Link>
+            {/* <Link className="App-link" to="/profile">Profile</Link> */}
           </div>
         </header>
     
@@ -57,7 +60,7 @@ console.log(vaccines)
                   {user ? <Users /> : <Redirect to="/login" />}
                 </Route> */}
                 <Route path="/">
-                <Products vaccines={vaccines} />
+                <Products vaccines={vaccinesToShow} />
                 </Route>
                 {/* <Route path="/profile">
                     {}
