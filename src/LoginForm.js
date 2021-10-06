@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, {useState} from 'react'
 import axios from 'axios'
-import login from './Action.js'
+
 // this file was taken from https://github.com/MQCOMP3120-2020/likes/tree/master/src/components
 
 
@@ -12,7 +12,11 @@ const LoginForm = ({user, setUser}) => {
 
     const formHandler = (event) => {
       event.preventDefault()
+      const login = ({username, password}) => {
 
+        return axios.post('/auth/login', {username, password})
+                    .then(response => response.data)
+    }
 
 
     login({username, password})
