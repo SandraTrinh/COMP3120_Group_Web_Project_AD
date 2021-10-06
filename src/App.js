@@ -21,11 +21,11 @@ function App() {
       .then (initialProducts => {
         console.log('promoise fulfilled')
         setVaccines(initialProducts)
-        console.log(vaccines)
+      
       })
   }, [])
 
-console.log(vaccines)
+
 
 vaccines.sort((a, b) => (a.FirstDoseVaccinationPercentage < b.FirstDoseVaccinationPercentage) ? 1 : -1)
 var vaccinesToShow=[];

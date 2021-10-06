@@ -32,6 +32,6 @@ const getAll = () => {
 //     return response.data
 // }
 
-export default {getAll,}
+export default {getAll}
     
     // createProduct, updateProduct, deleteProduct, setToken}
