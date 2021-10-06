@@ -69,18 +69,17 @@ a.App-link:active {
   color: #800000;
   padding: 50px;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .vaccination h3 {
-  padding: 0px 0px 0px 60px;
+  padding: 0px 0px 0px 0px;
 }
 
 .vaccine-region {
-  /* this remove list styles */
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
   padding: 10px;
   margin: 5px;
 }
