@@ -44,9 +44,9 @@ const update = (thing) => {
  * @param {Object} param0 {username, password} 
  * @returns {Promise} Promise that will resolve to the response data
  */
-const login = ({username, password}) => {
+const login = ({name, password}) => {
 
-    return axios.post('/auth/login', {username, password})
+    return axios.post(baseURL + "login/", {name, password})
                 .then(response => response.data)
 }
 

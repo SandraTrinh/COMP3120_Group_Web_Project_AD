@@ -1,21 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, {useState} from 'react'
-import axios from 'axios'
-import login from './Action.js'
+import loginService from './Action.js'
 // this file was taken from https://github.com/MQCOMP3120-2020/likes/tree/master/src/components
 
 
 const LoginForm = ({user, setUser}) => {
 
-    const [username, setUsername] = useState('')
+    const [name, setName] = useState('')
     const [password, setPassword] = useState('')
 
     const formHandler = (event) => {
       event.preventDefault()
 
-
-
-    login({username, password})
+      loginService.login({name, password})
         .then(data => {
             console.log("Success:", data)
             setUser(data)
@@ -37,8 +34,8 @@ const LoginForm = ({user, setUser}) => {
             <form onSubmit={formHandler}>
                     <div className="row">
                         <div className="four columns">
-                            <label htmlFor="username">Username</label>
-                            <input id="username" type="text" name="username" onChange={e => setUsername(e.target.value)} />
+                            <label htmlFor="name">Name</label>
+                            <input id="name" type="text" name="name" onChange={e => setName(e.target.value)} />
                         </div>
                         <div className="four columns">
                             <label htmlFor="password">Password</label>

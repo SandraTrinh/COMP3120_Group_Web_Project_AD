@@ -1,228 +1,228 @@
 {
-  "vaccination": [
-    {
-        "id": 0,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Capital Region",
-        "TotalPopulation": "188283",
-        "FirstDoseVaccinationPercentage": "86.853300616625%",
-        "SecondDoseVaccinationPercentage": "58.1374845312641%"
-    },
-    {
-        "id": 1,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Central Coast",
-        "TotalPopulation": "279520",
-        "FirstDoseVaccinationPercentage": "86.2532198053807%",
-        "SecondDoseVaccinationPercentage": "57.9586433886663%"
-    },
-    {
-        "id": 2,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Central West",
-        "TotalPopulation": "170545",
-        "FirstDoseVaccinationPercentage": "88.893253979888%",
-        "SecondDoseVaccinationPercentage": "58.1559119294028%"
-    },
-    {
-        "id": 3,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Coffs Harbour - Grafton",
-        "TotalPopulation": "116379",
-        "FirstDoseVaccinationPercentage": "78.5261945883708%",
-        "SecondDoseVaccinationPercentage": "46.8847472482149%"
-    },
-    {
-        "id": 4,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Far West and Orana",
-        "TotalPopulation": "92695",
-        "FirstDoseVaccinationPercentage": "89.1817250121366%",
-        "SecondDoseVaccinationPercentage": "62.9397486380064%"
-    },
-    {
-        "id": 5,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Hunter Valley exc Newcastle",
-        "TotalPopulation": "223616",
-        "FirstDoseVaccinationPercentage": "81.8993274184316%",
-        "SecondDoseVaccinationPercentage": "49.1422796222095%"
-    },
-    {
-        "id": 6,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Illawarra",
-        "TotalPopulation": "257183",
-        "FirstDoseVaccinationPercentage": "83.4662477690983%",
-        "SecondDoseVaccinationPercentage": "57.1351916728555%"
-    },
-    {
-        "id": 7,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Mid North Coast",
-        "TotalPopulation": "185401",
-        "FirstDoseVaccinationPercentage": "83.8943695017826%",
-        "SecondDoseVaccinationPercentage": "53.7424285737402%"
-    },
-    {
-        "id": 8,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Murray",
-        "TotalPopulation": "97988",
-        "FirstDoseVaccinationPercentage": "83.004041311181%",
-        "SecondDoseVaccinationPercentage": "52.7646242397028%"
-    },
-    {
-        "id": 9,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "New England and North West",
-        "TotalPopulation": "149890",
-        "FirstDoseVaccinationPercentage": "79.7564880912669%",
-        "SecondDoseVaccinationPercentage": "49.2341050103409%"
-    },
-    {
-        "id": 10,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Newcastle and Lake Macquarie",
-        "TotalPopulation": "310484",
-        "FirstDoseVaccinationPercentage": "83.1228018190954%",
-        "SecondDoseVaccinationPercentage": "53.6394790069698%"
-    },
-    {
-        "id": 11,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Richmond - Tweed",
-        "TotalPopulation": "208471",
-        "FirstDoseVaccinationPercentage": "75.6133946688029%",
-        "SecondDoseVaccinationPercentage": "46.5239769560275%"
-    },
-    {
-        "id": 12,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Riverina",
-        "TotalPopulation": "128994",
-        "FirstDoseVaccinationPercentage": "82.9224615098376%",
-        "SecondDoseVaccinationPercentage": "54.056777834628%"
-    },
-    {
-        "id": 13,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Southern Highlands and Shoalhaven",
-        "TotalPopulation": "129789",
-        "FirstDoseVaccinationPercentage": "88.1731117429058%",
-        "SecondDoseVaccinationPercentage": "61.6831934909738%"
-    },
-    {
-        "id": 14,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Baulkham Hills and Hawkesbury",
-        "TotalPopulation": "199726",
-        "FirstDoseVaccinationPercentage": "> 95%",
-        "SecondDoseVaccinationPercentage": "74.8810870893124%"
-    },
-    {
-        "id": 15,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Blacktown",
-        "TotalPopulation": "291560",
-        "FirstDoseVaccinationPercentage": "> 95%",
-        "SecondDoseVaccinationPercentage": "67.5408149266017%"
-    },
-    {
-        "id": 16,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - City and Inner South",
-        "TotalPopulation": "333308",
-        "FirstDoseVaccinationPercentage": "73.7228029330229%",
-        "SecondDoseVaccinationPercentage": "55.1048879714858%"
-    },
-    {
-        "id": 17,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Eastern Suburbs",
-        "TotalPopulation": "251184",
-        "FirstDoseVaccinationPercentage": "79.2518631759985%",
-        "SecondDoseVaccinationPercentage": "61.6826708707561%"
-    },
-    {
-        "id": 18,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Inner South West",
-        "TotalPopulation": "512553",
-        "FirstDoseVaccinationPercentage": "85.0536432329925%",
-        "SecondDoseVaccinationPercentage": "58.7539239844465%"
-    },
-    {
-        "id": 19,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Inner West",
-        "TotalPopulation": "274697",
-        "FirstDoseVaccinationPercentage": "83.7075031762269%",
-        "SecondDoseVaccinationPercentage": "63.4142345930243%"
-    },
-    {
-        "id": 20,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - North Sydney and Hornsby",
-        "TotalPopulation": "360504",
-        "FirstDoseVaccinationPercentage": "90.1010807092293%",
-        "SecondDoseVaccinationPercentage": "71.9026695958991%"
-    },
-    {
-        "id": 21,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Northern Beaches",
-        "TotalPopulation": "221234",
-        "FirstDoseVaccinationPercentage": "90.4842836092102%",
-        "SecondDoseVaccinationPercentage": "69.3727003986729%"
-    },
-    {
-        "id": 22,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Outer South West",
-        "TotalPopulation": "224905",
-        "FirstDoseVaccinationPercentage": "91.7418465574354%",
-        "SecondDoseVaccinationPercentage": "63.5628376425602%"
-    },
-    {
-        "id": 23,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Outer West and Blue Mountains",
-        "TotalPopulation": "260710",
-        "FirstDoseVaccinationPercentage": "88.9962026773043%",
-        "SecondDoseVaccinationPercentage": "61.5219976218787%"
-    },
-    {
-        "id": 24,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Parramatta",
-        "TotalPopulation": "404153",
-        "FirstDoseVaccinationPercentage": "87.797937909653%",
-        "SecondDoseVaccinationPercentage": "60.4951590115625%"
-    },
-    {
-        "id": 25,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Ryde",
-        "TotalPopulation": "170309",
-        "FirstDoseVaccinationPercentage": "88.8156233669389%",
-        "SecondDoseVaccinationPercentage": "68.1449600432156%"
-    },
-    {
-        "id": 26,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - South West",
-        "TotalPopulation": "359341",
-        "FirstDoseVaccinationPercentage": "89.6393676201714%",
-        "SecondDoseVaccinationPercentage": "61.902482600093%"
-    },
-    {
-        "id": 27,
-        "NameOfTheState": "New South Wales",
-        "NameOfTheTerritory": "Sydney - Sutherland",
-        "TotalPopulation": "186637",
-        "FirstDoseVaccinationPercentage": "91.7202912605753%",
-        "SecondDoseVaccinationPercentage": "70.7689257757037%"
-    }
-  ]
+    "vaccination": [
+        {
+            "id": 0,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Capital Region",
+            "TotalPopulation": "188283",
+            "FirstDoseVaccinationPercentage": "86.853300616625%",
+            "SecondDoseVaccinationPercentage": "58.1374845312641%"
+        },
+        {
+            "id": 1,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Central Coast",
+            "TotalPopulation": "279520",
+            "FirstDoseVaccinationPercentage": "86.2532198053807%",
+            "SecondDoseVaccinationPercentage": "57.9586433886663%"
+        },
+        {
+            "id": 2,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Central West",
+            "TotalPopulation": "170545",
+            "FirstDoseVaccinationPercentage": "88.893253979888%",
+            "SecondDoseVaccinationPercentage": "58.1559119294028%"
+        },
+        {
+            "id": 3,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Coffs Harbour - Grafton",
+            "TotalPopulation": "116379",
+            "FirstDoseVaccinationPercentage": "78.5261945883708%",
+            "SecondDoseVaccinationPercentage": "46.8847472482149%"
+        },
+        {
+            "id": 4,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Far West and Orana",
+            "TotalPopulation": "92695",
+            "FirstDoseVaccinationPercentage": "89.1817250121366%",
+            "SecondDoseVaccinationPercentage": "62.9397486380064%"
+        },
+        {
+            "id": 5,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Hunter Valley exc Newcastle",
+            "TotalPopulation": "223616",
+            "FirstDoseVaccinationPercentage": "81.8993274184316%",
+            "SecondDoseVaccinationPercentage": "49.1422796222095%"
+        },
+        {
+            "id": 6,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Illawarra",
+            "TotalPopulation": "257183",
+            "FirstDoseVaccinationPercentage": "83.4662477690983%",
+            "SecondDoseVaccinationPercentage": "57.1351916728555%"
+        },
+        {
+            "id": 7,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Mid North Coast",
+            "TotalPopulation": "185401",
+            "FirstDoseVaccinationPercentage": "83.8943695017826%",
+            "SecondDoseVaccinationPercentage": "53.7424285737402%"
+        },
+        {
+            "id": 8,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Murray",
+            "TotalPopulation": "97988",
+            "FirstDoseVaccinationPercentage": "83.004041311181%",
+            "SecondDoseVaccinationPercentage": "52.7646242397028%"
+        },
+        {
+            "id": 9,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "New England and North West",
+            "TotalPopulation": "149890",
+            "FirstDoseVaccinationPercentage": "79.7564880912669%",
+            "SecondDoseVaccinationPercentage": "49.2341050103409%"
+        },
+        {
+            "id": 10,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Newcastle and Lake Macquarie",
+            "TotalPopulation": "310484",
+            "FirstDoseVaccinationPercentage": "83.1228018190954%",
+            "SecondDoseVaccinationPercentage": "53.6394790069698%"
+        },
+        {
+            "id": 11,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Richmond - Tweed",
+            "TotalPopulation": "208471",
+            "FirstDoseVaccinationPercentage": "75.6133946688029%",
+            "SecondDoseVaccinationPercentage": "46.5239769560275%"
+        },
+        {
+            "id": 12,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Riverina",
+            "TotalPopulation": "128994",
+            "FirstDoseVaccinationPercentage": "82.9224615098376%",
+            "SecondDoseVaccinationPercentage": "54.056777834628%"
+        },
+        {
+            "id": 13,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Southern Highlands and Shoalhaven",
+            "TotalPopulation": "129789",
+            "FirstDoseVaccinationPercentage": "88.1731117429058%",
+            "SecondDoseVaccinationPercentage": "61.6831934909738%"
+        },
+        {
+            "id": 14,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Baulkham Hills and Hawkesbury",
+            "TotalPopulation": "199726",
+            "FirstDoseVaccinationPercentage": "> 95%",
+            "SecondDoseVaccinationPercentage": "74.8810870893124%"
+        },
+        {
+            "id": 15,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Blacktown",
+            "TotalPopulation": "291560",
+            "FirstDoseVaccinationPercentage": "> 95%",
+            "SecondDoseVaccinationPercentage": "67.5408149266017%"
+        },
+        {
+            "id": 16,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - City and Inner South",
+            "TotalPopulation": "333308",
+            "FirstDoseVaccinationPercentage": "73.7228029330229%",
+            "SecondDoseVaccinationPercentage": "55.1048879714858%"
+        },
+        {
+            "id": 17,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Eastern Suburbs",
+            "TotalPopulation": "251184",
+            "FirstDoseVaccinationPercentage": "79.2518631759985%",
+            "SecondDoseVaccinationPercentage": "61.6826708707561%"
+        },
+        {
+            "id": 18,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Inner South West",
+            "TotalPopulation": "512553",
+            "FirstDoseVaccinationPercentage": "85.0536432329925%",
+            "SecondDoseVaccinationPercentage": "58.7539239844465%"
+        },
+        {
+            "id": 19,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Inner West",
+            "TotalPopulation": "274697",
+            "FirstDoseVaccinationPercentage": "83.7075031762269%",
+            "SecondDoseVaccinationPercentage": "63.4142345930243%"
+        },
+        {
+            "id": 20,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - North Sydney and Hornsby",
+            "TotalPopulation": "360504",
+            "FirstDoseVaccinationPercentage": "90.1010807092293%",
+            "SecondDoseVaccinationPercentage": "71.9026695958991%"
+        },
+        {
+            "id": 21,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Northern Beaches",
+            "TotalPopulation": "221234",
+            "FirstDoseVaccinationPercentage": "90.4842836092102%",
+            "SecondDoseVaccinationPercentage": "69.3727003986729%"
+        },
+        {
+            "id": 22,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Outer South West",
+            "TotalPopulation": "224905",
+            "FirstDoseVaccinationPercentage": "91.7418465574354%",
+            "SecondDoseVaccinationPercentage": "63.5628376425602%"
+        },
+        {
+            "id": 23,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Outer West and Blue Mountains",
+            "TotalPopulation": "260710",
+            "FirstDoseVaccinationPercentage": "88.9962026773043%",
+            "SecondDoseVaccinationPercentage": "61.5219976218787%"
+        },
+        {
+            "id": 24,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Parramatta",
+            "TotalPopulation": "404153",
+            "FirstDoseVaccinationPercentage": "87.797937909653%",
+            "SecondDoseVaccinationPercentage": "60.4951590115625%"
+        },
+        {
+            "id": 25,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Ryde",
+            "TotalPopulation": "170309",
+            "FirstDoseVaccinationPercentage": "88.8156233669389%",
+            "SecondDoseVaccinationPercentage": "68.1449600432156%"
+        },
+        {
+            "id": 26,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - South West",
+            "TotalPopulation": "359341",
+            "FirstDoseVaccinationPercentage": "89.6393676201714%",
+            "SecondDoseVaccinationPercentage": "61.902482600093%"
+        },
+        {
+            "id": 27,
+            "NameOfTheState": "New South Wales",
+            "NameOfTheTerritory": "Sydney - Sutherland",
+            "TotalPopulation": "186637",
+            "FirstDoseVaccinationPercentage": "91.7202912605753%",
+            "SecondDoseVaccinationPercentage": "70.7689257757037%"
+        }
+    ]
 }
