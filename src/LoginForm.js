@@ -23,10 +23,28 @@ const LoginForm = ({user, setUser}) => {
         })
     }
 
+    const logoutHandler = (event) => {
+        event.preventDefault()
+
+        loginService.logout({name, password})
+            .then(data => {
+                console.log("Log Out:", data)
+                setUser(null)
+            })
+            .catch(error => {
+                console.log("Error:", error)
+            })
+    }
+
     if (user) {
         return (
             <div className="row">
                 <p>Logged in {user.name}</p>
+                <form onSubmit = {logoutHandler}>
+                    <div>
+                        <input type="submit" value="Log Out"/>
+                    </div>
+                </form>
             </div>
         )
     } else {
