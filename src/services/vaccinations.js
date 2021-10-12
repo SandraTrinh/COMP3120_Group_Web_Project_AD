@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/api'
+const baseUrl = '/api/vaccinations'
 
 // let token = null 
 
@@ -8,7 +8,9 @@ const baseUrl = 'http://localhost:3001/api'
 // }
 
 const getAll = () => {
-    const request = axios.get(baseUrl + '/vaccinations')
+    const request = axios.get(baseUrl
+        
+        )
     return request.then(response => response.data)
 }
 
@@ -30,6 +32,6 @@ const getAll = () => {
 //     return response.data
 // }
 
-export default {getAll,}
+export default {getAll}
     
     // createProduct, updateProduct, deleteProduct, setToken}
