@@ -1,10 +1,11 @@
 const express = require("express")
-//const bcrypt = require("bcrypt")
-//const jwt = require("jsonwebtoken")
+const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
 const fs = require("fs")
 const rawUsersData = fs.readFileSync("server/userVaccinationData.json")
 const rawVaccineData = fs.readFileSync("server/vaccine.json")
 const Vaccination = require("../models/vaccine")
+const Users = require("../models/users")
 const dotenv = require("dotenv")
 
 dotenv.config()
@@ -17,8 +18,8 @@ const vaccineData = JSON.parse(rawVaccineData)
 let vaccinations = vaccineData.vaccination
 
 //get user
-const getUser = (username) => {
-    return users.filter(u => u.username === username)[0]
+const getUser = (name) => {
+    return users.filter(u => u.name === name)[0]
 }
 
 //get user token
@@ -64,8 +65,33 @@ const generatedId = () => {
     ? Math.max(...units.map(p => p.id))
     : 0
     return maxId + 1
-} 
+}
 
+apiRouter.post('/login', async (req, res) => {
+
+    const {name, password} = req.body
+  
+    const user = getUser(name)
+  
+    if (!user) {
+        return res.status(401).json({error: "invalid name or password"})
+    }
+  
+    if (await bcrypt.compare(password, user.password)) {
+        
+        const userForToken = {
+            id: user.id,
+            name: user.name            
+        }
+        
+        const token = jwt.sign(userForToken, "secret")
+  
+        return res.status(200).json({token, name: user.name})
+        
+    } else {
+        return res.status(401).json({error: "invalid name or password"})
+    }
+  })
 
 // //POST unit
 // apiRouter.post('/api/units', (request, response) => {
@@ -104,35 +130,6 @@ const generatedId = () => {
 //         response.json(result)
 //     })
 //     console.log('POST: Unit Added is ',newUnit)
-// })
-
-// //handle post request for login with {username, password}
-// apiRouter.post('/api/login', async (req, res) => {
-//     //this does not do any error handling. it is not good to do it this way.
-//     const {username, password} = req.body
-
-//     const user = getUser(username)
-//     console.log(user)
-
-//     if(!user) {
-//         return res.status(401).json({error: "invalid username or password"})
-//     }
-
-//     if (await bcrypt.compare(password, user.password)){
-//         console.log("Password is good!")
-
-//         const userForToken = {
-//             id: user.id,
-//             username: user.username
-//         }
-
-//         const token = jwt.sign(userForToken, SECRET)
-
-//         return res.status(200).json({token, username: user.username, name: user.name})
-//     } else {
-//         return res.status(401).json({error: "invalid username or password"})
-//     }
-
 // })
 
 // //PUT unit
