@@ -21,8 +21,8 @@ const vaccinationSchema = new mongoose.Schema({
     NameOfTheState: String,
     NameOfTheTerritory: String,
     TotalPopulation: Number,
-    FirstDoseVaccinationPercentage: Number,
-    SecondDoseVaccinationPercentage: Number
+    FirstDoseVaccinationPercentage: String,
+    SecondDoseVaccinationPercentage: String
 })
 
 vaccinationSchema.set('toJSON', {
@@ -33,6 +33,6 @@ vaccinationSchema.set('toJSON', {
   }
 })
 
-const Vaccination = mongoose.model("vaccination", vaccinationSchema)
+const Vaccination = mongoose.model("Vaccination", vaccinationSchema)
 
 module.exports = Vaccination

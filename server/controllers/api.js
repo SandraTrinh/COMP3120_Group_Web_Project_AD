@@ -15,12 +15,18 @@ const SECRET = process.env.SECRET
 const usersData = JSON.parse(rawUsersData)
 let users = usersData.users
 const vaccineData = JSON.parse(rawVaccineData)
-let vaccinations = vaccineData.vaccination
+//let vaccinations = vaccineData.vaccination
+
 
 //get user
-const getUser = (name) => {
-    return users.filter(u => u.name === name)[0]
-}
+// const getUser = (name) => {
+//     //return users.filter(u => u.name === name)[0]
+//     Users.find({name:name})
+//     .then(result => {
+//         console.log("get users: "+result)
+//         return result
+//     })
+// }
 
 //get user token
 const getTokenFrom = request => {
@@ -41,11 +47,11 @@ apiRouter.get('/', (request, response) => {
 apiRouter.get('/api/vaccinations',(request, response) => {
     //response.json(units)
     console.log('GET user vaccine status') 
-    response.json(vaccinations)   
-    // Vaccination.find({}).then(result => {
-    //     console.log(result)
-    //     response.json(result)
-    // })
+    //response.json(vaccinations)   
+    Vaccination.find({}).then(result => {
+        console.log(result)
+        response.json(result)
+    })
 })
 
 //GET one user vaccine status 
@@ -70,27 +76,37 @@ const generatedId = () => {
 apiRouter.post('/login', async (req, res) => {
 
     const {name, password} = req.body
-  
-    const user = getUser(name)
-  
-    if (!user) {
-        return res.status(401).json({error: "invalid name or password"})
-    }
-  
-    if (await bcrypt.compare(password, user.password)) {
-        
-        const userForToken = {
-            id: user.id,
-            name: user.name            
+    let user
+    //const user = await getUser(name)
+    Users.find({name:name})
+    .then(result => {
+        //console.log("get users: "+ JSON.stringify(result))
+        user = JSON.parse(JSON.stringify(result))[0];
+        console.log(user);
+        if (!user) {
+            return res.status(401).json({error: "invalid name or password"})
         }
+    
+    })
+    .then(result => {
+        bcrypt.compare(password, user.password)
+            .then(result =>{
+                const userForToken = {
+                    id: user.id,
+                    name: user.name            
+                }
+                
+                const token = jwt.sign(userForToken, "secret")
         
-        const token = jwt.sign(userForToken, "secret")
-  
-        return res.status(200).json({token, name: user.name})
-        
-    } else {
-        return res.status(401).json({error: "invalid name or password"})
+                return res.status(200).json({token, name: user.name})
+            })
+            .catch((error) => {
+                return res.status(401).json({error: "invalid name or password"})
+            })   
     }
+
+    )
+ 
   })
 
 // //POST unit

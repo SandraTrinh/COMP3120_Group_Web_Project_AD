@@ -4,7 +4,7 @@
 # Project Members
     -   Hemanth Vejandla
     -   Zhi Jie Chair   
-    -   Sandra Trinh
+    -   Sandra Trinh 45915881
     -   Minh Son Do
     
 
