@@ -38,10 +38,10 @@ const LoginForm = ({user, setUser}) => {
 
     if (user) {
         return (
-            <div className="row">
+            <div className="login-container">
                 <p>Logged in {user.name}</p>
                 <form onSubmit = {logoutHandler}>
-                    <div>
+                    <div className="logout-button">
                         <input type="submit" value="Log Out"/>
                     </div>
                 </form>
@@ -49,21 +49,23 @@ const LoginForm = ({user, setUser}) => {
         )
     } else {
         return (
-            <form onSubmit={formHandler}>
-                    <div className="row">
-                        <div className="four columns">
-                            <label htmlFor="name">Name</label>
-                            <input id="name" type="text" name="name" onChange={e => setName(e.target.value)} />
+            <div className="login-container">
+                <form onSubmit={formHandler}>
+                    <div >
+                        <div className="loginform-name">
+                            <label htmlFor="name">Name </label>
+                            <input id="name" type="text" name="name" placeholder="Your name..." onChange={e => setName(e.target.value)} />
                         </div>
-                        <div className="four columns">
-                            <label htmlFor="password">Password</label>
-                            <input id="password" name="password" type="password" onChange={e => setPassword(e.target.value)} />
+                        <div className="loginform-password">
+                            <label htmlFor="password">Password </label>
+                            <input id="password" name="password" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
                         </div>
-                        <div className="three columns">
+                        <div className="loginform-submit">
                             <input type="submit" value="Login"/>
                         </div>
                     </div>
-            </form> 
+                </form> 
+            </div>
             )
     }
 }
