@@ -17,15 +17,16 @@ const doConnect = async (url) => {
 }
 doConnect(url)
 
-const vaccinationSchema = new mongoose.Schema({
-    NameOfTheState: String,
-    NameOfTheTerritory: String,
-    TotalPopulation: Number,
-    FirstDoseVaccinationPercentage: String,
-    SecondDoseVaccinationPercentage: String
+const usersSchema = new mongoose.Schema({
+    name: String,
+    password: String,
+    territoryName: String,
+    vaccineName: String,
+    status: String,
+    dose: String
 })
 
-vaccinationSchema.set('toJSON', {
+usersSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
@@ -33,6 +34,6 @@ vaccinationSchema.set('toJSON', {
   }
 })
 
-const Vaccination = mongoose.model("Vaccination", vaccinationSchema)
+const Users = mongoose.model("Users", usersSchema)
 
-module.exports = Vaccination
+module.exports = Users

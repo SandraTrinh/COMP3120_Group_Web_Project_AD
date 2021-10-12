@@ -1,10 +1,11 @@
 const express = require("express")
-//const bcrypt = require("bcrypt")
-//const jwt = require("jsonwebtoken")
+const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
 const fs = require("fs")
 const rawUsersData = fs.readFileSync("server/userVaccinationData.json")
 const rawVaccineData = fs.readFileSync("server/vaccine.json")
 const Vaccination = require("../models/vaccine")
+const Users = require("../models/users")
 const dotenv = require("dotenv")
 
 dotenv.config()
@@ -14,12 +15,18 @@ const SECRET = process.env.SECRET
 const usersData = JSON.parse(rawUsersData)
 let users = usersData.users
 const vaccineData = JSON.parse(rawVaccineData)
-let vaccinations = vaccineData.vaccination
+//let vaccinations = vaccineData.vaccination
+
 
 //get user
-const getUser = (username) => {
-    return users.filter(u => u.username === username)[0]
-}
+// const getUser = (name) => {
+//     //return users.filter(u => u.name === name)[0]
+//     Users.find({name:name})
+//     .then(result => {
+//         console.log("get users: "+result)
+//         return result
+//     })
+// }
 
 //get user token
 const getTokenFrom = request => {
@@ -40,11 +47,11 @@ apiRouter.get('/', (request, response) => {
 apiRouter.get('/api/vaccinations',(request, response) => {
     //response.json(units)
     console.log('GET user vaccine status') 
-    response.json(vaccinations)   
-    // Vaccination.find({}).then(result => {
-    //     console.log(result)
-    //     response.json(result)
-    // })
+    //response.json(vaccinations)   
+    Vaccination.find({}).then(result => {
+        console.log(result)
+        response.json(result)
+    })
 })
 
 //GET one user vaccine status 
@@ -64,8 +71,43 @@ const generatedId = () => {
     ? Math.max(...units.map(p => p.id))
     : 0
     return maxId + 1
-} 
+}
 
+apiRouter.post('/login', async (req, res) => {
+
+    const {name, password} = req.body
+    let user
+    //const user = await getUser(name)
+    Users.find({name:name})
+    .then(result => {
+        //console.log("get users: "+ JSON.stringify(result))
+        user = JSON.parse(JSON.stringify(result))[0];
+        console.log(user);
+        if (!user) {
+            return res.status(401).json({error: "invalid name or password"})
+        }
+    
+    })
+    .then(result => {
+        bcrypt.compare(password, user.password)
+            .then(result =>{
+                const userForToken = {
+                    id: user.id,
+                    name: user.name            
+                }
+                
+                const token = jwt.sign(userForToken, "secret")
+        
+                return res.status(200).json({token, name: user.name})
+            })
+            .catch((error) => {
+                return res.status(401).json({error: "invalid name or password"})
+            })   
+    }
+
+    )
+ 
+  })
 
 // //POST unit
 // apiRouter.post('/api/units', (request, response) => {
@@ -104,35 +146,6 @@ const generatedId = () => {
 //         response.json(result)
 //     })
 //     console.log('POST: Unit Added is ',newUnit)
-// })
-
-// //handle post request for login with {username, password}
-// apiRouter.post('/api/login', async (req, res) => {
-//     //this does not do any error handling. it is not good to do it this way.
-//     const {username, password} = req.body
-
-//     const user = getUser(username)
-//     console.log(user)
-
-//     if(!user) {
-//         return res.status(401).json({error: "invalid username or password"})
-//     }
-
-//     if (await bcrypt.compare(password, user.password)){
-//         console.log("Password is good!")
-
-//         const userForToken = {
-//             id: user.id,
-//             username: user.username
-//         }
-
-//         const token = jwt.sign(userForToken, SECRET)
-
-//         return res.status(200).json({token, username: user.username, name: user.name})
-//     } else {
-//         return res.status(401).json({error: "invalid username or password"})
-//     }
-
 // })
 
 // //PUT unit

@@ -1,25 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, {useState} from 'react'
-import axios from 'axios'
-
+import loginService from './Action.js'
 // this file was taken from https://github.com/MQCOMP3120-2020/likes/tree/master/src/components
 
 
 const LoginForm = ({user, setUser}) => {
 
-    const [username, setUsername] = useState('')
+    const [name, setName] = useState('')
     const [password, setPassword] = useState('')
 
     const formHandler = (event) => {
       event.preventDefault()
-      const login = ({username, password}) => {
 
-        return axios.post('/auth/login', {username, password})
-                    .then(response => response.data)
-    }
-
-
-    login({username, password})
+      loginService.login({name, password})
         .then(data => {
             console.log("Success:", data)
             setUser(data)
@@ -30,29 +23,49 @@ const LoginForm = ({user, setUser}) => {
         })
     }
 
+    const logoutHandler = (event) => {
+        event.preventDefault()
+
+        loginService.logout({name, password})
+            .then(data => {
+                console.log("Log Out:", data)
+                setUser(null)
+            })
+            .catch(error => {
+                console.log("Error:", error)
+            })
+    }
+
     if (user) {
         return (
-            <div className="row">
+            <div className="login-container">
                 <p>Logged in {user.name}</p>
+                <form onSubmit = {logoutHandler}>
+                    <div className="logout-button">
+                        <input type="submit" value="Log Out"/>
+                    </div>
+                </form>
             </div>
         )
     } else {
         return (
-            <form onSubmit={formHandler}>
-                    <div className="row">
-                        <div className="four columns">
-                            <label htmlFor="username">Username</label>
-                            <input id="username" type="text" name="username" onChange={e => setUsername(e.target.value)} />
+            <div className="login-container">
+                <form onSubmit={formHandler}>
+                    <div >
+                        <div className="loginform-name">
+                            <label htmlFor="name">Name </label>
+                            <input id="name" type="text" name="name" placeholder="Your name..." onChange={e => setName(e.target.value)} />
                         </div>
-                        <div className="four columns">
-                            <label htmlFor="password">Password</label>
-                            <input id="password" name="password" type="password" onChange={e => setPassword(e.target.value)} />
+                        <div className="loginform-password">
+                            <label htmlFor="password">Password </label>
+                            <input id="password" name="password" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
                         </div>
-                        <div className="three columns">
+                        <div className="loginform-submit">
                             <input type="submit" value="Login"/>
                         </div>
                     </div>
-            </form> 
+                </form> 
+            </div>
             )
     }
 }

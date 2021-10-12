@@ -44,7 +44,7 @@ vaccinesToShow = vaccines.slice(0,10)
           </div>
         </header>
     
-        <body className="App-body">
+        <div className="App-body">
             <Switch>
                 {/* <Route path="/products/:id">
                   <Product products={products} />
@@ -66,7 +66,7 @@ vaccinesToShow = vaccines.slice(0,10)
                     {}
                 </Route> */}
             </Switch>
-          </body> 
+          </div> 
         </Router>
     </div>
   );
