@@ -76,17 +76,16 @@ const generatedId = () => {
 apiRouter.post('/login', async (req, res) => {
 
     const {name, password} = req.body
-    let user
+    let user 
     //const user = await getUser(name)
     Users.find({name:name})
     .then(result => {
-        //console.log("get users: "+ JSON.stringify(result))
+        console.log("get users: "+ JSON.stringify(result))
         user = JSON.parse(JSON.stringify(result))[0];
         console.log(user);
-        if (!user) {
+        if (user == [] || !user) {
             return res.status(401).json({error: "invalid name or password"})
         }
-    
     })
     .then(result => {
         bcrypt.compare(password, user.password)
