@@ -19,8 +19,8 @@ const vaccineData = JSON.parse(rawVaccineData)
 
 
 //get user
-const getUser = (name) => {
-return users.filter(u => u.name === name)[0]
+const getUser = (username) => {
+return users.filter(u => u.username === username)[0]
 }
 
 
@@ -65,27 +65,27 @@ apiRouter.get('/api/vaccinations/:id', (request, response) => {
 
 apiRouter.post('/login', async (req, res) => {
 
-    const {name, password} = req.body
+    const {username, password} = req.body
   
-    const user = getUser(name)
+    const user = getUser(username)
   
     if (!user) {
-        return res.status(401).json({error: "invalid name or password"})
+        return res.status(401).json({error: "invalid username or password"})
     }
   
     if (await bcrypt.compare(password, user.password)) {
         
         const userForToken = {
             id: user.id,
-            name: user.name            
+            username: user.username            
         }
         
         const token = jwt.sign(userForToken, "secret")
   
-        return res.status(200).json({token, name: user.name})
+        return res.status(200).json({token, username: user.username})
         
     } else {
-        return res.status(401).json({error: "invalid name or password"})
+        return res.status(401).json({error: "invalid username or password"})
     }
   })
 
