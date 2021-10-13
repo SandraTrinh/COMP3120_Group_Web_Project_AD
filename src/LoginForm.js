@@ -25,15 +25,17 @@ const LoginForm = ({user, setUser}) => {
 
     const logoutHandler = (event) => {
         event.preventDefault()
+        setName()
+        setUser(null)
 
-        loginService.logout({name, password})
-            .then(data => {
-                console.log("Log Out:", data)
-                setUser(null)
-            })
-            .catch(error => {
-                console.log("Error:", error)
-            })
+        // loginService.logout({name, password})
+        //     .then(data => {
+        //         console.log("Log Out:", data)
+        //         setUser(null)
+        //     })
+        //     .catch(error => {
+        //         console.log("Error:", error)
+        //     })
     }
 
     if (user) {
@@ -42,6 +44,8 @@ const LoginForm = ({user, setUser}) => {
                 <p>Logged in {user.name}</p>
                 <form onSubmit = {logoutHandler}>
                     <div className="logout-button">
+                        <input id="name" type="hidden" name="name" value={user.name}/>
+                        <input id="password" type="hidden" name="password" value={user.password}/>
                         <input type="submit" value="Log Out"/>
                     </div>
                 </form>
