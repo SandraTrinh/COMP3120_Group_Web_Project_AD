@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
 import LoginForm from './LoginForm'
-import productService from './services/vaccinations.js'
+import productService from './services/Vaccinations.js'
 import Products from './components/Products.js'
 import UserInfo from './components/UserInfo.js'
 import {

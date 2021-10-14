@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-import productService from '../services/vaccinations'
+import productService from '../services/Vaccinations'
 
 const UserInfo = ({user}) => {
 
@@ -265,14 +265,8 @@ for(let i =0 ; i<myUserdata.length; i++) {
     )
 } else {
 return(
-<<<<<<< HEAD
-     <div > 
-         <Link className="App-link" to="/login">Click me to log in</Link>
-  
-=======
      <div> 
- <Link className="App-link" to="/login">Click me to log in</Link>
->>>>>>> MinhSon_Do
+        <Link className="App-link" to="/login">Click me to log in</Link>
     </div>
 )
 

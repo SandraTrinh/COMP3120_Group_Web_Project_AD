@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-import productService from '../services/vaccinations'
+import productService from '../services/Vaccinations'
 
 const Products = ({vaccines}) => {
 
