@@ -38,26 +38,4 @@ const update = (thing) => {
                 .then(response => response.data)
 }
 
-
-/**
- * Send a login request
- * @param {Object} param0 {name, password} 
- * @returns {Promise} Promise that will resolve to the response data
- */
-const login = ({name, password}) => {
-
-    return axios.post("/login", {name, password})
-                .then(response => response.data)
-}
-
-/**
- * Send a logout request
- * @param {Object} param0 {name, password} 
- * @returns {Promise} Promise that will resolve to the response data
- */
-const logout = ({name, password}) => {
-    return axios.post("/login", {name, password})
-    .then(response => response.data)
-}
-
 export default {login, update, create, getAll, logout}

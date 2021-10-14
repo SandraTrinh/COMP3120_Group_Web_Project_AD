@@ -19,11 +19,13 @@ doConnect(url)
 
 const usersSchema = new mongoose.Schema({
     name: String,
+    username: String,
     password: String,
     territoryName: String,
     vaccineName: String,
     status: String,
-    dose: String
+    FirstDose: String,
+    SecondDose: String
 })
 
 usersSchema.set('toJSON', {
@@ -34,6 +36,6 @@ usersSchema.set('toJSON', {
   }
 })
 
-const Users = mongoose.model("users", usersSchema)
+const Users = mongoose.model("Users", usersSchema)
 
 module.exports = Users

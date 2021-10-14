@@ -1,3 +1,4 @@
+  
 const express = require("express")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -15,12 +16,18 @@ const SECRET = process.env.SECRET
 const usersData = JSON.parse(rawUsersData)
 let users = usersData.users
 const vaccineData = JSON.parse(rawVaccineData)
-let vaccinations = vaccineData.vaccination
+//let vaccinations = vaccineData.vaccination
+
 
 //get user
-const getUser = (name) => {
-    return users.filter(u => u.name === name)[0]
-}
+// const getUser = (name) => {
+//     //return users.filter(u => u.name === name)[0]
+//     Users.find({name:name})
+//     .then(result => {
+//         console.log("get users: "+result)
+//         return result
+//     })
+// }
 
 //get user token
 const getTokenFrom = request => {
@@ -37,18 +44,18 @@ apiRouter.get('/', (request, response) => {
     response.send('<p>Hello World</p>')
 })
 
-//GET user vaccine status
+//GET all regions of NSW vaccine status
 apiRouter.get('/api/vaccinations',(request, response) => {
     //response.json(units)
     console.log('GET user vaccine status') 
-    response.json(vaccinations)   
-    // Vaccination.find({}).then(result => {
-    //     console.log(result)
-    //     response.json(result)
-    // })
+    //response.json(vaccinations)   
+    Vaccination.find({}).then(result => {
+        console.log(result)
+        response.json(result)
+    })
 })
 
-//GET one user vaccine status 
+//GET one vaccination region with id 
 apiRouter.get('/api/vaccinations/:id', (request, response) => {
     Unit.findById(request.params.id)
         .then(result => {
@@ -67,135 +74,102 @@ const generatedId = () => {
     return maxId + 1
 }
 
-apiRouter.post('/login', async (req, res) => {
-
-    const {name, password} = req.body
-  
-    const user = getUser(name)
-  
-    if (!user) {
-        return res.status(401).json({error: "invalid name or password"})
+//This verifies the user's token and sends back the user's vaccination data
+apiRouter.post('/api/user/vaccines-data', (request, response) => {
+    const token = getTokenFrom(request)
+    let decodedToken = null
+    try {
+        decodedToken = jwt.verify(token, SECRET)
     }
-  
-    if (await bcrypt.compare(password, user.password)) {
-        
-        const userForToken = {
-            id: user.id,
-            name: user.name            
+    catch {
+        decodedToken = {id: null}
+    }
+
+    if(!token || !decodedToken.id ) {
+        if(decodedToken.id !== 0){
+            return response.status(401).json({error: "invalid token"})
         }
-        
-        const token = jwt.sign(userForToken, "secret")
-  
-        return res.status(200).json({token, name: user.name})
-        
-    } else {
-        return res.status(401).json({error: "invalid name or password"})
     }
-  })
 
-// //POST unit
-// apiRouter.post('/api/units', (request, response) => {
-//     const token = getTokenFrom(request)
-//     let decodedToken = null
-//     try {
-//         decodedToken = jwt.verify(token, SECRET)
-//     }
-//     catch {
-//         decodedToken = {id: null}
-//     }
-    
-//     console.log("Token: ", decodedToken)
-//     if(!token || !decodedToken.id ) {
-//         if(decodedToken.id !== 0){
-//             return response.status(401).json({error: "invalid token"})
-//         }
-//     }
+    let userData
+    let user
+    Users.findById(decodedToken.id)
+    .then(result => {
+        //console.log("get users data: "+ JSON.stringify(result))
+        user = JSON.parse(JSON.stringify(result));
+        if (user === null || user === {}) {
+            return response.status(400).json({error: "invalid user"})
+        }
+        const data = user
+        userData = {
+            name: data.name,
+            territoryName: data.territoryName,
+            vaccineName: data.vaccineName,
+            status: data.status,
+            FirstDose: data.FirstDose,
+            SecondDose: data.SecondDose
+        }
+        //console.log("here is data: ",userData)
+        response.status(200).json(userData)
+        console.log("POST send user vaccine data back to frontend!")
+    })   
+})
 
 
-//     const body = request.body
+//log user in. verifies the password and send back a user token
+apiRouter.post('/api/login', async (request, response) => {
 
-//     if (!body.code || !body.title || !body.offering){
-//         return response.status(400).json({
-//             error: 'code, title or offering is missing'
-//         })
-//     }
-
-//     const newUnit = new Unit({
-//         code: body.code,
-//         title: body.title,
-//         offering: body.offering,
-//         user: decodedToken.id
-//     })
-//     newUnit.save().then(result => {
-//         response.json(result)
-//     })
-//     console.log('POST: Unit Added is ',newUnit)
-// })
-
-// //PUT unit
-// apiRouter.put('/api/units/:id', (request, response) => {
-//     const id = request.params.id
-//     const body = request.body
-//     console.log('PUT id is', id);
-//     //const unit = units.find(unit => unit.id === id)
-//     console.log("body: ", body)
-
-//     //if(unit){
-//         // if (!body.code || !body.title || body.offering.length === 0){
-//         //     return response.status(400).json({
-//         //         error: 'code, title or offering is missing'
-//         //     })
-//         // }
-
-//         // if(body === undefined) {
-//         //     return response.status(400).json({
-//         //                 error: 'code, title or offering is missing'
-//         //             })
-//         // }
-    
-//         // const unit = {
-//         //     id: id,
-//         //     code: body.code,
-//         //     title: body.title,
-//         //     offering: body.offering
-//         // }
-
-//         const newUnit = {
-//             id: id,
-//             code: body.code,
-//             title: body.title,
-//             offering: body.offering,
-//             user: body.user
-//         }
+    const {username, password} = request.body
+    let user 
+    //const user = await getUser(name)
+    Users.find({username:username})
+    .then(result => {
+        console.log("get users: "+ JSON.stringify(result))
+        user = JSON.parse(JSON.stringify(result))[0];
+        console.log(user);
+        if (user == [] || !user) {
+            return response.status(401).json({error: "invalid name or password"})
+        }
+    })
+    .then(result => {
+        bcrypt.compare(password, user.password)
+            .then(result =>{
+                const userForToken = {
+                    id: user.id,
+                    name: user.name            
+                }
+                
+                const token = jwt.sign(userForToken, SECRET)
         
-//         Unit.findByIdAndUpdate(id, newUnit, {new: true})
-//         .then(result => {
-//             response.json(result)
-//         })
-    
-//         //units = units.map(u => u.id !== id ? u : unit)
-//         console.log('PUT unit is: ', newUnit)
-//         //response.json(unit)
-//     // } else {
-//     //     console.log("PUT: Unit not found! It is not in the list.")
-//     //     response.status(404).end()
-//     // }
-  
-// })
+                return response.status(200).json({token, name: user.name})
+            })
+            .catch((error) => {
+                return response.status(401).json({error: "invalid name or password"})
+            })   
+     })
+ 
+})
 
-//DELETE unit
-// apiRouter.delete('/api/vaccines/:id', (request, response) => {
-//     const id = Number(request.params.id)
-//     const unit = units.find(unit => unit.id === id)
+//verify user to logout
+apiRouter.post('/api/logout', (request, response) => {
+    const token = getTokenFrom(request)
+    let decodedToken = null
+    try {
+        decodedToken = jwt.verify(token, SECRET)
+    }
+    catch {
+        decodedToken = {id: null}
+    }
 
-//     if(unit){
-//         units = units.filter(unit => unit.id !== id)
-//         console.log(`Unit ${id} has been DELETED`)
-//         response.status(204).end()
-//     } else {
-//         console.log("DELETE: Unit not found! It is not in the list.")
-//         response.status(404).end()
-//     }
-// })
+    //console.log("Token: ", decodedToken)
+
+    if(!token || !decodedToken.id ) {
+        if(decodedToken.id !== 0){
+            return response.status(401).json({error: "invalid token"})
+        }
+    }
+    console.log("user is verifyed, user can logout now!")
+    response.status(200).json({name:decodedToken.name})
+})
 
 module.exports = apiRouter

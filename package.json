@@ -24,9 +24,10 @@
   "scripts": {
     "start": "cross-env PORT=3000 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env NODE_ENV=test jest --verbose --coverage --testPathPattern server",
     "eject": "react-scripts eject",
-    "server": "cross-env NODE_ENV=development nodemon server/server.js"
+    "server": "node server/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server/server.js"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
@@ -46,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^2.1.0",
+    "express-session": "^1.17.2",
+    "supertest": "^6.1.6"
   }
 }

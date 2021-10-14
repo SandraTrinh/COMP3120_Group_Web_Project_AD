@@ -33,6 +33,6 @@ vaccinationSchema.set('toJSON', {
   }
 })
 
-const Vaccination = mongoose.model("vaccination", vaccinationSchema)
+const Vaccination = mongoose.model("Vaccination", vaccinationSchema)
 
 module.exports = Vaccination
