@@ -65,20 +65,27 @@ apiRouter.get('/api/vaccinations/:id', (request, response) => {
 
 apiRouter.post('/login', async (req, res) => {
 
-    const {username, password} = req.body
-  
-    const user = getUser(username)
-  
-    if (!user) {
-        return res.status(401).json({error: "invalid username or password"})
-    }
-  
-    if (await bcrypt.compare(password, user.password)) {
-        
-        const userForToken = {
-            id: user.id,
-            username: user.username            
+ const {name, password} = req.body
+    let user 
+    //const user = await getUser(name)
+    Users.find({name:name})
+    .then(result => {
+        console.log("get users: "+ JSON.stringify(result))
+        user = JSON.parse(JSON.stringify(result))[0];
+        console.log(user);
+        if (user == [] || !user) {
+            return res.status(401).json({error: "invalid name or password"})
         }
+    })
+    .then(result => {
+        bcrypt.compare(password, user.password)
+            .then(result =>{
+                const userForToken = {
+                    id: user.id,
+                    name: user.name            
+                }
+                
+                const token = jwt.sign(userForToken, "secret"
         
         const token = jwt.sign(userForToken, "secret")
   

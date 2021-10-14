@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.1.0",
+    "express-session": "^1.17.2",
     "supertest": "^6.1.6"
   }
 }
