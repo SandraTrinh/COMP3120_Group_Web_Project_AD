@@ -265,9 +265,14 @@ for(let i =0 ; i<myUserdata.length; i++) {
     )
 } else {
 return(
+<<<<<<< HEAD
      <div > 
          <Link className="App-link" to="/login">Click me to log in</Link>
   
+=======
+     <div> 
+ <Link className="App-link" to="/login">Click me to log in</Link>
+>>>>>>> MinhSon_Do
     </div>
 )
 

@@ -14,10 +14,11 @@
     This is a react based application that is intended to encourage NSW residents to get vaccinated. 
     This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
     The initial landing page displays the TOP 10 LGA's in terms of their first dose of vaccination.
+    The page also shows the averages of the first and second doses across NSW.
 
 # Basic Scripts
 - npm start will initialiase the project,
-- npm run server will initialiase the connection to database designed using MongoDB
+- npm run dev will initialiase the connection to database designed using MongoDB
 
 
 # Frontend Information
@@ -27,8 +28,10 @@
         - '/src/components/'
             - '/product.js' this file name will be changed in the future. 
             We have not used this in the react app yet.
-            - '/products.js' this file name will be changed in the future to something like NSWvaccinations
-            We use this to display the top ten highest vaccination regions in NSW on the home page.
+            - '/products.js' this file name will be changed in the future to something like NSW vaccinations
+            We use this to display the top ten highest vaccination regions in NSW on the home page sorted in descending order.
+            - '/UserInfo.js' 
+            We use this to display the vaccination status of each user.
         - '/src/services'
             - '/vaccinations.js'
                 This is where we manage the data request to the backend server. We use Axios to GET, POST, PUT, DELETE.
