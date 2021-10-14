@@ -108,7 +108,6 @@ apiRouter.post('/api/login', async (request, response) => {
 })
 
 apiRouter.post('/api/logout', async (request, response) => {
-    console.log("trying to logout!")
     const token = getTokenFrom(request)
     let decodedToken = null
     try {
@@ -125,7 +124,7 @@ apiRouter.post('/api/logout', async (request, response) => {
             return response.status(401).json({error: "invalid token"})
         }
     }
-    console.log("user is verifyed")
+    console.log("user is verifyed, user can logout now!")
     response.status(200).json({name:decodedToken.name})
 })
 
