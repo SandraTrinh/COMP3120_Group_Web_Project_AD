@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, {useState} from 'react'
-import loginService from './Action.js'
+import loginService from './services/Login.js'
 // this file was taken from https://github.com/MQCOMP3120-2020/likes/tree/master/src/components
 
 
