@@ -266,7 +266,7 @@ for(let i =0 ; i<myUserdata.length; i++) {
 } else {
 return(
      <div> 
-    <p> Please log in </p>
+ <Link className="App-link" to="/login">Click me to log in</Link>
     </div>
 )
 
