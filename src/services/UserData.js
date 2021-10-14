@@ -6,7 +6,7 @@ const getUserData = ({user}) => {
         return new Promise(() => null)
     }
     const config = {headers: {Authorization: "Bearer " + user.token}}
-    return axios.post("/api/user/vaccines-data", user, config)
+    return axios.post(baseURL + "vaccines-data", user, config)
                 .then(response => response.data)
 }
 

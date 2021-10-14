@@ -94,11 +94,9 @@ apiRouter.post('/api/user/vaccines-data', (request, response) => {
     let user
     Users.findById(decodedToken.id)
     .then(result => {
-        console.log("get users data: "+ JSON.stringify(result))
+        //console.log("get users data: "+ JSON.stringify(result))
         user = JSON.parse(JSON.stringify(result));
-        console.log("hello",user);
         if (user === null || user === {}) {
-            console.log("help me!!!  1")
             return response.status(400).json({error: "invalid user"})
         }
         const data = user
@@ -110,8 +108,9 @@ apiRouter.post('/api/user/vaccines-data', (request, response) => {
             FirstDose: data.FirstDose,
             SecondDose: data.SecondDose
         }
-        console.log("here is data: ",userData)
+        //console.log("here is data: ",userData)
         response.status(200).json(userData)
+        console.log("POST send user vaccine data back to frontend!")
     })   
 })
 

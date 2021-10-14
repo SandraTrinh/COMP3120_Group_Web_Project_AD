@@ -11,14 +11,12 @@ const UserInfo = ({user}) => {
         UserService.getUserData({user})
         .then(data => {
             setMyData(data)
-            console.log("data is", data)
+            //console.log("data is", data)
         })
         .catch(error => {
-            console.log("!!!!Error:", error.response.data)
+            console.log("Error:", error.response.data)
         })
     }, [])
-
-    console.log("my user data is : ", userData)
 
     if(user!=null) {
         if(userData !=null) {
