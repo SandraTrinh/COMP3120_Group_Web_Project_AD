@@ -26,13 +26,13 @@ const LoginForm = ({user, setUser}) => {
     const logoutHandler = (event) => {
         event.preventDefault()
 
-        loginService.logout({username, password})
+        loginService.logout({user})
             .then(data => {
-                console.log("Log Out:", data)
+                console.log("Success: " + data.name + " logged out!")
                 setUser(null)
             })
             .catch(error => {
-                console.log("Error:", error)
+                console.log("Error:", error.error)
             })
     }
 
