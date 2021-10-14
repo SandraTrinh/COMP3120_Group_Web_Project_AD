@@ -6,13 +6,13 @@ import loginService from './Action.js'
 
 const LoginForm = ({user, setUser}) => {
 
-    const [name, setName] = useState('')
+    const [username, setusername] = useState('')
     const [password, setPassword] = useState('')
 
     const formHandler = (event) => {
       event.preventDefault()
 
-      loginService.login({name, password})
+      loginService.login({username, password})
         .then(data => {
             console.log("Success:", data)
             setUser(data)
@@ -26,7 +26,7 @@ const LoginForm = ({user, setUser}) => {
     const logoutHandler = (event) => {
         event.preventDefault()
 
-        loginService.logout({name, password})
+        loginService.logout({username, password})
             .then(data => {
                 console.log("Log Out:", data)
                 setUser(null)
@@ -39,7 +39,7 @@ const LoginForm = ({user, setUser}) => {
     if (user) {
         return (
             <div className="login-container">
-                <p>Logged in {user.name}</p>
+                <p>Logged in {user.username}</p>
                 <form onSubmit = {logoutHandler}>
                     <div className="logout-button">
                         <input type="submit" value="Log Out"/>
@@ -53,8 +53,8 @@ const LoginForm = ({user, setUser}) => {
                 <form onSubmit={formHandler}>
                     <div >
                         <div className="loginform-name">
-                            <label htmlFor="name">Name </label>
-                            <input id="name" type="text" name="name" placeholder="Your name..." onChange={e => setName(e.target.value)} />
+                            <label htmlFor="username">UserName </label>
+                            <input id="username" type="text" name="username" placeholder="Your username..." onChange={e => setusername(e.target.value)} />
                         </div>
                         <div className="loginform-password">
                             <label htmlFor="password">Password </label>

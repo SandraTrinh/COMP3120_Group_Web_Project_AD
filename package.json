@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "cross-env NODE_ENV=test jest --verbose --coverage --testPathPattern server",
     "eject": "react-scripts eject",
-    "server": "cross-env NODE_ENV=development nodemon server/server.js",
+    "server": "node server/server.js",
     "dev": "cross-env NODE_ENV=development nodemon server/server.js"
   },
   "proxy": "http://localhost:3001",

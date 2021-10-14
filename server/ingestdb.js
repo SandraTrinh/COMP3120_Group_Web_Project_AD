@@ -27,11 +27,13 @@ usersData.users.map(record => {
     console.log(record)
     const newUsers = new Users({
         name: record.name,
+        username: record.username,
         password: record.password,
         territoryName: record.territoryName,
         vaccineName: record.vaccineName,
         status: record.status,
-        dose: record.dose
+        FirstDose: record.FirstDose,
+        SecondDose: record.SecondDose
     })
     newUsers.save().then(result => {
         console.log("Users record saved")
