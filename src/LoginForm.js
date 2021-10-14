@@ -39,7 +39,7 @@ const LoginForm = ({user, setUser}) => {
     if (user) {
         return (
             <div className="login-container">
-                <p>Logged in {user.username}</p>
+                <p>Logged in {user.name}</p>
                 <form onSubmit = {logoutHandler}>
                     <div className="logout-button">
                         <input type="submit" value="Log Out"/>
