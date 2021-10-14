@@ -14,10 +14,11 @@
     This is a react based application that is intended to encourage NSW residents to get vaccinated. 
     This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
     The initial landing page displays the TOP 10 LGA's in terms of their first dose of vaccination.
+    The page also shows the averages of the first and second doses across NSW.
 
 # Basic Scripts
 - npm start will initialiase the project,
-- npm run server will initialiase the connection to database designed using MongoDB
+- npm run dev will initialiase the connection to database designed using MongoDB
 
 
 # Frontend Information
