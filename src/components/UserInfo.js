@@ -48,7 +48,7 @@ const UserInfo = ({user}) => {
        
         return(
             <div> 
-            <p> Please log in </p>
+                 <Link className="App-link" to="/login">Click me to log in</Link>
             </div>
         )
 
