@@ -6,19 +6,35 @@ import productService from '../services/vaccinations'
 
 const Products = ({vaccines}) => {
 
-    // const deleteProduct = (id) => {
-    //    productService.deleteProduct(id).then(
-    //     returnedData => {
-    //       console.log('the returned product is: ', returnedData)
-    //       const updatedProducts = products.filter(product => product.id !== id)
-    //       updateProductHandler(updatedProducts)
-    //     }
-    //    )
-    // }
+  var averageVaccines = vaccines;
+  var sum1 =0 ;
+  var sum2 =0 ;
+  
+  for (var i =0; i<vaccines.length; i++) {
+
+
+      if(!isNaN(vaccines[i].FirstDoseVaccinationPercentage)){
+       sum1+= parseFloat(vaccines[i].FirstDoseVaccinationPercentage)
+      }
+      if(!isNaN(vaccines[i].SecondDoseVaccinationPercentage!=null)){
+       sum2+=parseFloat(vaccines[i].SecondDoseVaccinationPercentage)
+      }
+      
+      
+  }
+
+
+  var averageFirstDose = sum1/vaccines.length + "%"
+  var averageSecondDose = sum2/vaccines.length + "%"
+
   
     return(
       <div className="vaccination col-12">
-        <h3> Top 10 Regions in NSW in terms of 1st Dose of Vaccinations </h3>
+        <h1> Top 10 Regions in NSW in terms of 1st Dose of Vaccinations </h1>
+         <h3> Average First Dose </h3>
+        <p> {averageFirstDose} </p>
+        <h3> Average Second Dose </h3>
+        <p> {averageSecondDose} </p>
         <ul className="vaccination-list">
             {vaccines.map(vaccine => 
               <li key={vaccine.id} className="vaccine-region">
