@@ -74,9 +74,9 @@ const generatedId = () => {
     return maxId + 1
 }
 
-apiRouter.post('/login', async (req, res) => {
+apiRouter.post('/api/login', async (request, response) => {
 
-    const {username, password} = req.body
+    const {username, password} = request.body
     let user 
     //const user = await getUser(name)
     Users.find({username:username})
@@ -85,7 +85,7 @@ apiRouter.post('/login', async (req, res) => {
         user = JSON.parse(JSON.stringify(result))[0];
         console.log(user);
         if (user == [] || !user) {
-            return res.status(401).json({error: "invalid name or password"})
+            return response.status(401).json({error: "invalid name or password"})
         }
     })
     .then(result => {
@@ -96,15 +96,36 @@ apiRouter.post('/login', async (req, res) => {
                     name: user.name            
                 }
                 
-                const token = jwt.sign(userForToken, "secret")
+                const token = jwt.sign(userForToken, SECRET)
         
-                return res.status(200).json({token, name: user.name})
+                return response.status(200).json({token, name: user.name})
             })
             .catch((error) => {
-                return res.status(401).json({error: "invalid name or password"})
+                return response.status(401).json({error: "invalid name or password"})
             })   
      })
  
+})
+
+apiRouter.post('/api/logout', async (request, response) => {
+    const token = getTokenFrom(request)
+    let decodedToken = null
+    try {
+        decodedToken = jwt.verify(token, SECRET)
+    }
+    catch {
+        decodedToken = {id: null}
+    }
+
+    //console.log("Token: ", decodedToken)
+
+    if(!token || !decodedToken.id ) {
+        if(decodedToken.id !== 0){
+            return response.status(401).json({error: "invalid token"})
+        }
+    }
+    console.log("user is verifyed, user can logout now!")
+    response.status(200).json({name:decodedToken.name})
 })
 
 

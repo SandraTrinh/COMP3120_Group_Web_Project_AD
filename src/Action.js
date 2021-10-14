@@ -46,7 +46,7 @@ const update = (thing) => {
  */
 const login = ({username, password}) => {
 
-    return axios.post("/login", {username, password})
+    return axios.post(baseURL + "login", {username, password})
                 .then(response => response.data)
 }
 
@@ -55,9 +55,13 @@ const login = ({username, password}) => {
  * @param {Object} param0 {username, password} 
  * @returns {Promise} Promise that will resolve to the response data
  */
-const logout = ({username, password}) => {
-    return axios.post("/login", {username, password})
-    .then(response => response.data)
+const logout = ({user}) => {
+    if(!user) {
+        return new Promise(() => null)
+    }
+    const config = {headers: {Authorization: "Bearer " + user.token}}
+    return axios.post(baseURL + "logout", user, config)
+                .then(response => response.data)
 }
 
 export default {login, update, create, getAll, logout}
