@@ -1,3 +1,4 @@
+  
 const express = require("express")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -75,10 +76,10 @@ const generatedId = () => {
 
 apiRouter.post('/login', async (req, res) => {
 
-    const {name, password} = req.body
+    const {username, password} = req.body
     let user 
     //const user = await getUser(name)
-    Users.find({name:name})
+    Users.find({username:username})
     .then(result => {
         console.log("get users: "+ JSON.stringify(result))
         user = JSON.parse(JSON.stringify(result))[0];
@@ -102,115 +103,10 @@ apiRouter.post('/login', async (req, res) => {
             .catch((error) => {
                 return res.status(401).json({error: "invalid name or password"})
             })   
-    }
-
-    )
+     })
  
-  })
-
-// //POST unit
-// apiRouter.post('/api/units', (request, response) => {
-//     const token = getTokenFrom(request)
-//     let decodedToken = null
-//     try {
-//         decodedToken = jwt.verify(token, SECRET)
-//     }
-//     catch {
-//         decodedToken = {id: null}
-//     }
-    
-//     console.log("Token: ", decodedToken)
-//     if(!token || !decodedToken.id ) {
-//         if(decodedToken.id !== 0){
-//             return response.status(401).json({error: "invalid token"})
-//         }
-//     }
+})
 
 
-//     const body = request.body
-
-//     if (!body.code || !body.title || !body.offering){
-//         return response.status(400).json({
-//             error: 'code, title or offering is missing'
-//         })
-//     }
-
-//     const newUnit = new Unit({
-//         code: body.code,
-//         title: body.title,
-//         offering: body.offering,
-//         user: decodedToken.id
-//     })
-//     newUnit.save().then(result => {
-//         response.json(result)
-//     })
-//     console.log('POST: Unit Added is ',newUnit)
-// })
-
-// //PUT unit
-// apiRouter.put('/api/units/:id', (request, response) => {
-//     const id = request.params.id
-//     const body = request.body
-//     console.log('PUT id is', id);
-//     //const unit = units.find(unit => unit.id === id)
-//     console.log("body: ", body)
-
-//     //if(unit){
-//         // if (!body.code || !body.title || body.offering.length === 0){
-//         //     return response.status(400).json({
-//         //         error: 'code, title or offering is missing'
-//         //     })
-//         // }
-
-//         // if(body === undefined) {
-//         //     return response.status(400).json({
-//         //                 error: 'code, title or offering is missing'
-//         //             })
-//         // }
-    
-//         // const unit = {
-//         //     id: id,
-//         //     code: body.code,
-//         //     title: body.title,
-//         //     offering: body.offering
-//         // }
-
-//         const newUnit = {
-//             id: id,
-//             code: body.code,
-//             title: body.title,
-//             offering: body.offering,
-//             user: body.user
-//         }
-        
-//         Unit.findByIdAndUpdate(id, newUnit, {new: true})
-//         .then(result => {
-//             response.json(result)
-//         })
-    
-//         //units = units.map(u => u.id !== id ? u : unit)
-//         console.log('PUT unit is: ', newUnit)
-//         //response.json(unit)
-//     // } else {
-//     //     console.log("PUT: Unit not found! It is not in the list.")
-//     //     response.status(404).end()
-//     // }
-  
-// })
-
-//DELETE unit
-// apiRouter.delete('/api/vaccines/:id', (request, response) => {
-//     const id = Number(request.params.id)
-//     const unit = units.find(unit => unit.id === id)
-
-//     if(unit){
-//         units = units.filter(unit => unit.id !== id)
-//         console.log(`Unit ${id} has been DELETED`)
-//         response.status(204).end()
-//     } else {
-//         console.log("DELETE: Unit not found! It is not in the list.")
-//         response.status(404).end()
-//     }
-// })
 
 module.exports = apiRouter

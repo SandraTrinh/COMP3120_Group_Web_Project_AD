@@ -6,13 +6,13 @@ import loginService from './Action.js'
 
 const LoginForm = ({user, setUser}) => {
 
-    const [name, setName] = useState('')
+    const [username, setusername] = useState('')
     const [password, setPassword] = useState('')
 
     const formHandler = (event) => {
       event.preventDefault()
 
-      loginService.login({name, password})
+      loginService.login({username, password})
         .then(data => {
             console.log("Success:", data)
             setUser(data)
@@ -25,17 +25,15 @@ const LoginForm = ({user, setUser}) => {
 
     const logoutHandler = (event) => {
         event.preventDefault()
-        setName()
-        setUser(null)
 
-        // loginService.logout({name, password})
-        //     .then(data => {
-        //         console.log("Log Out:", data)
-        //         setUser(null)
-        //     })
-        //     .catch(error => {
-        //         console.log("Error:", error)
-        //     })
+        loginService.logout({username, password})
+            .then(data => {
+                console.log("Log Out:", data)
+                setUser(null)
+            })
+            .catch(error => {
+                console.log("Error:", error)
+            })
     }
 
     if (user) {
@@ -44,8 +42,6 @@ const LoginForm = ({user, setUser}) => {
                 <p>Logged in {user.name}</p>
                 <form onSubmit = {logoutHandler}>
                     <div className="logout-button">
-                        <input id="name" type="hidden" name="name" value={user.name}/>
-                        <input id="password" type="hidden" name="password" value={user.password}/>
                         <input type="submit" value="Log Out"/>
                     </div>
                 </form>
@@ -57,8 +53,8 @@ const LoginForm = ({user, setUser}) => {
                 <form onSubmit={formHandler}>
                     <div >
                         <div className="loginform-name">
-                            <label htmlFor="name">Name </label>
-                            <input id="name" type="text" name="name" placeholder="Your name..." onChange={e => setName(e.target.value)} />
+                            <label htmlFor="username">UserName </label>
+                            <input id="username" type="text" name="username" placeholder="Your username..." onChange={e => setusername(e.target.value)} />
                         </div>
                         <div className="loginform-password">
                             <label htmlFor="password">Password </label>
