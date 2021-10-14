@@ -74,6 +74,7 @@ const generatedId = () => {
     return maxId + 1
 }
 
+//This verifies the user's token and sends back the user's vaccination data
 apiRouter.post('/api/user/vaccines-data', (request, response) => {
     const token = getTokenFrom(request)
     let decodedToken = null
