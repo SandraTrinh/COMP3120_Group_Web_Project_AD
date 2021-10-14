@@ -2,8 +2,6 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-import productService from '../services/vaccinations'
-
 const Products = ({vaccines}) => {
 
   var averageVaccines = vaccines;

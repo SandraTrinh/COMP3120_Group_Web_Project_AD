@@ -44,7 +44,7 @@ apiRouter.get('/', (request, response) => {
     response.send('<p>Hello World</p>')
 })
 
-//GET user vaccine status
+//GET all regions of NSW vaccine status
 apiRouter.get('/api/vaccinations',(request, response) => {
     //response.json(units)
     console.log('GET user vaccine status') 
@@ -55,7 +55,7 @@ apiRouter.get('/api/vaccinations',(request, response) => {
     })
 })
 
-//GET one user vaccine status 
+//GET one vaccination region with id 
 apiRouter.get('/api/vaccinations/:id', (request, response) => {
     Unit.findById(request.params.id)
         .then(result => {
@@ -74,6 +74,49 @@ const generatedId = () => {
     return maxId + 1
 }
 
+apiRouter.post('/api/user/vaccines-data', (request, response) => {
+    const token = getTokenFrom(request)
+    let decodedToken = null
+    try {
+        decodedToken = jwt.verify(token, SECRET)
+    }
+    catch {
+        decodedToken = {id: null}
+    }
+
+    if(!token || !decodedToken.id ) {
+        if(decodedToken.id !== 0){
+            return response.status(401).json({error: "invalid token"})
+        }
+    }
+
+    let userData
+    let user
+    Users.findById(decodedToken.id)
+    .then(result => {
+        console.log("get users data: "+ JSON.stringify(result))
+        user = JSON.parse(JSON.stringify(result));
+        console.log("hello",user);
+        if (user === null || user === {}) {
+            console.log("help me!!!  1")
+            return response.status(400).json({error: "invalid user"})
+        }
+        const data = user
+        userData = {
+            name: data.name,
+            territoryName: data.territoryName,
+            vaccineName: data.vaccineName,
+            status: data.status,
+            FirstDose: data.FirstDose,
+            SecondDose: data.SecondDose
+        }
+        console.log("here is data: ",userData)
+        response.status(200).json(userData)
+    })   
+})
+
+
+//log user in. verifies the password and send back a user token
 apiRouter.post('/api/login', async (request, response) => {
 
     const {username, password} = request.body
@@ -107,7 +150,8 @@ apiRouter.post('/api/login', async (request, response) => {
  
 })
 
-apiRouter.post('/api/logout', async (request, response) => {
+//verify user to logout
+apiRouter.post('/api/logout', (request, response) => {
     const token = getTokenFrom(request)
     let decodedToken = null
     try {
@@ -127,7 +171,5 @@ apiRouter.post('/api/logout', async (request, response) => {
     console.log("user is verifyed, user can logout now!")
     response.status(200).json({name:decodedToken.name})
 })
-
-
 
 module.exports = apiRouter

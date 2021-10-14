@@ -1,11 +1,13 @@
 import axios from 'axios'
-const baseUrl = '/api/vaccinations'
+const baseURL = "/api/user/"
 
-const getAll = () => {
-    const request = axios.get(baseUrl
-        
-        )
-    return request.then(response => response.data)
+const getUserData = ({user}) => {
+    if(!user) {
+        return new Promise(() => null)
+    }
+    const config = {headers: {Authorization: "Bearer " + user.token}}
+    return axios.post("/api/user/vaccines-data", user, config)
+                .then(response => response.data)
 }
 
 export default {getUserData}

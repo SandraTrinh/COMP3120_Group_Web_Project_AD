@@ -19,7 +19,7 @@ const LoginForm = ({user, setUser}) => {
         }
         )
         .catch(error => {
-            console.log("Error:", error)
+            console.log("Error:", error.response.data)
         })
     }
 
@@ -32,7 +32,7 @@ const LoginForm = ({user, setUser}) => {
                 setUser(null)
             })
             .catch(error => {
-                console.log("Error:", error.error)
+                console.log("Error:", error.response.data)
             })
     }
 
