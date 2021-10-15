@@ -4,6 +4,7 @@ import LoginForm from './LoginForm'
 import productService from './services/Vaccinations.js'
 import Products from './components/Products.js'
 import UserInfo from './components/UserInfo.js'
+import Feedback from './components/Feedback'
 import {
   BrowserRouter as Router,
   Switch, Route, Link, Redirect
@@ -25,7 +26,18 @@ function App() {
       
       })
   }, [])
+  const [feedBack, setFeedBack] = useState([])
 
+  useEffect(() => {
+    console.log('effect')
+    productService
+      .getFeedback()
+      .then (initialProducts => {
+        
+        setFeedBack(initialProducts)
+        console.log(initialProducts)
+      })
+  }, [])
 
 
 vaccines.sort((a, b) => (a.FirstDoseVaccinationPercentage < b.FirstDoseVaccinationPercentage) ? 1 : -1)
@@ -40,8 +52,9 @@ vaccinesToShow = vaccines.slice(0,10)
         <header className="col-12">
           <div className="Navbar col-12">
             <Link className="App-link" to="/">Home</Link>
-            <Link className="App-link" to="/vaccines">Vaccines</Link>
+            <Link className="App-link" to="/vaccines">Profile</Link>
             <Link className="App-link" to="/login">Login</Link>
+            <Link className="App-link" to="/feedback">Reviews</Link>
             {/* <Link className="App-link" to="/profile">Profile</Link> */}
           </div>
         </header>
@@ -60,9 +73,11 @@ vaccinesToShow = vaccines.slice(0,10)
                   {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
                   <LoginForm user={user} setUser={setUser}/>
                 </Route>
-                {/* <Route path="/users">
-                  {user ? <Users /> : <Redirect to="/login" />}
-                </Route> */}
+                <Route path="/feedback">
+                <Feedback Feedback={feedBack} />
+                </Route>
+
+
                 <Route path="/">
                 <Products vaccines={vaccinesToShow} />
                 </Route>

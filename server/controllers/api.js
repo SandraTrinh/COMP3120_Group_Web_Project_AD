@@ -20,18 +20,7 @@ let users = usersData.users
 const vaccineData = JSON.parse(rawVaccineData)
 const feedbackData = JSON.parse(rawFeedbackData)
 
-//let vaccinations = vaccineData.vaccination
 
-
-//get user
-// const getUser = (name) => {
-//     //return users.filter(u => u.name === name)[0]
-//     Users.find({name:name})
-//     .then(result => {
-//         console.log("get users: "+result)
-//         return result
-//     })
-// }
 
 //get user token
 const getTokenFrom = request => {
@@ -42,6 +31,23 @@ const getTokenFrom = request => {
 }
 
 const apiRouter = express.Router()
+
+apiRouter.get('/api/vaccinations/feedback',(request, response) => {
+ 
+    //response.json(units)
+    console.log('GET user vaccine status') 
+    //response.json(vaccinations)   
+    Feedback.find({}).then(result => {
+        console.log("feedback data is on")
+        response.json(result)
+
+    })
+})
+
+
+
+
+
 
 //GET home
 apiRouter.get('/', (request, response) => {
@@ -58,6 +64,8 @@ apiRouter.get('/api/vaccinations',(request, response) => {
         response.json(result)
     })
 })
+
+
 
 //GET one vaccination region with id 
 apiRouter.get('/api/vaccinations/:id', (request, response) => {

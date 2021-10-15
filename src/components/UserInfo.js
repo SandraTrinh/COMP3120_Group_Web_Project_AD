@@ -17,7 +17,7 @@ const UserInfo = ({ user }) => {
                 console.log("Error:", error.response.data)
             })
     }, [])
-
+       console.log(userData)
     if (user != null) {
         if (userData != null) {
             return (
