@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
 import LoginForm from './LoginForm'
-import productService from './services/vaccinations.js'
+import productService from './services/Vaccinations.js'
 import Products from './components/Products.js'
+import UserInfo from './components/UserInfo.js'
 import {
   BrowserRouter as Router,
   Switch, Route, Link, Redirect
@@ -31,6 +32,7 @@ vaccines.sort((a, b) => (a.FirstDoseVaccinationPercentage < b.FirstDoseVaccinati
 var vaccinesToShow=[];
 vaccinesToShow = vaccines.slice(0,10)
 
+
   return (
     <div className="App">
       
@@ -50,7 +52,9 @@ vaccinesToShow = vaccines.slice(0,10)
                   <Product products={products} />
                 </Route> */}
                 <Route path="/vaccines">
-                  {/* <Products vaccines={vaccines} /> */}
+                 
+                <UserInfo  user={user} />
+                  
                 </Route>
                 <Route path="/login">
                   {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}

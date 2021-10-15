@@ -6,6 +6,7 @@ const baseUrl = '/api/vaccinations'
 //     token = `bearer ${newToken}`
 // }
 
+//get all home page nsw vaccination data
 const getAll = () => {
     const request = axios.get(baseUrl
         
