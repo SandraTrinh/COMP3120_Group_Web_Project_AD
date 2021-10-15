@@ -5,8 +5,10 @@ const jwt = require("jsonwebtoken")
 const fs = require("fs")
 const rawUsersData = fs.readFileSync("server/userVaccinationData.json")
 const rawVaccineData = fs.readFileSync("server/vaccine.json")
+const rawFeedbackData = fs.readFileSync("server/feedback.json")
 const Vaccination = require("../models/vaccine")
 const Users = require("../models/users")
+const Feedback = require("../models/feedback")
 const dotenv = require("dotenv")
 
 dotenv.config()
@@ -16,6 +18,8 @@ const SECRET = process.env.SECRET
 const usersData = JSON.parse(rawUsersData)
 let users = usersData.users
 const vaccineData = JSON.parse(rawVaccineData)
+const feedbackData = JSON.parse(rawFeedbackData)
+
 //let vaccinations = vaccineData.vaccination
 
 
@@ -66,13 +70,6 @@ apiRouter.get('/api/vaccinations/:id', (request, response) => {
         })
 })
 
-//generated a new ID
-const generatedId = () => {
-    const maxId = units.length > 0
-    ? Math.max(...units.map(p => p.id))
-    : 0
-    return maxId + 1
-}
 
 //This verifies the user's token and sends back the user's vaccination data
 apiRouter.post('/api/user/vaccines-data', (request, response) => {
