@@ -31,7 +31,9 @@
             - '/products.js' this file name will be changed in the future to something like NSWvaccinations
                 We use this to display the top ten highest vaccination regions in NSW on the home page.
             - '/UserInfo.js' 
-                this display the user's vaccination status and personal vaccination data. name, location, vaccine name, vaccination status, first and secon dose datas
+                We use this to display the user's vaccination status. This includes name, location, vaccine name, vaccination status, first and second dose data.
+            - '/Feedback.js' 
+                We use this to show all the feedbacks we get from our users. To prevent injection attacks, we have decided to only allow users to choose an option that best describes their thoughts of our website.
         - '/src/services'
              This is where we manage the data request to the backend server. We use Axios to GET, POST, PUT, DELETE.
             - '/Vaccinations.js'
