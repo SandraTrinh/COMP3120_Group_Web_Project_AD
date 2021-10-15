@@ -26,7 +26,16 @@ const UserInfo = ({ user }) => {
                         <Pdf targetRef={ref} filename="Vaccine-Cert.pdf">
                             {({ toPdf }) => <button onClick={toPdf}>Download Your Digital Certificate</button>}
                         </Pdf>
-                        
+                        <div style={{ height: 1200, width: 1000, background: 'black' }} ref={ref}>
+                            <ul className="vaccination-list">
+                                <li> Full Name: {userData.name}     </li>
+                                <li> Territory Name: {userData.territoryName}     </li>
+                                <li> Vaccine name: {userData.vaccineName}     </li>
+                                <li> Vaccination status: {userData.status}     </li>
+                                <li> First Dose Date: {userData.FirstDose}     </li>
+                                <li> Second Dose Date: {userData.SecondDose}     </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
