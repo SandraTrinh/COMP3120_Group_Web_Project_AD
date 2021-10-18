@@ -29,9 +29,9 @@ const Products = ({vaccines}) => {
     return(
       <div className="vaccination col-12">
         <h1> Top 10 Regions in NSW in terms of 1st Dose of Vaccinations </h1>
-         <h3> Average First Dose </h3>
+         <h3> Average Percentage of First Dose Across NSW </h3>
         <p> {averageFirstDose} </p>
-        <h3> Average Second Dose </h3>
+        <h3> Average Percentage of Second Dose Across NSW </h3>
         <p> {averageSecondDose} </p>
         <ul className="vaccination-list">
             {vaccines.map(vaccine => 

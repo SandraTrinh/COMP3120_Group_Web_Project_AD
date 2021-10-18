@@ -5,8 +5,10 @@ const jwt = require("jsonwebtoken")
 const fs = require("fs")
 const rawUsersData = fs.readFileSync("server/userVaccinationData.json")
 const rawVaccineData = fs.readFileSync("server/vaccine.json")
+const rawFeedbackData = fs.readFileSync("server/feedback.json")
 const Vaccination = require("../models/vaccine")
 const Users = require("../models/users")
+const Feedback = require("../models/feedback")
 const dotenv = require("dotenv")
 
 dotenv.config()
@@ -16,18 +18,9 @@ const SECRET = process.env.SECRET
 const usersData = JSON.parse(rawUsersData)
 let users = usersData.users
 const vaccineData = JSON.parse(rawVaccineData)
-//let vaccinations = vaccineData.vaccination
+const feedbackData = JSON.parse(rawFeedbackData)
 
 
-//get user
-// const getUser = (name) => {
-//     //return users.filter(u => u.name === name)[0]
-//     Users.find({name:name})
-//     .then(result => {
-//         console.log("get users: "+result)
-//         return result
-//     })
-// }
 
 //get user token
 const getTokenFrom = request => {
@@ -38,6 +31,23 @@ const getTokenFrom = request => {
 }
 
 const apiRouter = express.Router()
+
+apiRouter.get('/api/vaccinations/feedback',(request, response) => {
+ 
+    //response.json(units)
+    console.log('GET user vaccine status') 
+    //response.json(vaccinations)   
+    Feedback.find({}).then(result => {
+        console.log("feedback data is on")
+        response.json(result)
+
+    })
+})
+
+
+
+
+
 
 //GET home
 apiRouter.get('/', (request, response) => {
@@ -55,6 +65,8 @@ apiRouter.get('/api/vaccinations',(request, response) => {
     })
 })
 
+
+
 //GET one vaccination region with id 
 apiRouter.get('/api/vaccinations/:id', (request, response) => {
     Unit.findById(request.params.id)
@@ -66,13 +78,6 @@ apiRouter.get('/api/vaccinations/:id', (request, response) => {
         })
 })
 
-//generated a new ID
-const generatedId = () => {
-    const maxId = units.length > 0
-    ? Math.max(...units.map(p => p.id))
-    : 0
-    return maxId + 1
-}
 
 //This verifies the user's token and sends back the user's vaccination data
 apiRouter.post('/api/user/vaccines-data', (request, response) => {
