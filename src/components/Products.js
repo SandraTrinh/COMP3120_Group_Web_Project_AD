@@ -27,12 +27,15 @@ const Products = ({vaccines}) => {
 
   
     return(
-      <div className="vaccination col-12">
+      <div className="home-page col-12">
+         <div className="vaccination-average col-6">
+          <h3> Average Percentage of First Dose Across NSW </h3>
+          <p> {averageFirstDose} </p>
+          <h3> Average Percentage of Second Dose Across NSW </h3>
+          <p> {averageSecondDose} </p>
+        </div>
+        <div className="vaccination col-6">
         <h1> Top 10 Regions in NSW in terms of 1st Dose of Vaccinations </h1>
-         <h3> Average Percentage of First Dose Across NSW </h3>
-        <p> {averageFirstDose} </p>
-        <h3> Average Percentage of Second Dose Across NSW </h3>
-        <p> {averageSecondDose} </p>
         <ul className="vaccination-list">
             {vaccines.map(vaccine => 
               <li key={vaccine.id} className="vaccine-region">
@@ -59,6 +62,7 @@ const Products = ({vaccines}) => {
           :null
         } */}
       </div> 
+      </div>
     )
 }
 

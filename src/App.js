@@ -28,16 +28,6 @@ function App() {
   }, [])
   const [feedBack, setFeedBack] = useState([])
 
-  useEffect(() => {
-    console.log('effect')
-    productService
-      .getFeedback()
-      .then (initialProducts => {
-        
-        setFeedBack(initialProducts)
-        console.log(initialProducts)
-      })
-  }, [])
 
 
 vaccines.sort((a, b) => (a.FirstDoseVaccinationPercentage < b.FirstDoseVaccinationPercentage) ? 1 : -1)
@@ -74,7 +64,7 @@ vaccinesToShow = vaccines.slice(0,10)
                   <LoginForm user={user} setUser={setUser}/>
                 </Route>
                 <Route path="/feedback">
-                <Feedback Feedback={feedBack} />
+                <Feedback Feedback={feedBack} setFeedBack={setFeedBack} />
                 </Route>
 
 
