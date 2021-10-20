@@ -9,29 +9,25 @@ const Products = ({vaccines}) => {
   var sum2 =0 ;
   
   for (var i =0; i<vaccines.length; i++) {
-
-
       if(!isNaN(vaccines[i].FirstDoseVaccinationPercentage)){
        sum1+= parseFloat(vaccines[i].FirstDoseVaccinationPercentage)
       }
       if(!isNaN(vaccines[i].SecondDoseVaccinationPercentage!=null)){
        sum2+=parseFloat(vaccines[i].SecondDoseVaccinationPercentage)
       }
-      
-      
   }
 
 
-  var averageFirstDose = sum1/vaccines.length + "%"
-  var averageSecondDose = sum2/vaccines.length + "%"
+  var averageFirstDose = Math.round(sum1/vaccines.length) + "%"
+  var averageSecondDose = Math.round(sum2/vaccines.length) + "%"
 
   
     return(
       <div className="home-page col-12">
          <div className="vaccination-average col-6">
-          <h3> Average Percentage of First Dose Across NSW </h3>
-          <p> {averageFirstDose} </p>
-          <h3> Average Percentage of Second Dose Across NSW </h3>
+          <h3> Total Percentage of First Dose Across NSW </h3>
+          <p> {averageFirstDose}</p>
+          <h3> Total Percentage of Second Dose Across NSW </h3>
           <p> {averageSecondDose} </p>
         </div>
         <div className="vaccination col-6">
