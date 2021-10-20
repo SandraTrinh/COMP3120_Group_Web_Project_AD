@@ -34,7 +34,7 @@ vaccines.sort((a, b) => (a.FirstDoseVaccinationPercentage < b.FirstDoseVaccinati
 var vaccinesToShow=[];
 vaccinesToShow = vaccines.slice(0,10)
 
-
+if(user != null) {
   return (
     <div className="App">
       
@@ -78,7 +78,52 @@ vaccinesToShow = vaccines.slice(0,10)
           </div> 
         </Router>
     </div>
+  );         
+} else {
+  return (
+    <div className="App">
+      
+       <Router>
+        <header className="col-12">
+          <div className="Navbar col-12">
+            <Link className="App-link" to="/">Home</Link>
+            <Link className="App-link" to="/login">Login</Link>
+            {/* <Link className="App-link" to="/profile">Profile</Link> */}
+          </div>
+        </header>
+    
+        <div className="App-body">
+            <Switch>
+                {/* <Route path="/products/:id">
+                  <Product products={products} />
+                </Route> */}
+                <Route path="/vaccines">
+                 
+                <UserInfo  user={user} />
+                  
+                </Route>
+                <Route path="/login">
+                  {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
+                  <LoginForm user={user} setUser={setUser}/>
+                </Route>
+                <Route path="/feedback">
+                <Feedback Feedback={feedBack} setFeedBack={setFeedBack} />
+                </Route>
+
+
+                <Route path="/">
+                <Products vaccines={vaccinesToShow} />
+                </Route>
+                {/* <Route path="/profile">
+                    {}
+                </Route> */}
+            </Switch>
+          </div> 
+        </Router>
+    </div>
   );
+}
+  
 }
 
 export default App;
