@@ -26,15 +26,15 @@ if(Feedback.length != 0) {
                     <div className="App">
                         <div style={{ height: 500, width: 800, background: 'white', textAlign: 'center', color: 'black' }} >
                             <ul className="vaccination-list">
-                                <li> Very Satisfied: {Feedback.verySatisfied} <button> 5</button> </li>
+                                <li> Very Satisfied: {Feedback[0].verySatisfied} <button> 5</button> </li>
                                 <br></br>
-                                <li> Satisfied: {Feedback.satisfied} <button> 4 </button></li>
+                                <li> Satisfied: {Feedback[0].satisfied} <button> 4 </button></li>
                                 <br></br>
-                                <li> Neutral: {Feedback.neutral} <button> 3 </button></li>
+                                <li> Neutral: {Feedback[0].neutral} <button> 3 </button></li>
                                 <br></br>
-                                <li> Unsatisfied: {Feedback.unsatisfied} <button> 2 </button></li>
+                                <li> Unsatisfied: {Feedback[0].unsatisfied} <button> 2 </button></li>
                                 <br></br>
-                                <li> Very Unsatisfied: {Feedback.veryUnsatisfied} <button> 1 </button> </li>
+                                <li> Very Unsatisfied: {Feedback[0].veryUnsatisfied} <button> 1 </button> </li>
                             </ul>
                         </div>
                     </div>
