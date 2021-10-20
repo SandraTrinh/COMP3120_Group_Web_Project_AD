@@ -1,3 +1,6 @@
+/* Inspired by the following sources */
+/* https://stackoverflow.com/questions/5703552/how-can-i-center-text-horizontally-and-vertically-inside-a-div-block */
+/* https://stackoverflow.com/questions/62158078/css-animation-keyframe-percentage-issue */
 import React from 'react'
 
 import {Link} from 'react-router-dom'
@@ -25,10 +28,14 @@ const Products = ({vaccines}) => {
     return(
       <div className="home-page col-12">
          <div className="vaccination-average col-6">
-          <h3> Total Percentage of First Dose Across NSW </h3>
-          <p> {averageFirstDose}</p>
-          <h3> Total Percentage of Second Dose Across NSW </h3>
-          <p> {averageSecondDose} </p>
+         <div class="flex-buttons">
+       
+       <button> <h2> Total Second Dose : {averageSecondDose}  </h2> </button>
+   
+       <button> <h2>  Total First Dose : {averageFirstDose} </h2> </button>
+   
+       <div class="imgs"><div class="temp"></div></div>
+     </div>
         </div>
         <div className="vaccination col-6">
         <h1> Top 10 Regions in NSW in terms of 1st Dose of Vaccinations </h1>
@@ -58,7 +65,9 @@ const Products = ({vaccines}) => {
           :null
         } */}
       </div> 
+
       </div>
+      
     )
 }
 

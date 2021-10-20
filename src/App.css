@@ -1,3 +1,6 @@
+/* Inspired by the following sources */
+/* https://stackoverflow.com/questions/5703552/how-can-i-center-text-horizontally-and-vertically-inside-a-div-block */
+/* https://stackoverflow.com/questions/62158078/css-animation-keyframe-percentage-issue */
 * {
   box-sizing: border-box;
 }
@@ -242,4 +245,57 @@ ul.vaccination-list {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.flex-buttons{
+  width:20%;
+  display: inline-block;
+  background: transparent;
+  border: none !important;
+  color:#800000;
+  position: absolute;
+  top: 20%;
+  left: 55%;
+  /* transform: translateX(-50%) translateY(-50%); */
+}
+
+.flex-buttons button{
+  flex:3;
+  display: inline-block;
+  cursor:pointer; 
+  background: transparent;
+  border: none !important; 
+  color:#800000;
+  text-align: center;
+vertical-align: middle;
+}
+
+.temp {
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.1, 0.2, 0.7, 1);  
+  min-height: 20%;
+  min-width: 0%;
+  width: 0%;
+  background-color: #800000;
+}
+
+.flex-buttons button:nth-child(2):hover ~ .imgs .temp{
+  min-width: 91%;
+  width: 91%;
+}
+
+.flex-buttons button:nth-child(1):hover ~ .imgs .temp{
+  min-width: 66%;
+  width: 66%;
+}
+
+
+.imgs{
+  flex-basis:20%;
+  height:20px;
+  border:2px solid grey;
+  order:-1;
+  
 }
