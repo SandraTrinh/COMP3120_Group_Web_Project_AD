@@ -21,7 +21,6 @@ const create = (newObject, user) => {
     if (!user) {
         return new Promise((res) => res(null))
     }
-
     const config = {headers: {Authorization: "Bearer " + user.token}  }
     
     return axios.post(baseURL + "vaccine", newObject, config)

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, {useEffect} from 'react'
 import productService from '../services/Vaccinations.js'
 
 
@@ -19,26 +19,24 @@ const Feedback = ({Feedback, setFeedBack}) => {
       }, [])
 
 if(Feedback[0] != null || Feedback!=null) {
-
             return (
                 <div className="vaccination col-12">
                     <div className="App">
-
-                        <div style={{ height: 1200, width: 1000, background: 'black' }} >
+                        <div style={{ height: 500, width: 800, background: 'white', textAlign: 'center', color: 'black' }} >
                             <ul className="vaccination-list">
-                            
-                                <li>  I am very satisfied: {Feedback.verySatisfied} <button> Vote</button> </li>
-                                <li> I am satisfied: {Feedback.satisfied} <button> Vote</button></li>
-                                <li> I am indifferent: {Feedback.neutral} <button> Vote</button></li>
-                                <li> I am not happy: {Feedback.unsatisfied} <button> Vote</button></li>
-                                <li> I hate this website: {Feedback.veryUnsatisfied} <button> Vote</button> </li>
-
-
+                                <li> Very Satisfied: {Feedback.verySatisfied} <button> 5</button> </li>
+                                <br></br>
+                                <li> Satisfied: {Feedback.satisfied} <button> 4 </button></li>
+                                <br></br>
+                                <li> Neutral: {Feedback.neutral} <button> 3 </button></li>
+                                <br></br>
+                                <li> Unsatisfied: {Feedback.unsatisfied} <button> 2 </button></li>
+                                <br></br>
+                                <li> Very Unsatisfied: {Feedback.veryUnsatisfied} <button> 1 </button> </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
             )
         } 
     }
