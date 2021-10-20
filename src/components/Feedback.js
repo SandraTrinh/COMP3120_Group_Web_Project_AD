@@ -24,22 +24,21 @@ if(Feedback.length != 0) {
             return (
                 <div className="vaccination col-12">
                     <div className="App">
-
-                        <div style={{ height: 1200, width: 1000, background: 'black' }} >
+                        <div style={{ height: 500, width: 800, background: 'white', textAlign: 'center', color: 'black' }} >
                             <ul className="vaccination-list">
-                            
-                                <li>  I am very satisfied: {Feedback[0].verySatisfied} <button> Vote</button> </li>
-                                <li> I am satisfied: {Feedback[0].satisfied} <button> Vote</button></li>
-                                <li> I am indifferent: {Feedback[0].neutral} <button> Vote</button></li>
-                                <li> I am not happy: {Feedback[0].unsatisfied} <button> Vote</button></li>
-                                <li> I hate this website: {Feedback[0].veryUnsatisfied} <button> Vote</button> </li>
-
-
+                                <li> Very Satisfied: {Feedback.verySatisfied} <button> 5</button> </li>
+                                <br></br>
+                                <li> Satisfied: {Feedback.satisfied} <button> 4 </button></li>
+                                <br></br>
+                                <li> Neutral: {Feedback.neutral} <button> 3 </button></li>
+                                <br></br>
+                                <li> Unsatisfied: {Feedback.unsatisfied} <button> 2 </button></li>
+                                <br></br>
+                                <li> Very Unsatisfied: {Feedback.veryUnsatisfied} <button> 1 </button> </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
             )
         } else {
             return (

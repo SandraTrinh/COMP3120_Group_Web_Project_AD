@@ -7,7 +7,7 @@ import UserInfo from './components/UserInfo.js'
 import Feedback from './components/Feedback'
 import {
   BrowserRouter as Router,
-  Switch, Route, Link, Redirect
+  Switch, Route, Link
 } from "react-router-dom"
 
 function App() {
@@ -66,8 +66,6 @@ if(user != null) {
                 <Route path="/feedback">
                 <Feedback Feedback={feedBack} setFeedBack={setFeedBack} />
                 </Route>
-
-
                 <Route path="/">
                 <Products vaccines={vaccinesToShow} />
                 </Route>
