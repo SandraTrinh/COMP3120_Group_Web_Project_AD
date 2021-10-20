@@ -17,16 +17,17 @@ const UserInfo = ({ user }) => {
                 console.log("Error:", error.response.data)
             })
     }, [])
-
+       console.log(userData)
     if (user != null) {
         if (userData != null) {
             return (
-                <div className="vaccination col-12">
+                <div className="profile-logged-in col-12">
                     <div className="App">
+                        <h3>Profile</h3>
                         <Pdf targetRef={ref} filename="Vaccine-Cert.pdf">
-                            {({ toPdf }) => <button onClick={toPdf}>Download Your Digital Certificate</button>}
+                            {({ toPdf }) => <button className="profile-download-pdf" onClick={toPdf}>Download Your Digital Certificate</button>}
                         </Pdf>
-                        <div style={{ height: 1200, width: 1000, background: 'black' }} ref={ref}>
+                        <div className="profile-userdata" style={{ height: 1200, width: 1000}} ref={ref}>
                             <ul className="vaccination-list">
                                 <li> Full Name: {userData.name}     </li>
                                 <li> Territory Name: {userData.territoryName}     </li>
@@ -43,6 +44,7 @@ const UserInfo = ({ user }) => {
         } else {
             return (
                 <div>
+                    <h3>Profile</h3>
                     <p> Loading ...</p>
                 </div>
             )
@@ -51,7 +53,8 @@ const UserInfo = ({ user }) => {
     } else {
 
         return (
-            <div>
+            <div className="profile-log-in col-12">
+                <h3>Profile</h3>
                 <Link className="App-link" to="/login">Click me to log in</Link>
             </div>
         )
