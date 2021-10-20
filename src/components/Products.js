@@ -10,7 +10,7 @@ const Products = ({vaccines}) => {
   
   for (var i =0; i<vaccines.length; i++) {
       if(!isNaN(vaccines[i].FirstDoseVaccinationPercentage)){
-       sum1+= parseFloat(vaccines[i].FirstDoseVaccinationPercentage)
+       sum1+=parseFloat(vaccines[i].FirstDoseVaccinationPercentage)
       }
       if(!isNaN(vaccines[i].SecondDoseVaccinationPercentage!=null)){
        sum2+=parseFloat(vaccines[i].SecondDoseVaccinationPercentage)
@@ -41,8 +41,8 @@ const Products = ({vaccines}) => {
                     <li>Population: {vaccine.TotalPopulation}</li>
                   </ul>
                   <ul>
-                    <li>First Dose: {vaccine.FirstDoseVaccinationPercentage}</li>
-                    <li>Second Does: {vaccine.SecondDoseVaccinationPercentage}</li>
+                    <li>First Dose: {Math.round(vaccine.FirstDoseVaccinationPercentage)}%</li>
+                    <li>Second Does: {Math.round(vaccine.SecondDoseVaccinationPercentage)}%</li>
                   </ul>                
                 </Link>
                 {/* {
