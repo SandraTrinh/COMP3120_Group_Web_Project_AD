@@ -138,21 +138,21 @@ apiRouter.post('/api/login', async (request, response) => {
       
     })
   
-        if (await bcrypt.compare(password, user.password)){
-            console.log("Password is good!")
-            bcrypt.compare(password, user.password)
-    
-            const userForToken = {
-                id: user.id,
-                name: user.name            
-            }
-            
-            const token = jwt.sign(userForToken, SECRET)
-    
-            return response.status(200).json({token, name: user.name})
-         } else {
-            return response.status(401).json({error: "invalid name or password"})
-         }
+    if (await bcrypt.compare(password, user.password)){
+        console.log("Password is good!")
+        bcrypt.compare(password, user.password)
+
+        const userForToken = {
+            id: user.id,
+            name: user.name            
+        }
+        
+        const token = jwt.sign(userForToken, SECRET)
+
+        return response.status(200).json({token, name: user.name})
+        } else {
+        return response.status(401).json({error: "invalid name or password"})
+        }
 
    
  
