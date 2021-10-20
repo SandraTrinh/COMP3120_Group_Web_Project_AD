@@ -127,7 +127,7 @@ apiRouter.post('/api/login', async (request, response) => {
     const {username, password} = request.body
     let user 
     //const user = await getUser(name)
-    Users.find({username:username})
+    await Users.find({username:username})
     .then(result => {
         console.log("get users: "+ JSON.stringify(result))
         user = JSON.parse(JSON.stringify(result))[0];
@@ -135,23 +135,26 @@ apiRouter.post('/api/login', async (request, response) => {
         if (user == [] || !user) {
             return response.status(401).json({error: "invalid name or password"})
         }
+      
     })
-    .then(result => {
-        bcrypt.compare(password, user.password)
-            .then(result =>{
-                const userForToken = {
-                    id: user.id,
-                    name: user.name            
-                }
-                
-                const token = jwt.sign(userForToken, SECRET)
-        
-                return response.status(200).json({token, name: user.name})
-            })
-            .catch((error) => {
-                return response.status(401).json({error: "invalid name or password"})
-            })   
-     })
+  
+        if (await bcrypt.compare(password, user.password)){
+            console.log("Password is good!")
+            bcrypt.compare(password, user.password)
+    
+            const userForToken = {
+                id: user.id,
+                name: user.name            
+            }
+            
+            const token = jwt.sign(userForToken, SECRET)
+    
+            return response.status(200).json({token, name: user.name})
+         } else {
+            return response.status(401).json({error: "invalid name or password"})
+         }
+
+   
  
 })
 
