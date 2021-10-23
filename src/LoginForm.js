@@ -50,6 +50,7 @@ const LoginForm = ({user, setUser}) => {
     } else {
         return (
             <div className="login-container">
+                <h3>Login</h3>
                 <form onSubmit={formHandler}>
                     <div >
                         <div className="loginform-name">
