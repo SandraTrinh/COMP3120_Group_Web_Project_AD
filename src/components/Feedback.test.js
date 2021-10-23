@@ -5,7 +5,7 @@ import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { fireEvent, render } from '@testing-library/react'
 import fs from 'fs'
-import Feedback from './components/Feedback'
+import Feedback from './Feedback'
 
 /**
  * Read sample data for testing
