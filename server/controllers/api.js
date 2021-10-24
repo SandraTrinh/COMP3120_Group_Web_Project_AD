@@ -56,11 +56,9 @@ apiRouter.get('/', (request, response) => {
 
 //GET all regions of NSW vaccine status
 apiRouter.get('/api/vaccinations',(request, response) => {
-    //response.json(units)
     console.log('GET user vaccine status') 
     //response.json(vaccinations)   
     Vaccination.find({}).then(result => {
-        console.log(result)
         response.json(result)
     })
 })
