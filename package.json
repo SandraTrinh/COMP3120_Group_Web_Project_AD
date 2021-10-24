@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^1.6.17",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.4",
     "bcrypt": "^5.0.1",
@@ -29,14 +27,13 @@
     "test": "cross-env NODE_ENV=test jest --verbose --coverage --testPathPattern server",
     "testreact": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node server/server.js",
+    "server": "cross-env NODE_ENV=development nodemon server/server.js",
     "dev": "cross-env NODE_ENV=development nodemon server/server.js"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -53,6 +50,8 @@
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
     "express-session": "^1.17.2",
     "supertest": "^6.1.6"
   }
