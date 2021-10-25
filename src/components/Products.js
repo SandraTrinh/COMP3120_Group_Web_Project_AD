@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 const Products = ({vaccines}) => {
 
-  var averageVaccines = vaccines;
+  //var averageVaccines = vaccines;
   var sum1 =0 ;
   var sum2 =0 ;
   
