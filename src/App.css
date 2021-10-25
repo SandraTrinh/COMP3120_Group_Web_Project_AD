@@ -237,17 +237,6 @@ ul.vaccination-list {
   background-color: #0F2027;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 .flex-buttons{
   width:20%;
   display: inline-block;
