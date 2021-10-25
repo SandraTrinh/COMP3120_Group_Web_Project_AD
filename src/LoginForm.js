@@ -8,6 +8,7 @@ const LoginForm = ({user, setUser}) => {
 
     const [username, setusername] = useState('')
     const [password, setPassword] = useState('')
+    const [LoginError, setLoginError] = useState(" ")
 
     const formHandler = (event) => {
       event.preventDefault()
@@ -16,10 +17,16 @@ const LoginForm = ({user, setUser}) => {
         .then(data => {
             console.log("Success:", data)
             setUser(data)
+            setLoginError('')
         }
         )
         .catch(error => {
             console.log("Error:", error.response.data)
+            if(error.response.status === 401)
+            {
+                console.log("Failed to Login")
+                setLoginError("Failed to Login")
+            }
         })
     }
 
@@ -66,6 +73,9 @@ const LoginForm = ({user, setUser}) => {
                         </div>
                     </div>
                 </form> 
+                <div>
+                    <p>{LoginError}</p>
+                </div>
             </div>
             )
     }
