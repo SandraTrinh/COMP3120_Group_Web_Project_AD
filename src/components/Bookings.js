@@ -22,7 +22,6 @@ const Bookings = () => {
     const [myDate, setMyDate] = useState(new Date());
     const choices = [
         { value: 'Pfizer', label: 'Pfizer' },
-        { value: 'Moderna', label: 'Moderna' },
         { value: 'AstraZeneca', label: 'AstraZeneca' }
       ]
          
