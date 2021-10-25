@@ -27,6 +27,11 @@ const LoginForm = ({user, setUser}) => {
                 console.log("Failed to Login")
                 setLoginError("Failed to Login")
             }
+            if(error.response.status === 500)
+            {
+                console.log("Internal server error")
+                setLoginError("Sorry Internal server error is prevent you from logging in!")
+            }
         })
     }
 
