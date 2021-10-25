@@ -130,13 +130,12 @@ apiRouter.post('/api/login', async (request, response) => {
         console.log("get users: "+ JSON.stringify(result))
         user = JSON.parse(JSON.stringify(result))[0];
         console.log(user);
-        if (user == [] || !user) {
-            return response.status(401).json({error: "invalid name or password"})
-        }
-      
+     
     })
   
-    if (await bcrypt.compare(password, user.password)){
+    if (user == [] || !user) {
+        return response.status(401).json({error: "invalid name or password"})
+    } else if (await bcrypt.compare(password, user.password)){
         console.log("Password is good!")
         bcrypt.compare(password, user.password)
 
