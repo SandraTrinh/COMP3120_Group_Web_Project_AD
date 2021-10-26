@@ -56,11 +56,9 @@ apiRouter.get('/', (request, response) => {
 
 //GET all regions of NSW vaccine status
 apiRouter.get('/api/vaccinations',(request, response) => {
-    //response.json(units)
     console.log('GET user vaccine status') 
     //response.json(vaccinations)   
     Vaccination.find({}).then(result => {
-        console.log(result)
         response.json(result)
     })
 })
@@ -127,31 +125,33 @@ apiRouter.post('/api/login', async (request, response) => {
     const {username, password} = request.body
     let user 
     //const user = await getUser(name)
-    Users.find({username:username})
+    await Users.find({username:username})
     .then(result => {
         console.log("get users: "+ JSON.stringify(result))
         user = JSON.parse(JSON.stringify(result))[0];
         console.log(user);
-        if (user == [] || !user) {
-            return response.status(401).json({error: "invalid name or password"})
-        }
+     
     })
-    .then(result => {
+  
+    if (user == [] || !user) {
+        return response.status(401).json({error: "invalid name or password"})
+    } else if (await bcrypt.compare(password, user.password)){
+        console.log("Password is good!")
         bcrypt.compare(password, user.password)
-            .then(result =>{
-                const userForToken = {
-                    id: user.id,
-                    name: user.name            
-                }
-                
-                const token = jwt.sign(userForToken, SECRET)
+
+        const userForToken = {
+            id: user.id,
+            name: user.name            
+        }
         
-                return response.status(200).json({token, name: user.name})
-            })
-            .catch((error) => {
-                return response.status(401).json({error: "invalid name or password"})
-            })   
-     })
+        const token = jwt.sign(userForToken, SECRET)
+
+        return response.status(200).json({token, name: user.name})
+        } else {
+        return response.status(401).json({error: "invalid name or password"})
+        }
+
+   
  
 })
 
