@@ -5,6 +5,7 @@ import productService from './services/Vaccinations.js'
 import Products from './components/Products.js'
 import UserInfo from './components/UserInfo.js'
 import Feedback from './components/Feedback'
+import Bookings from './components/Bookings.js'
 import {
   BrowserRouter as Router,
   Switch, Route, Link
@@ -45,7 +46,7 @@ if(user != null) {
             <Link className="App-link" to="/vaccines">Profile</Link>
             <Link className="App-link" to="/login">Login</Link>
             <Link className="App-link" to="/feedback">Reviews</Link>
-            {/* <Link className="App-link" to="/profile">Profile</Link> */}
+            <Link className="App-link" to="/booking">Bookings</Link>
           </div>
         </header>
     
@@ -66,12 +67,13 @@ if(user != null) {
                 <Route path="/feedback">
                 <Feedback Feedback={feedBack} setFeedBack={setFeedBack} />
                 </Route>
+                <Route path="/booking">
+                <Bookings  />
+                </Route>
                 <Route path="/">
                 <Products vaccines={vaccinesToShow} />
                 </Route>
-                {/* <Route path="/profile">
-                    {}
-                </Route> */}
+
             </Switch>
           </div> 
         </Router>
