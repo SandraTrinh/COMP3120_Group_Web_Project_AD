@@ -7,7 +7,7 @@
             "password": "$2b$10$LpaUCjA1yrbIwPV5ZkhPK.2Xgx5eliBSOxUqK27GSc2MSAqoBlNO2",
             "territoryName": "Capital Region",
             "vaccineName": "Pfizer",
-            "status": "Vaccinated",
+            "status": " Vaccinated",
             "FirstDose": "02-09-2021",
             "SecondDose": "23-09-2021"
         },

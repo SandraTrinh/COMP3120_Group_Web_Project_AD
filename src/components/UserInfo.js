@@ -3,6 +3,8 @@ import Pdf from "react-to-pdf";
 import { Link } from 'react-router-dom'
 import UserService from '../services/UserData.js'
 
+
+
 const ref = React.createRef();
 
 const UserInfo = ({ user }) => {
@@ -17,29 +19,70 @@ const UserInfo = ({ user }) => {
                 console.log("Error:", error.response.data)
             })
     }, [])
-       console.log(userData)
+    console.log(userData)
     if (user != null) {
         if (userData != null) {
             return (
                 <div className="profile-logged-in col-12">
                     <div className="App">
-                        <h3>Profile</h3>
+
                         <Pdf targetRef={ref} filename="Vaccine-Cert.pdf">
                             {({ toPdf }) => <button className="profile-download-pdf" onClick={toPdf}>Download Your Digital Certificate</button>}
                         </Pdf>
-                        <div className="profile-userdata" style={{ height: 1200, width: 1000}} ref={ref}>
-                            <ul className="vaccination-list">
-                                <li> Full Name: {userData.name}     </li>
-                                <li> Territory Name: {userData.territoryName}     </li>
-                                <li> Vaccine name: {userData.vaccineName}     </li>
-                                <li> Vaccination status: {userData.status}     </li>
-                                <li> First Dose Date: {userData.FirstDose}     </li>
-                                <li> Second Dose Date: {userData.SecondDose}     </li>
-                            </ul>
+                        <div className="profile-userdata" style={{ height: 1200, width: 1100, textAlign: 'left' }} ref={ref}>
+                            <div>
+                                <h3>Government of Macquarie University</h3>
+                                <h6>Covid 19 Digital Certificate</h6>
+                            </div>
+                            <table className="customers">
+                                <tr>
+                                    <td><strong>Full Name</strong></td>
+                                    <td>{userData.name}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Territory Name</strong></td>
+                                    <td>{userData.territoryName} </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vaccine name</strong></td>
+                                    <td>{userData.vaccineName} </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vaccination status</strong></td>
+                                    <td>{userData.status} </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Date of First Dose</strong></td>
+                                    <td>{userData.FirstDose} </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Date of Second Dose</strong></td>
+                                    <td>{userData.SecondDose} </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Accessed At</strong></td>
+                                    <td>{new Date().toLocaleString() + ''}</td>
+                                </tr>
+                            </table>
+                            <br></br><br></br><br></br>
+                            <div style={{ textAlign: 'left', fontSize: 15, bottom: 0 }}>
+                                <h2>Disclaimer:</h2>
+                                <p>This certificate shows your COVID-19 vaccination details as reported to the Australian Immunisation Register by
+                                    your vaccination provider. It is available because you have received all required COVID-19 vaccinations or you
+                                    have a medical contraindication to COVID-19 vaccines.</p>
+
+                                <p>Every effort is made to ensure that the information contained on the Australian Immunisation Register is correct.
+                                    The data is based on information provided by vaccination providers and the accuracy of data is dependent on the
+                                    quality and timeliness of information provided.</p>
+
+                                <p>If any of the vaccination details shown on the certificate are not correct, please ask your vaccination provider to
+                                    provide the correct details. They can call us on 1234 567 890 (call charges may apply).
+                                    If you have any questions about this certificate please call the Australian Immunisation Register on 1234 567 890
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             )
         } else {
             return (
