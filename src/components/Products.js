@@ -55,18 +55,9 @@ const Products = ({vaccines}) => {
                       <li>Second Does: {Math.round(vaccine.SecondDoseVaccinationPercentage)}%</li>
                     </ul>                
                   </Link>
-                  {/* {
-                    user !== null
-                    ? <Button text="Delete" eventHandler={() => deleteProduct(product.id)}/> 
-                    : null
-                  } */}
                 </li>
               )}
           </ul>
-          {/* {user !== null
-            ?<ProductForm products={products} updateProductHandler={updateProductHandler}/>
-            :null
-          } */}
 
         </div> 
         <div className="clearfix"></div>
