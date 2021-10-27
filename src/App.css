@@ -431,3 +431,11 @@ h6{
   background-color: #04AA6D;
   color: white;
 }
+
+.logo{
+  height: 120px;
+  width: 200px;
+  text-align: center;
+  margin: 10px auto 20px;
+  display: block;
+}

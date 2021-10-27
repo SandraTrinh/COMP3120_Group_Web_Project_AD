@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Pdf from "react-to-pdf";
 import { Link } from 'react-router-dom'
 import UserService from '../services/UserData.js'
+import image from '/Users/hemanthvejandla/Documents/GitHub/group-web-project-group-ad/src/logo.png';
 
 
 
@@ -31,6 +32,7 @@ const UserInfo = ({ user }) => {
                         </Pdf>
                         <div className="profile-userdata" style={{ height: 1200, width: 1100, textAlign: 'left' }} ref={ref}>
                             <div>
+                                <img src={image} className="logo"/>
                                 <h3>Government of Macquarie University</h3>
                                 <h6>Covid 19 Digital Certificate</h6>
                             </div>
