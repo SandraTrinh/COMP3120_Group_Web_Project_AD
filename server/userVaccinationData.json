@@ -7,7 +7,7 @@
             "password": "$2b$10$LpaUCjA1yrbIwPV5ZkhPK.2Xgx5eliBSOxUqK27GSc2MSAqoBlNO2",
             "territoryName": "Capital Region",
             "vaccineName": "Pfizer",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "02-09-2021",
             "SecondDose": "23-09-2021"
         },
@@ -18,7 +18,7 @@
             "password": "$2b$10$39Yu1WXfi31ddsAa1V1g5e1iZEko3NNbpaBbnANA7wi.l4QvxjylW",
             "territoryName": "Central Coast",
             "vaccineName": "Pfizer",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "09-09-2021",
             "SecondDose": "30-09-2021"
         },
@@ -29,7 +29,7 @@
             "password": "$2b$10$et2USQZTO230INwRwUB0xe3ZwBHkORgsSwmZNCVWvSGtcf2sCSTVO",
             "territoryName": "Central West",
             "vaccineName": "AstraZeneca",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "15-09-2021",
             "SecondDose": "07-10-2021"
         },
@@ -40,7 +40,7 @@
             "password": "$2b$10$am1JFJXiIaiMBEFrmF58tOffYs5kTKSU/xOQY5NyqXTGXWg6TE7GK",
             "territoryName": "Coffs Harbour - Grafton",
             "vaccineName": "Pfizer",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "18-09-2021",
             "SecondDose": "13-10-2021"
         },
@@ -51,7 +51,7 @@
             "password": "$2b$10$9TSTbg3E6MH1f1JfcklDuuj/hoPjHCXuI74fRPbs7VzrwcLnIV3jy",
             "territoryName": "Far West and Orana",
             "vaccineName": "AstraZeneca",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "22-09-2021",
             "SecondDose": "18-10-2021"
         },
@@ -62,7 +62,7 @@
             "password": "$2b$10$sUs7SZyFQ5N3CKCIgxtp3er1euenE9194pB4.lL9CEdqIqxzvn6qi",
             "territoryName": "Hunter Valley exc Newcastle",
             "vaccineName": "Pfizer",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "29-09-2021",
             "SecondDose": "21-10-2021"
         },
@@ -73,7 +73,7 @@
             "password": "$2b$10$KWfAIHnCbHnocMeZZ.LkO.a1FPeKXv0amr8pT5mTDWwC9VdcV15sW",
             "territoryName": "Illawarra",
             "vaccineName": "AstraZeneca",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "29-09-2021",
             "SecondDose": "21-10-2021"
         },
@@ -84,7 +84,7 @@
             "password": "$2b$10$tXkTd00/F/soZy7kLLgJV.NIe8UzH8lIW6IAgGIRoNCVyttDcCX.K",
             "territoryName": "Mid North Coast",
             "vaccineName": "Pfizer",
-            "status": "Vaccinated",
+            "status": "Fully Vaccinated",
             "FirstDose": "02-10-2021",
             "SecondDose": "23-10-2021"
         },
