@@ -1,6 +1,8 @@
 import axios from 'axios'
 const baseURL = "/api/"
 
+// to be DELETED we are not using this JS
+
 /**
  * Get a list of all liked things from the api
  * @return {Promise}    Promise that will resolve to the response data

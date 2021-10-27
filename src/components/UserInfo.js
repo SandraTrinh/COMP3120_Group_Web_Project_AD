@@ -7,7 +7,7 @@ import image from '../logo.png'
 
 
 const ref = React.createRef();
-
+// This componet displays User profile infomation 
 const UserInfo = ({ user }) => {
     const [userData, setMyData] = useState(null)
     useEffect(() => {

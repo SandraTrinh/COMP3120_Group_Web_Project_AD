@@ -5,7 +5,7 @@ import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { fireEvent, render } from '@testing-library/react'
 import LoginForm from './LoginForm'
-import vaccinationService from './services/Vaccinations.js'
+import vaccinationService from '../services/Vaccinations.js'
 
 jest.mock('./services/vaccinations.js')
 
