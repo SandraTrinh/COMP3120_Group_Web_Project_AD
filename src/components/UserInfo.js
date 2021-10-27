@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Pdf from "react-to-pdf";
 import { Link } from 'react-router-dom'
 import UserService from '../services/UserData.js'
-import image from '../logo.png';
+import image from '../logo.png'
+
 
 
 
