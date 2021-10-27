@@ -436,3 +436,11 @@ h6{
   margin: 10px auto 20px;
   display: block;
 }
+
+.pdf{
+  height: 100%;
+   width: 100%; 
+   text-align: 'left';
+   background-color: white;
+   color: black;
+}
