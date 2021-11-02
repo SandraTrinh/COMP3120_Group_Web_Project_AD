@@ -15,7 +15,6 @@ const UserInfo = ({ user }) => {
         UserService.getUserData({ user })
             .then(data => {
                 setMyData(data)
-                //console.log("data is", data)
             })
             .catch(error => {
                 console.log("Error:", error.response.data)
