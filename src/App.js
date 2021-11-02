@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
-import LoginForm from './LoginForm'
+import LoginForm from './components/LoginForm.js'
 import productService from './services/Vaccinations.js'
 import Products from './components/Products.js'
 import UserInfo from './components/UserInfo.js'

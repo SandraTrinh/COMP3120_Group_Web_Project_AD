@@ -26,14 +26,16 @@
 
     ## Project Script Files
         - '/src/components/'
-            - '/product.js' this file name will be changed in the future. 
-                We have not used this in the react app yet.
+            - '/bookings.js'
+                User booking form, to book vacination.
             - '/products.js' this file name will be changed in the future to something like NSWvaccinations
                 We use this to display the top ten highest vaccination regions in NSW on the home page.
-            - '/UserInfo.js' 
-                We use this to display the user's vaccination status. This includes name, location, vaccine name, vaccination status, first and second dose data.
             - '/Feedback.js' 
                 We use this to show all the feedbacks we get from our users. To prevent injection attacks, we have decided to only allow users to choose an option that best describes their thoughts of our website.
+            -  '/LoginForm.js'
+                This manages the user login form.
+            -  '/UserInfo.js' 
+                We use this to display the user's vaccination status. This includes name, location, vaccine name, vaccination status, first and second dose data.
         - '/src/services'
              This is where we manage the data request to the backend server. We use Axios to GET, POST, PUT, DELETE.
             - '/Vaccinations.js'
@@ -47,10 +49,10 @@
             This is the file that manages the CSS for the front end
         - '/src/App.js'
             Gets data from server and returns the router links to different pages, switches between the links.
-        - '/src/LoginForm.js'
-            This manages the user login form.
         - 'src/setupTest.js'
             we will set up test and manage for the front end here.
+        - 'src/logo.png'
+            This is Macquarie University logo. This logo is used in '/components/UsersInfo.js'
 
 
 # Backend Information

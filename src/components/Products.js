@@ -5,6 +5,8 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
+// name of this componet NEEDs to change to homepage or something
+//maybe even change to NswVacination
 const Products = ({vaccines}) => {
 
   //var averageVaccines = vaccines;
