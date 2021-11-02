@@ -44,26 +44,13 @@ apiRouter.get('/api/vaccinations/feedback',(request, response) => {
     })
 })
 
-
-
-
-
-
-//GET home
-apiRouter.get('/', (request, response) => {
-    response.send('<p>Hello World</p>')
-})
-
 //GET all regions of NSW vaccine status
 apiRouter.get('/api/vaccinations',(request, response) => {
-    console.log('GET user vaccine status') 
-    //response.json(vaccinations)   
+    console.log('GET user vaccine status')   
     Vaccination.find({}).then(result => {
         response.json(result)
     })
 })
-
-
 
 //GET one vaccination region with id 
 apiRouter.get('/api/vaccinations/:id', (request, response) => {
@@ -75,7 +62,6 @@ apiRouter.get('/api/vaccinations/:id', (request, response) => {
             response.status(404).json({error: "Not found"})
         })
 })
-
 
 //This verifies the user's token and sends back the user's vaccination data
 apiRouter.post('/api/user/vaccines-data', (request, response) => {

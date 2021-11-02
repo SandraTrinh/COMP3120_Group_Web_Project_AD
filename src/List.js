@@ -12,7 +12,6 @@ const List = ({contents, addVote}) => {
           contents.map((item) => 
             <li key={item.id}>
               {item.content} [{item.votes} Votes]
-              {/* <button onClick={() => addVote(item)}>Vote</button> */}
             </li>)
           } 
       </ul> 

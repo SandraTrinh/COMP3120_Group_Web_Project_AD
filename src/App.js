@@ -52,9 +52,6 @@ if(user != null) {
     
         <div className="App-body">
             <Switch>
-                {/* <Route path="/products/:id">
-                  <Product products={products} />
-                </Route> */}
                 <Route path="/vaccines">
                  
                 <UserInfo  user={user} />
@@ -88,35 +85,27 @@ if(user != null) {
           <div className="Navbar col-12">
             <Link className="App-link" to="/">Home</Link>
             <Link className="App-link" to="/login">Login</Link>
-            {/* <Link className="App-link" to="/profile">Profile</Link> */}
           </div>
         </header>
     
         <div className="App-body">
             <Switch>
-                {/* <Route path="/products/:id">
-                  <Product products={products} />
-                </Route> */}
                 <Route path="/vaccines">
                  
                 <UserInfo  user={user} />
                   
                 </Route>
                 <Route path="/login">
-                  {/* <LoginForm user={user} userLoginHandler={userLoginHandler}/> */}
                   <LoginForm user={user} setUser={setUser}/>
                 </Route>
                 <Route path="/feedback">
-                <Feedback Feedback={feedBack} setFeedBack={setFeedBack} />
+                  <Feedback Feedback={feedBack} setFeedBack={setFeedBack} />
                 </Route>
 
 
                 <Route path="/">
                 <Products vaccines={vaccinesToShow} />
                 </Route>
-                {/* <Route path="/profile">
-                    {}
-                </Route> */}
             </Switch>
           </div> 
         </Router>
