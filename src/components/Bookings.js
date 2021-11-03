@@ -114,7 +114,7 @@ const Bookings = () => {
               </div>
               <div className="question"> 
                 <label htmlFor="7"> Are you pregnant? *</label>
-                <select id="pregnant" name="pregnant" placeholder="Select...">
+                <select id="pregnant" name="pregnant" placeholder="Select..." required>
                   <option value="select">Select...</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -164,7 +164,7 @@ const Bookings = () => {
               </div>
               <div className="question">
                 <label htmlFor="13"> Have you ever had cerebral venous sinus thrombosis? *</label>
-                <select id="cerebral" name="cerebral" placeholder="Select...">
+                <select id="cerebral" name="cerebral" placeholder="Select..." required>
                   <option value="select">Select...</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -173,7 +173,7 @@ const Bookings = () => {
               </div>
               <div className="question">
                 <label htmlFor="14">Have you ever had heparin-induced thrombocytopenia? *</label>
-                <select id="thrombocytopenia" name="thrombocytopenia" placeholder="Select...">
+                <select id="thrombocytopenia" name="thrombocytopenia" placeholder="Select..." required>
                   <option value="select">Select...</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -182,7 +182,7 @@ const Bookings = () => {
               </div>
               <div className="question"> 
                 <label htmlFor="15"> Have you ever had blood clots in the abdominal veins (splanchnic veins)? *</label>
-                <select id="clots" name="clots" placeholder="Select...">
+                <select id="clots" name="clots" placeholder="Select..." required>
                   <option value="select">Select...</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -191,7 +191,7 @@ const Bookings = () => {
               </div>
               <div className="question"> 
                 <label htmlFor="16"> Have you ever had antiphospholipid syndrome associated with blood clots? *</label>
-                <select id="antiphospholipid" name="antiphospholipid" placeholder="Select...">
+                <select id="antiphospholipid" name="antiphospholipid" placeholder="Select..." required>
                   <option value="select">Select...</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -200,7 +200,7 @@ const Bookings = () => {
               </div>
               <div className="question">
                 <label htmlFor="17"> Are you under 60 years of age? *</label>
-                <select id="under60" name="under60" placeholder="Select...">
+                <select id="under60" name="under60" placeholder="Select..." required>
                   <option value="select">Select...</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
