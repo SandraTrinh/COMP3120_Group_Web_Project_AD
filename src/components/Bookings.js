@@ -18,8 +18,8 @@ import {Link} from 'react-router-dom'
 const Bookings = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit =  function (e) {
-      alert('It has been successfully submitted');
       e.preventDefault();
+      alert('It has been successfully submitted');  
   }
 
   
