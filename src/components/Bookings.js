@@ -5,6 +5,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select'
 import { useForm } from "react-hook-form";
+import {Link} from 'react-router-dom'
+
 //https://react-hook-form.com/get-started
 // Datepicker from https://www.npmjs.com/package/react-datepicker
 // https://react-select.com/styles
@@ -15,7 +17,10 @@ import { useForm } from "react-hook-form";
 
 const Bookings = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit =  function (e) {
+      alert('It has been successfully submitted');
+      e.preventDefault();
+  }
 
   
   
@@ -53,7 +58,7 @@ const Bookings = () => {
             <Select  styles={customStyles}  options={choices}/>
          </div>
                   
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={onSubmit}>
               <div className="question"> 
               <input type="checkbox" />
                 <label htmlFor="3"> Have you had COVID-19 before? pros do a check with user data.</label>
