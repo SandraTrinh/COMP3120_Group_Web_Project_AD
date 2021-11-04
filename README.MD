@@ -103,3 +103,10 @@ What we have implemented so far:
 # External API's used
 - 
 
+# SCREENSHOTS 
+We have screen shots the pages in our application and put them in the '/SCREENSHOTS' folder. 
+- 
+    ## Discription:
+    -   image name.jpg 
+    example decription of the images
+
