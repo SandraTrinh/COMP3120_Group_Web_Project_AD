@@ -21,7 +21,9 @@
 -   npm run build 
     - creates a react build of your applications
 -   npm run test
-    - 
+    - run backend tests
+-   npm run testreact
+    - run frontend test
 
 
 # Project Introduction
