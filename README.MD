@@ -6,8 +6,22 @@
     -   Zhi Jie Chair   
     -   Sandra Trinh 45915881
     -   Minh Son Do
-    
 
+# Heroku Link
+
+# Project dev settings
+-   npm start 
+    - this starts runs the react application in your localhost.
+-   npm run dev 
+    - this runs the backend server code
+    - runs in development environment
+-   npm run server 
+    - this runs the backend server code
+    - runs in development environment
+-   npm run build 
+    - creates a react build of your applications
+-   npm run test
+    - 
 
 
 # Project Introduction
@@ -15,6 +29,19 @@
     This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
     The initial landing page displays the TOP 10 LGA's in terms of their first dose of vaccination.
     The page also shows the averages of the first and second doses across NSW.
+
+# Application outline 
+
+    ## What we Aimed for but had no time
+        
+    ## Target Users
+
+    ## Data source
+
+# MVP
+What we have implemented so far
+
+
 
 # Basic Scripts
 - npm start will initialiase the project,
