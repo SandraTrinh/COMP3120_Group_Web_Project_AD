@@ -34,14 +34,17 @@
 
 # Application outline 
 
-    ## What we Aimed for but had no time
+## What we Aimed for but had no time
         
-    ## Target Users
+## Target Users
 
-    ## Data source
+## Data source
 
-# MVP
-What we have implemented so far
+# MVP 
+What we have implemented so far: 
+-   
+
+
 
 
 
