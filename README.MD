@@ -24,21 +24,21 @@ There are four members in our team each specialising in specific roles. Sandra i
     The page also shows the averages of the first and second doses across NSW.
 
 # Application outline 
-An out line on our aims, target audiencs and data source.
+- An out line on our aims, target audiencs and data source.
     
-   ## What we Aimed for but had no time:
-    ●	First of all, we cannot validate the vaccination status of our clients as we do not have government approval and time to implement this particular feature. 
-    ●	Secondly, we wanted to make sure user’s will also be able to book for a vaccination and also input for doctors administering the jab, but due to time complexity it might not be achievable by the end of the semester. 
-    ●	Thirdly, we will not allow users to post comments to minimize the risks of SQL injection attacks and similar. 
-    ●	Finally, we want to implement where users can find local vaccination centers by searching by post code but we don’t have time to manage another database and create extra methods and scripts to handle this. If we have time in our scope we hope to add this feature in.
-    Other features we would like to include: 
-    ●	If the vaccine is not administered already, the information for the current booking will be displayed.
-    ●	Users would be able to change the date of the booking for their vaccination appointment and will also be able to delete (cancel) the booking.
+    ## What we Aimed for but had no time:
+        ●	First of all, we cannot validate the vaccination status of our clients as we do not have government approval and time to implement this particular feature. 
+        ●	Secondly, we wanted to make sure user’s will also be able to book for a vaccination and also input for doctors administering the jab, but due to time complexity it might not be achievable by the end of the semester. 
+        ●	Thirdly, we will not allow users to post comments to minimize the risks of SQL injection attacks and similar. 
+        ●	Finally, we want to implement where users can find local vaccination centers by searching by post code but we don’t have time to manage another database and create extra methods and scripts to handle this. If we have time in our scope we hope to add this feature in.
+        Other features we would like to include: 
+        ●	If the vaccine is not administered already, the information for the current booking will be displayed.
+        ●	Users would be able to change the date of the booking for their vaccination appointment and will also be able to delete (cancel) the booking.
         
-   ## Target Users
+    ## Target Users
     -   NSW residence and citizens 
 
-   ## Data source
+    ## Data source
     - mongoDB
     - service NSW covide - 19 data
 
