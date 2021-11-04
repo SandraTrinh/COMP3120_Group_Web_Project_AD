@@ -6,25 +6,16 @@
     -   Zhi Jie Chair   
     -   Sandra Trinh 45915881
     -   Minh Son Do
+    
+There are four members in our team each specialising in specific roles. Sandra is looking after the backend code using express and will be taking care of the app’s aesthetics with CSS, a framework may be used for this. Minh Son will be our frontend specialist using React and will also help Sandra with Backend functionality. Zhi Jie will look after authentication in our application. He will also help Hemanth with managing the database and testing both front and backend. Hemanth is also managing the APIs that we will be using in our web application. 
+
+    # COMUNICATIONS
+    Through out our project we made sure every week before the milstone meeting we all have completed our tasks. We comunicate when we are changing the code and/or need to merge code into main as well as when code errors comes up.
+    -   We mainly used messenger chat functions to communitcate.
+    -   Zoom calls used for sharing screen and meetings
+
 
 # Heroku Link
-
-# Project dev settings
--   npm start 
-    - this starts runs the react application in your localhost.
--   npm run dev 
-    - this runs the backend server code
-    - runs in development environment
--   npm run server 
-    - this runs the backend server code
-    - runs in development environment
--   npm run build 
-    - creates a react build of your applications
--   npm run test
-    - run backend tests
--   npm run testreact
-    - run frontend test
-
 
 # Project Introduction
     This is a react based application that is intended to encourage NSW residents to get vaccinated. 
@@ -33,25 +24,32 @@
     The page also shows the averages of the first and second doses across NSW.
 
 # Application outline 
-
-## What we Aimed for but had no time
+An out line on our aims, target audiencs and data source.
+    
+    ## What we Aimed for but had no time:
+    ●	First of all, we cannot validate the vaccination status of our clients as we do not have government approval and time to implement this particular feature. 
+    ●	Secondly, we wanted to make sure user’s will also be able to book for a vaccination and also input for doctors administering the jab, but due to time complexity it might not be achievable by the end of the semester. 
+    ●	Thirdly, we will not allow users to post comments to minimize the risks of SQL injection attacks and similar. 
+    ●	Finally, we want to implement where users can find local vaccination centers by searching by post code but we don’t have time to manage another database and create extra methods and scripts to handle this. If we have time in our scope we hope to add this feature in.
+    Other features we would like to include: 
+    ●	If the vaccine is not administered already, the information for the current booking will be displayed.
+    ●	Users would be able to change the date of the booking for their vaccination appointment and will also be able to delete (cancel) the booking.
         
-## Target Users
+    ## Target Users
+    -   NSW residence and citizens 
 
-## Data source
+    ## Data source
+    - mongoDB
+    - service NSW covide - 19 data
 
 # MVP 
 What we have implemented so far: 
--   
-
-
-
-
-
-# Basic Scripts
-- npm start will initialiase the project,
-- npm run dev will initialiase the connection to database designed using MongoDB
-
+●	Login: User Authentication into the database to display the personal information and vaccination status
+●	Live interaction with MongoDB database to display the changes requested by the user in real time. 
+●	Be able to submit a booking for vacination in our application. Only when user is logged in.  
+●	Get the information of Vaccination administered, eg: the brand, date of 1st dose etc. only when user is logged in.
+●	User’s will be able to provide the website administrator with feedback about their website experience in the form of reactions.
+●	Coordination between front end and back end in the realtime for status update.
 
 # Frontend Information
 - A custom designed CSS will be used throughout the project for better integration and functionality.
