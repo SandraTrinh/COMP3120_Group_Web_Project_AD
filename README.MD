@@ -6,10 +6,10 @@
     -   Zhi Jie Chair   
     -   Sandra Trinh 45915881
     -   Minh Son Do
-    
+
 There are four members in our team each specialising in specific roles. Sandra is looking after the backend code using express and will be taking care of the app’s aesthetics with CSS, a framework may be used for this. Minh Son will be our frontend specialist using React and will also help Sandra with Backend functionality. Zhi Jie will look after authentication in our application. He will also help Hemanth with managing the database and testing both front and backend. Hemanth is also managing the APIs that we will be using in our web application. 
 
-    # COMUNICATIONS
+# COMUNICATIONS
     Through out our project we made sure every week before the milstone meeting we all have completed our tasks. We comunicate when we are changing the code and/or need to merge code into main as well as when code errors comes up.
     -   We mainly used messenger chat functions to communitcate.
     -   Zoom calls used for sharing screen and meetings
@@ -26,7 +26,7 @@ There are four members in our team each specialising in specific roles. Sandra i
 # Application outline 
 An out line on our aims, target audiencs and data source.
     
-    ## What we Aimed for but had no time:
+   ## What we Aimed for but had no time:
     ●	First of all, we cannot validate the vaccination status of our clients as we do not have government approval and time to implement this particular feature. 
     ●	Secondly, we wanted to make sure user’s will also be able to book for a vaccination and also input for doctors administering the jab, but due to time complexity it might not be achievable by the end of the semester. 
     ●	Thirdly, we will not allow users to post comments to minimize the risks of SQL injection attacks and similar. 
@@ -35,10 +35,10 @@ An out line on our aims, target audiencs and data source.
     ●	If the vaccine is not administered already, the information for the current booking will be displayed.
     ●	Users would be able to change the date of the booking for their vaccination appointment and will also be able to delete (cancel) the booking.
         
-    ## Target Users
+   ## Target Users
     -   NSW residence and citizens 
 
-    ## Data source
+   ## Data source
     - mongoDB
     - service NSW covide - 19 data
 
