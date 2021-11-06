@@ -21,7 +21,7 @@ function App() {
     productService
       .getAll()
       .then (initialProducts => {
-        console.log('promoise fulfilled')
+        console.log('promise fulfilled')
         setVaccines(initialProducts)
       
       })
