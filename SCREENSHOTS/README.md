@@ -1,6 +1,6 @@
 As soon as people visit this website, the first thing they see is the beautiful home page. It contains a list of regions sorted by the vaccination percentage. On the right hand side of the page is the dynamic graph that shows the total percentage of vaccination across NSW. 
 In order to see more features, the user has to log in. If the user details are wrong, they will not be able to access these features. 
 Once the users are logged in, they may decide to either log out or explore more functionalities. 
-If the user clicks on "Reviews, they will be only to vote their experience with the website. 
+If the user clicks on "Reviews, they will be able to rate their experience with the website. 
 If they wish to book a vaccine appointment, they can always execute that through "Bookings". Here, they can select date, vaccine, and answer some health-related questions. Once they are done, they can submit the query. 
 As for the Profile tab, it shows the profile of the current user. For example, their names, vaccine, first dose and similar. Moreover, they can also download the digital certificate to their devices. 
