@@ -23,7 +23,6 @@ function App() {
       .then (initialProducts => {
         console.log('promise fulfilled')
         setVaccines(initialProducts)
-      
       })
   }, [])
   const [feedBack, setFeedBack] = useState([])
