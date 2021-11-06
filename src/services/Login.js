@@ -26,4 +26,6 @@ const logout = ({user}) => {
                 .then(response => response.data)
 }
 
-export default {login, logout}
+const exportObject = {login, logout}
+
+export default exportObject

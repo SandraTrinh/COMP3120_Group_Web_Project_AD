@@ -34,13 +34,14 @@ There are four members in our team each specialising in specific roles. Sandra i
         Other features we would like to include: 
     -   If the vaccine is not administered already, the information for the current booking will be displayed.
     -   Users would be able to change the date of the booking for their vaccination appointment and will also be able to delete (cancel) the booking.
+    -   The backend tests is not working due to MongoDB databases got deleted everytime the tests run.
         
     ## Target Users
     -   NSW residence and citizens 
 
     ## Data source
     - mongoDB
-    - service NSW covide - 19 data
+    - service NSW covid - 19 data
 
 # MVP 
 What we have implemented so far: 

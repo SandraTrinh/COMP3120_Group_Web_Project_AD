@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './App.css';
 import LoginForm from './components/LoginForm.js'
 import productService from './services/Vaccinations.js'
-import Products from './components/Products.js'
+import Homepage from './components/Homepage.js'
 import UserInfo from './components/UserInfo.js'
 import Feedback from './components/Feedback'
 import Bookings from './components/Bookings.js'
@@ -16,20 +16,16 @@ function App() {
   const [user, setUser] = useState(null)
   const [vaccines, setVaccines] = useState([])
 
-
   useEffect(() => {
     console.log('effect')
     productService
       .getAll()
       .then (initialProducts => {
-        console.log('promoise fulfilled')
+        console.log('promise fulfilled')
         setVaccines(initialProducts)
-      
       })
   }, [])
   const [feedBack, setFeedBack] = useState([])
-
-
 
 vaccines.sort((a, b) => (a.FirstDoseVaccinationPercentage < b.FirstDoseVaccinationPercentage) ? 1 : -1)
 var vaccinesToShow=[];
@@ -68,7 +64,7 @@ if(user != null) {
                 <Bookings  />
                 </Route>
                 <Route path="/">
-                <Products vaccines={vaccinesToShow} />
+                <Homepage vaccines={vaccinesToShow} />
                 </Route>
 
             </Switch>
@@ -102,9 +98,8 @@ if(user != null) {
                   <Feedback Feedback={feedBack} setFeedBack={setFeedBack} />
                 </Route>
 
-
                 <Route path="/">
-                <Products vaccines={vaccinesToShow} />
+                <Homepage vaccines={vaccinesToShow} />
                 </Route>
             </Switch>
           </div> 

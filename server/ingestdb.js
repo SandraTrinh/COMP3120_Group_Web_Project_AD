@@ -56,6 +56,3 @@ feedbackData.userfeedback.map(record => {
         console.log("Feedback record saved")
     })
 })
-
-
-// mongoose.connection.close()

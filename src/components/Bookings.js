@@ -5,7 +5,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select'
 import { useForm } from "react-hook-form";
-import {Link} from 'react-router-dom'
 
 //https://react-hook-form.com/get-started
 // Datepicker from https://www.npmjs.com/package/react-datepicker
@@ -16,14 +15,12 @@ import {Link} from 'react-router-dom'
 
 
 const Bookings = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register} = useForm();
     const onSubmit =  function (e) {
       e.preventDefault();
       alert('It has been successfully submitted');  
   }
 
-  
-  
     const [myDate, setMyDate] = useState(new Date());
     const choices = [
         { value: 'Pfizer', label: 'Pfizer' },
@@ -44,7 +41,6 @@ const Bookings = () => {
       });
       
     return (
-      //<div className="home-page col-12">
         <div className="bookingform" >
           <div className="title">
             <h3>Book your COVID-19 Vaccination</h3>
@@ -81,7 +77,6 @@ const Bookings = () => {
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
-                {/* <input type="text"></input> */}
                 <p> </p>
               </div>
               
@@ -210,23 +205,6 @@ const Bookings = () => {
               <div className="question otherHealth"> 
                 <p>Other health conditions</p>
                 <textarea type="text" rows="10" cols="100" {...register("Health Conditions")} />
-                {/* 
-                
-                function showPreview()
-                  {
-                    var value = $('#writer').val().trim();
-                    value = value.replace("<", "&lt;");
-                    value = value.replace(">", "&gt;");
-                    $('#preview').html(value);
-                  }
-                  // or
-                  function sanitize(text){
-                      var sanitized = text.replace("<script>", "");
-                      sanitized = sanitized.replace("</script>", "");
-                      return sanitized;
-                      }
-                                  
-                */}
               </div> 
               <div className="submit">
                 <input type="submit" value="Submit"/>
@@ -237,13 +215,8 @@ const Bookings = () => {
           <p> </p>
 
         </div>
-      //</div>
       
     );
-       
-
-            
     }
-
 
   export default Bookings
