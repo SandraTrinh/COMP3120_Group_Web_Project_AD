@@ -29,7 +29,7 @@ const Feedback = ({ Feedback, setFeedBack }) => {
             .catch(error => {
                 console.log("Error:", error.response.data)
             })
-    }, [])
+    })
 
     if (Feedback.length !== 0) {
 

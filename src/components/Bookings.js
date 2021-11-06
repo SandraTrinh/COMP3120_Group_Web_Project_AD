@@ -5,7 +5,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select'
 import { useForm } from "react-hook-form";
-import {Link} from 'react-router-dom'
 
 //https://react-hook-form.com/get-started
 // Datepicker from https://www.npmjs.com/package/react-datepicker
@@ -16,7 +15,7 @@ import {Link} from 'react-router-dom'
 
 
 const Bookings = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register} = useForm();
     const onSubmit =  function (e) {
       e.preventDefault();
       alert('It has been successfully submitted');  
