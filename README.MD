@@ -2,8 +2,8 @@
 # COVID-19 Vaccination in NSW
 
 # Project Members
-    -   Hemanth Vejandla
-    -   Zhi Jie Chair   
+    -   Hemanth Kumar Vejandla 45531536
+    -   Zhi Jie Chair 45707650
     -   Sandra Trinh 45915881
     -   Minh Son Do
 
@@ -40,8 +40,9 @@ There are four members in our team each specialising in specific roles. Sandra i
     -   NSW residence and citizens 
 
     ## Data source
-    - mongoDB
-    - service NSW covid - 19 data
+    - MongoDB - 28 Covid-19 data for Homepage
+              - 20 User data for authentication
+              - 1 feedback data for feedback section
 
 # MVP 
 What we have implemented so far: 
