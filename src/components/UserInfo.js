@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom'
 import UserService from '../services/UserData.js'
 import image from '../logo.png'
 
-
-
-
 const ref = React.createRef();
 // This componet displays User profile infomation 
 const UserInfo = ({ user }) => {
@@ -19,7 +16,7 @@ const UserInfo = ({ user }) => {
             .catch(error => {
                 console.log("Error:", error.response.data)
             })
-    }, [])
+    })
     console.log(userData)
     if (user != null) {
         if (userData != null) {
@@ -30,9 +27,9 @@ const UserInfo = ({ user }) => {
                         <Pdf targetRef={ref} filename="Vaccine-Cert.pdf">
                             {({ toPdf }) => <button className="profile-download-pdf" onClick={toPdf}>Download Your Digital Certificate</button>}
                         </Pdf>
-                        <div className="profile-userdata" className="pdf" ref={ref}>
+                        <div className="profile-userdata" ref={ref}>
                             <div>
-                                <img src={image} className="logo"/>
+                                <img src={image} alt="" className="logo"/>
                                 <h3>Government of Macquarie University</h3>
                                 <h6>Covid 19 Digital Certificate</h6>
                             </div>

@@ -13,6 +13,6 @@ const getFeedback = () => {
     return request.then(response => response.data)
 }
 
-export default {getAll, getFeedback}
-    
-    // createProduct, updateProduct, deleteProduct, setToken}
+const exportObject = {getAll, getFeedback}
+
+export default exportObject

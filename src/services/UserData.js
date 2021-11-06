@@ -10,4 +10,6 @@ const getUserData = ({user}) => {
                 .then(response => response.data)
 }
 
-export default {getUserData}
+const exportObject = {getUserData}
+
+export default exportObject
