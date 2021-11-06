@@ -21,8 +21,6 @@ const Bookings = () => {
       alert('It has been successfully submitted');  
   }
 
-  
-  
     const [myDate, setMyDate] = useState(new Date());
     const choices = [
         { value: 'Pfizer', label: 'Pfizer' },
@@ -43,7 +41,6 @@ const Bookings = () => {
       });
       
     return (
-      //<div className="home-page col-12">
         <div className="bookingform" >
           <div className="title">
             <h3>Book your COVID-19 Vaccination</h3>
@@ -80,7 +77,6 @@ const Bookings = () => {
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
-                {/* <input type="text"></input> */}
                 <p> </p>
               </div>
               
@@ -209,23 +205,6 @@ const Bookings = () => {
               <div className="question otherHealth"> 
                 <p>Other health conditions</p>
                 <textarea type="text" rows="10" cols="100" {...register("Health Conditions")} />
-                {/* 
-                
-                function showPreview()
-                  {
-                    var value = $('#writer').val().trim();
-                    value = value.replace("<", "&lt;");
-                    value = value.replace(">", "&gt;");
-                    $('#preview').html(value);
-                  }
-                  // or
-                  function sanitize(text){
-                      var sanitized = text.replace("<script>", "");
-                      sanitized = sanitized.replace("</script>", "");
-                      return sanitized;
-                      }
-                                  
-                */}
               </div> 
               <div className="submit">
                 <input type="submit" value="Submit"/>
@@ -236,13 +215,8 @@ const Bookings = () => {
           <p> </p>
 
         </div>
-      //</div>
       
     );
-       
-
-            
     }
-
 
   export default Bookings

@@ -2,14 +2,10 @@
 /* https://stackoverflow.com/questions/5703552/how-can-i-center-text-horizontally-and-vertically-inside-a-div-block */
 /* https://stackoverflow.com/questions/62158078/css-animation-keyframe-percentage-issue */
 import React from 'react'
-
 import {Link} from 'react-router-dom'
 
-// name of this componet NEEDs to change to homepage or something
-//maybe even change to NswVacination
-const Products = ({vaccines}) => {
+const Homepage = ({vaccines}) => {
 
-  //var averageVaccines = vaccines;
   var sum1 =0 ;
   var sum2 =0 ;
   
@@ -22,10 +18,8 @@ const Products = ({vaccines}) => {
       }
   }
 
-
   var averageFirstDose = Math.round(sum1/vaccines.length) + "%"
   var averageSecondDose = Math.round(sum2/vaccines.length) + "%"
-
   
     return(
       <div className="home-page col-12">
@@ -68,4 +62,4 @@ const Products = ({vaccines}) => {
     )
 }
 
-export default Products
+export default Homepage

@@ -1,4 +1,3 @@
-  
 const express = require("express")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -20,8 +19,6 @@ let users = usersData.users
 const vaccineData = JSON.parse(rawVaccineData)
 const feedbackData = JSON.parse(rawFeedbackData)
 
-
-
 //get user token
 const getTokenFrom = request => {
     const authorization = request.get('authorization')
@@ -34,9 +31,7 @@ const apiRouter = express.Router()
 
 apiRouter.get('/api/vaccinations/feedback',(request, response) => {
  
-    //response.json(units)
     console.log('GET user vaccine status') 
-    //response.json(vaccinations)   
     Feedback.find({}).then(result => {
         console.log("feedback data is on")
         response.json(result)
@@ -84,7 +79,6 @@ apiRouter.post('/api/user/vaccines-data', (request, response) => {
     let user
     Users.findById(decodedToken.id)
     .then(result => {
-        //console.log("get users data: "+ JSON.stringify(result))
         user = JSON.parse(JSON.stringify(result));
         if (user === null || user === {}) {
             return response.status(400).json({error: "invalid user"})
@@ -98,7 +92,6 @@ apiRouter.post('/api/user/vaccines-data', (request, response) => {
             FirstDose: data.FirstDose,
             SecondDose: data.SecondDose
         }
-        //console.log("here is data: ",userData)
         response.status(200).json(userData)
         console.log("POST send user vaccine data back to frontend!")
     })   
@@ -110,7 +103,6 @@ apiRouter.post('/api/login', async (request, response) => {
 
     const {username, password} = request.body
     let user 
-    //const user = await getUser(name)
     await Users.find({username:username})
     .then(result => {
         console.log("get users: "+ JSON.stringify(result))
@@ -136,9 +128,6 @@ apiRouter.post('/api/login', async (request, response) => {
         } else {
         return response.status(401).json({error: "invalid name or password"})
         }
-
-   
- 
 })
 
 //verify user to logout
@@ -151,8 +140,6 @@ apiRouter.post('/api/logout', (request, response) => {
     catch {
         decodedToken = {id: null}
     }
-
-    //console.log("Token: ", decodedToken)
 
     if(!token || !decodedToken.id ) {
         if(decodedToken.id !== 0){

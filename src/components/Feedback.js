@@ -13,7 +13,6 @@ const labels = {
     5: 'Very Satisfied',
 };
 
-
 const Feedback = ({ Feedback, setFeedBack }) => {
     const [value, setValue] = React.useState(2);
     const [hover, setHover] = React.useState(-1);
