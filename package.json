@@ -18,6 +18,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.8",
     "nodemon": "^2.0.13",
@@ -64,7 +65,7 @@
     "@shelf/jest-mongodb": "^2.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
-    "express-session": "^1.17.2",
+    "json-server": "^0.17.0",
     "supertest": "^6.1.6"
   }
 }
