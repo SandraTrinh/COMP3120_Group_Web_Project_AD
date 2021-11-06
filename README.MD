@@ -48,9 +48,10 @@ What we have implemented so far:
 -   Login: User Authentication into the database to display the personal information and vaccination status
 -   Live interaction with MongoDB database to display the changes requested by the user in real time. 
 -   Be able to submit a booking for vacination in our application. Only when user is logged in.  
--   Get the information of Vaccination administered, eg: the brand, date of 1st dose etc. only when user is logged in.
+-   Get the information of Vaccination administered, eg: the brand, date of 1st dose etc. only when user is logged in. Able to download PDF of their user vacciantion information.
 -   User’s will be able to provide the website administrator with feedback about their website experience in the form of reactions.
 -   Coordination between front end and back end in the realtime for status update.
+-   Home page displays top ten NSW vaccination status. 
 
 # Frontend Information
 - A custom designed CSS will be used throughout the project for better integration and functionality.
@@ -97,7 +98,9 @@ What we have implemented so far:
         -   '/server/server.js' This file imports the '/server/app.js' file. This also tells the server to use port 3001.
         -   '/server/app.js' This file import the '/controllers/api.js' files. This sets up the express, cors, api routers, and in the future the tests.
         -   '/controllers/api.js' This is where all the API routers are controlled:
-            -   GET : at the moment we are geting vaccination rates in nsw from our own mongoDB In the future we will include: POST, PUT, DELETE
+            -   GET : at the moment we are geting vaccination rates in nsw from our own mongoDB
+            -   POST : handles user login
+            -   POST : handles user authentication for login and geting user vacciantion data.
         -   '/models/vaccine.js' This connects to the mongoDB with mongoose. We are currently geting the vaccination data in NSW from our own data clutch in our MongoDB.
         -   'server/ingestdb.js' This helps us populate the static data from userVaccinationData.json and the vaccine.json in to our mongoDB.
 
