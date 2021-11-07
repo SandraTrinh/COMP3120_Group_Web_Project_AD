@@ -1,5 +1,9 @@
 # Link to deplyed version
-Heroku link:
+Heroku link: https://fast-atoll-92750.herokuapp.com
+
+# Test login
+- username: SamSmith
+- password: sam123
 
 # Project dev settings, Basic Scripts
 -   npm start 
