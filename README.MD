@@ -68,9 +68,9 @@ For our next step we would need to connect the booking form to send requests to 
 
     ## Project Script Files
     - '/src/components/'
-        - '/bookings.js'
+        - '/Bookings.js'
             User booking form, to book vacination.
-        - '/products.js' this file name will be changed in the future to something like NSWvaccinations
+        - '/Homepage.js'
             We use this to display the top ten highest vaccination regions in NSW on the home page.
         - '/Feedback.js' 
             We use this to show all the feedbacks we get from our users. To prevent injection attacks, we have decided to only allow users to choose an option that best describes their thoughts of our website.
@@ -79,7 +79,7 @@ For our next step we would need to connect the booking form to send requests to 
         -  '/UserInfo.js' 
             We use this to display the user's vaccination status. This includes name, location, vaccine name, vaccination status, first and second dose data.
     - '/src/services'
-            This is where we manage the data request to the backend server. We use Axios to GET, POST, PUT, DELETE.
+    This is where we manage the data request to the backend server. We use Axios to GET, POST, PUT, DELETE.
         - '/Vaccinations.js'
             - GET: this at the moment get the vaccination rates in NSWs
         - '/Login.js'
@@ -111,11 +111,18 @@ For our next step we would need to connect the booking form to send requests to 
         -   GET : at the moment we are geting vaccination rates in nsw from our own mongoDB
         -   POST : handles user login
         -   POST : handles user authentication for login and geting user vaccination data.
+    -   '/models/feedback.js' This connects to the mongoDB with mongoose. For the feedback data.
+    -   '/models/users.js' This connects to the mongoDB with mongoose. For the user, logins and vaccination data.
     -   '/models/vaccine.js' This connects to the mongoDB with mongoose. We are currently geting the vaccination data in NSW from our own data clutch in our MongoDB.
     -   'server/ingestdb.js' This helps us populate the static data from userVaccinationData.json and the vaccine.json in to our mongoDB.
+    -   'server/utils/middleware.js' middleware used for test done in the backend server.
 
 # SCREENSHOTS 
 We have created a video about our web application and put it in the '/SCREENSHOTS' folder. 
+-   'README.md'
+Describes the video content.
+-   'vaccine.mp4'
+This is a recorded video of our website pages.
 
 
 
