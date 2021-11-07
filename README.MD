@@ -1,30 +1,31 @@
 # COMP3120 Group AD
+https://github.com/MQCOMP3120-2021/group-web-project-group-ad
 # COVID-19 Vaccination in NSW
 
 # Project Members
     -   Hemanth Kumar Vejandla 45531536
     -   Zhi Jie Chair 45707650
     -   Sandra Trinh 45915881
-    -   Minh Son Do
+    -   Minh Son Do 44751494
 
 There are four members in our team each specialising in specific roles. Sandra is looking after the backend code using express and will be taking care of the app’s aesthetics with CSS, a framework may be used for this. Minh Son will be our frontend specialist using React and will also help Sandra with Backend functionality. Zhi Jie will look after authentication in our application. He will also help Hemanth with managing the database and testing both front and backend. Hemanth is also managing the APIs that we will be using in our web application. 
 
-# COMUNICATIONS
-    Through out our project we made sure every week before the milstone meeting we all have completed our tasks. We comunicate when we are changing the code and/or need to merge code into main as well as when code errors comes up.
-    -   We mainly used messenger chat functions to communitcate.
+# COMMUNICATIONS
+    Throughout our project we made sure every week before the milestone meeting we all have completed our tasks. We comunicate when we are changing the code and/or need to merge code into main as well as when code errors come up.
+    -   We mainly used messenger chat functions to communicate.
     -   Zoom calls used for sharing screen and meetings
 
 
 # Heroku Link
 
 # Project Introduction
-    This is a react based application that is intended to encourage NSW residents to get vaccinated. 
+    This is a react-based application that is intended to encourage NSW residents to get vaccinated. 
     This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
     The initial landing page displays the TOP 10 LGA's in terms of their first dose of vaccination.
     The page also shows the averages of the first and second doses across NSW.
 
 # Application outline 
-- An out line on our aims, target audiencs and data source.
+- An outline on our aims, target audience and data source.
     
     ## What we Aimed for but had no time:
     -   First of all, we cannot validate the vaccination status of our clients as we do not have government approval and time to implement this particular feature. 
@@ -34,7 +35,7 @@ There are four members in our team each specialising in specific roles. Sandra i
         Other features we would like to include: 
     -   If the vaccine is not administered already, the information for the current booking will be displayed.
     -   Users would be able to change the date of the booking for their vaccination appointment and will also be able to delete (cancel) the booking.
-    -   The backend tests is not working due to MongoDB databases got deleted everytime the tests run.
+    -   The backend tests are not working due to MongoDB databases get deleted everytime the tests run.
         
     ## Target Users
     -   NSW residence and citizens 
@@ -49,8 +50,8 @@ What we have implemented so far:
 -   Login: User Authentication into the database to display the personal information and vaccination status
 -   Live interaction with MongoDB database to display the changes requested by the user in real time. 
 -   Be able to submit a booking for vacination in our application. Only when user is logged in.  
--   Get the information of Vaccination administered, eg: the brand, date of 1st dose etc. only when user is logged in. Able to download PDF of their user vacciantion information.
--   User’s will be able to provide the website administrator with feedback about their website experience in the form of reactions.
+-   Get the information of Vaccination administered, eg: the brand, date of 1st dose etc. only when user is logged in. Able to download PDF of their user vaccination information.
+-   Users will be able to provide the website administrator with feedback about their website experience in the form of reactions.
 -   Coordination between front end and back end in the realtime for status update.
 -   Home page displays top ten NSW vaccination status. 
 
@@ -89,7 +90,7 @@ What we have implemented so far:
 
 
 # Backend Information
-- Mongo DB will be primiraly be used as our database for the information on vaccine status for users and as well as for the Vaccinantion percentage across NSW
+- Mongo DB will be primarily used as our database for the information on vaccine status for users as well as for the Vaccination percentage across NSW
 - Custom designed Mongo DB API has been immplemented (vaccine.js) to help us in establishing the initial database
 - .env file is used to authenticate to MongoDB database
 - ingestdb.js has been implemented to load the data into the MongoDB database.
@@ -97,11 +98,11 @@ What we have implemented so far:
     ## Project Script Files 
         -   '/server' This is the location for our backend server code. We are using express server.
         -   '/server/server.js' This file imports the '/server/app.js' file. This also tells the server to use port 3001.
-        -   '/server/app.js' This file import the '/controllers/api.js' files. This sets up the express, cors, api routers, and in the future the tests.
+        -   '/server/app.js' This file imports the '/controllers/api.js' file. This sets up the express, cors, api routers, and in the future the tests.
         -   '/controllers/api.js' This is where all the API routers are controlled:
             -   GET : at the moment we are geting vaccination rates in nsw from our own mongoDB
             -   POST : handles user login
-            -   POST : handles user authentication for login and geting user vacciantion data.
+            -   POST : handles user authentication for login and geting user vaccination data.
         -   '/models/vaccine.js' This connects to the mongoDB with mongoose. We are currently geting the vaccination data in NSW from our own data clutch in our MongoDB.
         -   'server/ingestdb.js' This helps us populate the static data from userVaccinationData.json and the vaccine.json in to our mongoDB.
 
@@ -109,9 +110,7 @@ What we have implemented so far:
 - 
 
 # SCREENSHOTS 
-We have screen shots the pages in our application and put them in the '/SCREENSHOTS' folder. 
-- 
-    ## Discription:
-    -   image name.jpg 
-    example decription of the images
+We have created a video about our web application and put it in the '/SCREENSHOTS' folder. 
+
+
 
