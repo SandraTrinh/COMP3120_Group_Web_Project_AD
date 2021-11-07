@@ -41,9 +41,9 @@ There are four members in our team each specialising in specific roles. Sandra i
     -   NSW residence and citizens 
 
     ## Data source
-    - MongoDB - 28 Covid-19 data for Homepage
-              - 20 User data for authentication
-              - 1 feedback data for feedback section
+    - COVID - 19 data by LGA has been obtained directly from NSW Health on 2nd October 2021. 
+      Source: https://www.health.nsw.gov.au/Infectious/covid-19/Pages/stats-nsw.aspx?fbclid=IwAR0xj5WRy8G3MaI_jIjUqULDdGXtoJpGwgC5Z71zrxseOF4Yt3QEzradgc8#vaccine
+    - User Data: Due to restrained access from NSW Health to protect the confidentiality of the residents, their personal data cannot be disclosed. The user data used in this         project is manually generated using the list of Top 20 Names in Australia, and LGA has been assigned to individual User randomly.
 
 # MVP 
 What we have implemented so far: 
