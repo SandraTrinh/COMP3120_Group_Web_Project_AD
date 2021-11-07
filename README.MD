@@ -17,7 +17,7 @@ There are four members in our team each specialising in specific roles. Sandra i
 
 
 # Heroku Link
-
+https://fast-atoll-92750.herokuapp.com
 # Project Introduction
     This is a react-based application that is intended to encourage NSW residents to get vaccinated. 
     This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
@@ -54,6 +54,9 @@ What we have implemented so far:
 -   Users will be able to provide the website administrator with feedback about their website experience in the form of reactions.
 -   Coordination between front end and back end in the realtime for status update.
 -   Home page displays top ten NSW vaccination status. 
+
+# Our Next Step
+For our next step we would need to connect the booking form to send requests to the backend server. In the frontend the booking form will need to be able to send the form data to the server. We will need to be able to track how many vaccination the user had so far and change the booking form title to, "first dose", "second does'', "booster shots", etc. and add some conditions to only allow the second shot booking to only be able to pick the same vaccine they used in the first dose. We may like to better display the home page data for better user experience, using CSS or some form of graphs. Most of the ideas mentioned above in "What we Aimed for but had no time" we would like to complete. However, just for the next step we would like to tackle the booking and homepage CSS first. 
 
 # Frontend Information
 - A custom designed CSS will be used throughout the project for better integration and functionality.
@@ -105,9 +108,6 @@ What we have implemented so far:
             -   POST : handles user authentication for login and geting user vaccination data.
         -   '/models/vaccine.js' This connects to the mongoDB with mongoose. We are currently geting the vaccination data in NSW from our own data clutch in our MongoDB.
         -   'server/ingestdb.js' This helps us populate the static data from userVaccinationData.json and the vaccine.json in to our mongoDB.
-
-# External API's used
-- 
 
 # SCREENSHOTS 
 We have created a video about our web application and put it in the '/SCREENSHOTS' folder. 
