@@ -11,9 +11,9 @@ https://github.com/MQCOMP3120-2021/group-web-project-group-ad
 There are four members in our team each specialising in specific roles. Sandra is looking after the backend code using express and will be taking care of the app’s aesthetics with CSS, a framework may be used for this. Minh Son will be our frontend specialist using React and will also help Sandra with Backend functionality. Zhi Jie will look after authentication in our application. He will also help Hemanth with managing the database and testing both front and backend. Hemanth is also managing the APIs that we will be using in our web application. 
 
 # COMMUNICATIONS
-    Throughout our project we made sure every week before the milestone meeting we all have completed our tasks. We comunicate when we are changing the code and/or need to merge code into main as well as when code errors come up.
-    -   We mainly used messenger chat functions to communicate.
-    -   Zoom calls used for sharing screen and meetings
+Throughout our project we made sure every week before the milestone meeting we all have completed our tasks. We comunicate when we are changing the code and/or need to merge code into main as well as when code errors come up.
+-   We mainly used messenger chat functions to communicate.
+-   Zoom calls used for sharing screen and meetings
 
 
 # Heroku Link
@@ -24,10 +24,10 @@ https://fast-atoll-92750.herokuapp.com
 - password: sam123
 
 # Project Introduction
-    This is a react-based application that is intended to encourage NSW residents to get vaccinated. 
-    This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
-    The initial landing page displays the TOP 10 LGA's in terms of their first dose of vaccination.
-    The page also shows the averages of the first and second doses across NSW.
+This is a react-based application that is intended to encourage NSW residents to get vaccinated. 
+This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
+The initial landing page displays the TOP 10 LGA's in terms of their first dose of vaccination.
+The page also shows the averages of the first and second doses across NSW.
 
 # Application outline 
 - An outline on our aims, target audience and data source.
@@ -67,34 +67,34 @@ For our next step we would need to connect the booking form to send requests to 
 - A custom designed CSS will be used throughout the project for better integration and functionality.
 
     ## Project Script Files
-        - '/src/components/'
-            - '/bookings.js'
-                User booking form, to book vacination.
-            - '/products.js' this file name will be changed in the future to something like NSWvaccinations
-                We use this to display the top ten highest vaccination regions in NSW on the home page.
-            - '/Feedback.js' 
-                We use this to show all the feedbacks we get from our users. To prevent injection attacks, we have decided to only allow users to choose an option that best describes their thoughts of our website.
-            -  '/LoginForm.js'
-                This manages the user login form.
-            -  '/UserInfo.js' 
-                We use this to display the user's vaccination status. This includes name, location, vaccine name, vaccination status, first and second dose data.
-        - '/src/services'
-             This is where we manage the data request to the backend server. We use Axios to GET, POST, PUT, DELETE.
-            - '/Vaccinations.js'
-                - GET: this at the moment get the vaccination rates in NSWs
-            - '/Login.js'
-                - POST: login post, send login request
-                - POST: logout post, verify the user is the user before logout
-            - '/UserData'
-                - POST: POST to verify the user and get the user's vaccination data
-        - '/src/App.css'
-            This is the file that manages the CSS for the front end
-        - '/src/App.js'
-            Gets data from server and returns the router links to different pages, switches between the links.
-        - 'src/setupTest.js'
-            we will set up test and manage for the front end here.
-        - 'src/logo.png'
-            This is Macquarie University logo. This logo is used in '/components/UsersInfo.js'
+    - '/src/components/'
+        - '/bookings.js'
+            User booking form, to book vacination.
+        - '/products.js' this file name will be changed in the future to something like NSWvaccinations
+            We use this to display the top ten highest vaccination regions in NSW on the home page.
+        - '/Feedback.js' 
+            We use this to show all the feedbacks we get from our users. To prevent injection attacks, we have decided to only allow users to choose an option that best describes their thoughts of our website.
+        -  '/LoginForm.js'
+            This manages the user login form.
+        -  '/UserInfo.js' 
+            We use this to display the user's vaccination status. This includes name, location, vaccine name, vaccination status, first and second dose data.
+    - '/src/services'
+            This is where we manage the data request to the backend server. We use Axios to GET, POST, PUT, DELETE.
+        - '/Vaccinations.js'
+            - GET: this at the moment get the vaccination rates in NSWs
+        - '/Login.js'
+            - POST: login post, send login request
+            - POST: logout post, verify the user is the user before logout
+        - '/UserData'
+            - POST: POST to verify the user and get the user's vaccination data
+    - '/src/App.css'
+        This is the file that manages the CSS for the front end
+    - '/src/App.js'
+        Gets data from server and returns the router links to different pages, switches between the links.
+    - 'src/setupTest.js'
+        we will set up test and manage for the front end here.
+    - 'src/logo.png'
+        This is Macquarie University logo. This logo is used in '/components/UsersInfo.js'
 
 
 # Backend Information
@@ -104,15 +104,15 @@ For our next step we would need to connect the booking form to send requests to 
 - ingestdb.js has been implemented to load the data into the MongoDB database.
 
     ## Project Script Files 
-        -   '/server' This is the location for our backend server code. We are using express server.
-        -   '/server/server.js' This file imports the '/server/app.js' file. This also tells the server to use port 3001.
-        -   '/server/app.js' This file imports the '/controllers/api.js' file. This sets up the express, cors, api routers, and in the future the tests.
-        -   '/controllers/api.js' This is where all the API routers are controlled:
-            -   GET : at the moment we are geting vaccination rates in nsw from our own mongoDB
-            -   POST : handles user login
-            -   POST : handles user authentication for login and geting user vaccination data.
-        -   '/models/vaccine.js' This connects to the mongoDB with mongoose. We are currently geting the vaccination data in NSW from our own data clutch in our MongoDB.
-        -   'server/ingestdb.js' This helps us populate the static data from userVaccinationData.json and the vaccine.json in to our mongoDB.
+    -   '/server' This is the location for our backend server code. We are using express server.
+    -   '/server/server.js' This file imports the '/server/app.js' file. This also tells the server to use port 3001.
+    -   '/server/app.js' This file imports the '/controllers/api.js' file. This sets up the express, cors, api routers, and in the future the tests.
+    -   '/controllers/api.js' This is where all the API routers are controlled:
+        -   GET : at the moment we are geting vaccination rates in nsw from our own mongoDB
+        -   POST : handles user login
+        -   POST : handles user authentication for login and geting user vaccination data.
+    -   '/models/vaccine.js' This connects to the mongoDB with mongoose. We are currently geting the vaccination data in NSW from our own data clutch in our MongoDB.
+    -   'server/ingestdb.js' This helps us populate the static data from userVaccinationData.json and the vaccine.json in to our mongoDB.
 
 # SCREENSHOTS 
 We have created a video about our web application and put it in the '/SCREENSHOTS' folder. 
