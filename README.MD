@@ -3,10 +3,10 @@ https://github.com/MQCOMP3120-2021/group-web-project-group-ad
 # COVID-19 Vaccination in NSW
 
 # Project Members
-    -   Hemanth Kumar Vejandla 45531536
-    -   Zhi Jie Chair 45707650
-    -   Sandra Trinh 45915881
-    -   Minh Son Do 44751494
+-   Hemanth Kumar Vejandla 45531536
+-   Zhi Jie Chair 45707650
+-   Sandra Trinh 45915881
+-   Minh Son Do 44751494
 
 There are four members in our team each specialising in specific roles. Sandra is looking after the backend code using express and will be taking care of the app’s aesthetics with CSS, a framework may be used for this. Minh Son will be our frontend specialist using React and will also help Sandra with Backend functionality. Zhi Jie will look after authentication in our application. He will also help Hemanth with managing the database and testing both front and backend. Hemanth is also managing the APIs that we will be using in our web application. 
 
