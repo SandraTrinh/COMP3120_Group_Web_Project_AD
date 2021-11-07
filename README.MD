@@ -17,7 +17,7 @@ There are four members in our team each specialising in specific roles. Sandra i
 
 
 # Heroku Link
-
+https://fast-atoll-92750.herokuapp.com
 # Project Introduction
     This is a react-based application that is intended to encourage NSW residents to get vaccinated. 
     This Application will allow the users to see the percentage of the vaccination status across different LGA's diveded into 1st dose and 2nd dose of the vaccine.
