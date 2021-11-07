@@ -24,3 +24,4 @@ Heroku link: https://fast-atoll-92750.herokuapp.com
     - run frontend test
 
 # Information about any use of Continuous Integration you have implemented.
+- We do not have any.
